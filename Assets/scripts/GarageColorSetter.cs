@@ -13,12 +13,6 @@ public class GarageColorSetter : MonoBehaviour
     [SerializeField]
     Garage gg;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void GCStart(int car,TuneSetter ts)//garageより表示中の車番号をもらえる
     {
         this.car = car;

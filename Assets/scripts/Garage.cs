@@ -216,9 +216,10 @@ public class Garage : MonoBehaviour {
         opt.SetActive(true);
     }
 
+    /*
     public void OptSet()
     {
-        /*
+        
         float res;
         int width, height;
         res = kaizoudo.value;
@@ -231,8 +232,8 @@ public class Garage : MonoBehaviour {
             height = (int)(Screen.height * screenRate);
         }
         Screen.SetResolution(width, height, true, 15);
-        */
-    }
+        
+    }*/
 
     void OnOffTune()
     {
