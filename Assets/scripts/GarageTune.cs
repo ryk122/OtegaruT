@@ -98,6 +98,7 @@ public class GarageTune : MonoBehaviour
             c -= 10;
             PlayerPrefs.SetInt("money", c);
             g.DispCoin(c);
+            data = PlayerPrefs.GetString("car" + dcar);
             PlayerPrefs.SetString("car" + dcar, data[0] + drop.value.ToString() +data.Substring(2, data.Length - 2));
             gg.CloseTune();
         }

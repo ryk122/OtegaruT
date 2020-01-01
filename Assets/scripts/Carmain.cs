@@ -23,6 +23,7 @@ public class Carmain : MonoBehaviour {
     bool gyaa,imgfadeout;
     Image gyaimg;
     RaycastHit uhit;
+    TuneSetter ts;
     bool k;
     int sliptime;
     float vol;
@@ -51,6 +52,17 @@ public class Carmain : MonoBehaviour {
         gyaimg = gyaobj.GetComponent<Image>();
         gyaa = false;
         imgfadeout = true;
+
+        ts = GetComponent<TuneSetter>();
+
+
+        foreach (ChangeColor cc in ts.changecolor)
+        {
+            cc.Start();
+            cc.GetEmitColor();
+        }
+        if (PlayerPrefs.GetInt("time") == 0)
+            LightOnOff();
     }
 
     private void Update()
@@ -327,6 +339,12 @@ public class Carmain : MonoBehaviour {
             {
                 skm.SetBlendShapeWeight(0, 100);
             }
+
+            if(!auto)
+            foreach (ChangeColor cc in ts.changecolor)
+            {
+                cc.SetEmmison(0);
+            }
         }
         else
         {
@@ -334,6 +352,12 @@ public class Carmain : MonoBehaviour {
             if (skm != null)
             {
                 skm.SetBlendShapeWeight(0, 0);
+            }
+
+            if (!auto)
+            foreach (ChangeColor cc in ts.changecolor)
+            {
+                cc.SetEmmison(1);
             }
         }
     }

@@ -46,7 +46,7 @@ public class StartCtrl : MonoBehaviour {
         TargetScript.num = 0;
         TargetScript.putnum = 0;
 
-        if (PlayerPrefs.GetInt("time") == 0) { Light(); }
+        //if (PlayerPrefs.GetInt("time") == 0) { Light(); }
 
         Change.Reset();
     }
