@@ -13,10 +13,10 @@ public class News : MonoBehaviour
             PlayerPrefs.SetInt("news", 0);
 
         int n = PlayerPrefs.GetInt("news");
-        if (n != 28)
+        if (n != 101)
         {
             newspanel.SetActive(true);
-            PlayerPrefs.SetInt("news", 28);
+            PlayerPrefs.SetInt("news", 101);
         }
     }
 

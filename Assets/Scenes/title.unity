@@ -5897,10 +5897,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News!\n\n\u8ECA\u4F53\u30AB\u30E9\u30FC\u5909\u66F4\u6A5F\u80FD\u3092\u8FFD\u52A0\u3057\u307E\u3057\u305F.Garage\u3088\u308Atune\u3067\u304D\u307E\u3059\u3002\nBody
-    color changing are available.You can tune in Garage. \n\n\u8ECA\u7A2E\u3092\u8FFD\u52A0\u3057\u307E\u3057\u305F
-    new car is added : mr2\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
-    cars are being made : (180,sil80,g86 etc..)\n\nLoadStage\u306B\u65B0\u3057\u3044\u547D\u4EE4\u3092\u8FFD\u52A0\u3057\u307E\u3057\u305F\u3002\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
+  m_Text: "#Update News!\n\n\u30D0\u30B0\u4FEE\u6B63 bug fix\n\n\u30E9\u30A4\u30C8\u3092\u6D88\u3057\u305F\u3068\u304D\u30EA\u30A2\u306E\u8ECA\u5E45\u706F\u3082\u6D88\u3048\u308B\u3088\u3046\u306B\u3057\u307E\u3057\u305F\nrear
+    position light can be turn on/off\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
+    cars are being made : (180,sil80,g86 etc..)\n\n\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8554,7 +8553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1125132908
 RectTransform:
   m_ObjectHideFlags: 0
