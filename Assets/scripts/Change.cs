@@ -24,7 +24,7 @@ public class Change : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        rd.material.SetFloat("speed", (cm.maxs-cm.speed)/cm.maxs-0.05f);
+        rd.material.SetFloat("_Blend", (cm.maxs-cm.speed)/cm.maxs+0.1f);
         //rd.material.SetFloat("speed", speed);
     }
 }

@@ -5,9 +5,10 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: r1
-  m_Shader: {fileID: 4800000, guid: 5a1149a7b599e24439aa510cd31a8189, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8185f695f36299a44bea387674f0415e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,8 +40,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 3, y: 0.3}
+        m_Texture: {fileID: 2800000, guid: e7633f066981a004b8279b375cdc7783, type: 3}
+        m_Scale: {x: 2, y: 2.5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -54,7 +55,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SubTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Blend: 0.356
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1

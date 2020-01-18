@@ -4,7 +4,7 @@
 	{
 		_MainTex("Texture", 2D) = "black" {}
 		_SubTex("SubTexture", 2D) = "black" {}
-		_Blend("Blend",Range(0, 1)) = 1
+		_Blend("Blend",float) = 1
 	}
 		SubShader
 		{
