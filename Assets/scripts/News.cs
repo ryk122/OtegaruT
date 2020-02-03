@@ -5,6 +5,8 @@ using UnityEngine;
 public class News : MonoBehaviour
 {
     public GameObject newspanel;
+    [SerializeField]
+    int buildnum;
 
     // Start is called before the first frame update
     void Start()
@@ -13,10 +15,10 @@ public class News : MonoBehaviour
             PlayerPrefs.SetInt("news", 0);
 
         int n = PlayerPrefs.GetInt("news");
-        if (n != 101)
+        if (n != buildnum)
         {
             newspanel.SetActive(true);
-            PlayerPrefs.SetInt("news", 118);
+            PlayerPrefs.SetInt("news", buildnum);
         }
     }
 
