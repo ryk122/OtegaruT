@@ -6504,6 +6504,7 @@ MonoBehaviour:
   - {fileID: 7251467331799334750, guid: f76560c6663953e499e47e11d7477a40, type: 3}
   - {fileID: 5086936989876592351, guid: dbdb87539dd92cb49976cd43335ebbc2, type: 3}
   - {fileID: 925713221676406031, guid: fe8562344c9112a419dd24759182d4d5, type: 3}
+  - {fileID: 3093573229114807692, guid: e585d11aba29bf342abb9161614a40de, type: 3}
   Checkpoint: {fileID: 1880967342305586, guid: d2457c1c43d653a48a41a9fefe5f671c, type: 3}
   Target: {fileID: 2043030393647565335, guid: ae758b875deb02a43be9f97718b0b25e, type: 3}
   mj: {fileID: 0}
@@ -35565,7 +35566,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898753780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37214fd7da8810c478a5004219544871, type: 3}
   m_Name: 

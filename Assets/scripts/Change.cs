@@ -12,18 +12,23 @@ public class Change : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rd = GetComponent<Renderer>();
-        GameObject car = GameObject.Find("car");
-        cm = car.GetComponent<Carmain>();
+        cm = Carmain.CARMAIN;
+        //GameObject car = GameObject.Find("car");
+        //cm = car.GetComponent<Carmain>();
     }
 
+    
     public static void Reset()
     {
-        GameObject car = GameObject.Find("car");
-        cm = car.GetComponent<Carmain>();
+        //GameObject car = GameObject.Find("car");
+        //cm = car.GetComponent<Carmain>();
+        cm = Carmain.CARMAIN;
     }
     
     // Update is called once per frame
     void Update () {
+        if (cm == null)
+            Reset();
         rd.material.SetFloat("_Blend", (cm.maxs-cm.speed)/cm.maxs+0.1f);
         //rd.material.SetFloat("speed", speed);
     }

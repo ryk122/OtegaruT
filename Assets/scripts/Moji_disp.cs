@@ -16,6 +16,8 @@ public class Moji_disp : MonoBehaviour {
     bool disp;
     AudioSource ads;
 
+    Rigidbody rb;
+
     public int i;
     int time;
 
@@ -29,6 +31,8 @@ public class Moji_disp : MonoBehaviour {
             tmp.text = time.ToString();
         InvokeRepeating("TimeCount", 4, 1);
         if (PlayerPrefs.GetInt("etext") == 1) disp = true; else disp = false;
+
+        rb = cm.gameObject.GetComponent<Rigidbody>();
     }
 	
     void TimeCount()
@@ -108,6 +112,13 @@ public class Moji_disp : MonoBehaviour {
                 CancelInvoke("Setoffdoko");
                 Invoke("Setoffdoko", 0.5f);
             }
+        }
+        if(other.gameObject.tag == "mizo")
+        {
+            Vector3 vec = other.gameObject.transform.position - transform.position;
+            float a = Vector3.Cross(vec, cm.gameObject.transform.forward).y;
+            Debug.Log((a > 0 ? "left" : "right"));
+            rb.AddForce(cm.transform.right*(a<0 ? 10:-10));
         }
     }
 

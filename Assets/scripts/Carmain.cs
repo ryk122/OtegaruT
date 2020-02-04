@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Carmain : MonoBehaviour {
+    public static Carmain CARMAIN;
     public float speed, maxs;
     public float b,a,str;
     public int h,back, slip;
@@ -30,6 +31,7 @@ public class Carmain : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        CARMAIN = this;
         k = false;
         sliptime = 0;
         back = 1;
