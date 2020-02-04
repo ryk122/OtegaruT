@@ -81,12 +81,13 @@ public class Carmain : MonoBehaviour {
             cmr.enabled = false;
 
         Vector3 rot = transform.localEulerAngles;
-        if (rot.z > 30 || rot.z < -30)
+
+        if (!(rot.z > 300 || rot.z < 60))
         {
             rot.z = 0;
             transform.localEulerAngles = rot;
         }
-        if (rot.x > 80 || rot.x < -80)
+        if (!(rot.x > 280 || rot.x < 80))
         {
             rot.x = 0;
             transform.localEulerAngles = rot;
