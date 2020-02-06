@@ -117,8 +117,8 @@ public class Moji_disp : MonoBehaviour {
         {
             Vector3 vec = other.gameObject.transform.position - transform.position;
             float a = Vector3.Cross(vec, cm.gameObject.transform.forward).y;
-            Debug.Log((a > 0 ? "left" : "right"));
-            rb.AddForce(cm.transform.right*(a<0 ? 10:-10));
+            rb.AddForce(cm.transform.right*(a<0 ? 1:-1)*cm.speed*0.25f);
+            Debug.Log(cm.speed * 0.25f);
         }
     }
 
