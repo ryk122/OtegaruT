@@ -136,9 +136,9 @@ public class Carmain : MonoBehaviour {
         back = 1;
         tlight.SetActive(false);
 
-        //if (!android && !auto)
-            if (!auto)
-            {
+        if (!android && !auto)
+            //if (!auto)
+        {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 Run();

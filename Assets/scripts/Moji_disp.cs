@@ -120,12 +120,14 @@ public class Moji_disp : MonoBehaviour {
             if (a < 0)
             {
                 cm.mizo = 1;
-                mizor.SetActive(true);
+                if (disp)
+                    mizor.SetActive(true);
             }
             else
             {
                 cm.mizo = -1;
-                mizol.SetActive(true);
+                if (disp)
+                    mizol.SetActive(true);
             }
         }
         
