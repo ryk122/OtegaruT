@@ -7,7 +7,7 @@ public class Carmain : MonoBehaviour {
     public static Carmain CARMAIN;
     public float speed, maxs;
     public float b,a,str;
-    public int h,back, slip;
+    public int h,back, slip ,mizo;
     public float lvec;
     public GameObject tlight,gyaobj,light1,light2;
     public SkinnedMeshRenderer skm;
@@ -31,7 +31,8 @@ public class Carmain : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        CARMAIN = this;
+        if(!auto)
+            CARMAIN = this;
         k = false;
         sliptime = 0;
         back = 1;
@@ -135,8 +136,9 @@ public class Carmain : MonoBehaviour {
         back = 1;
         tlight.SetActive(false);
 
-        if (!android && !auto)
-        {
+        //if (!android && !auto)
+            if (!auto)
+            {
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 Run();
@@ -185,6 +187,13 @@ public class Carmain : MonoBehaviour {
         }
 
         sliptime++;
+
+
+        //mizo
+        rb.AddForce(transform.right * mizo* speed * 0.35f);
+        rb.AddTorque(transform.forward * mizo * speed * -80f);
+        rb.AddTorque(transform.right * mizo * speed * 50f);
+        transform.Rotate(new Vector3(0, Mathf.Pow(speed, 0.5f) * mizo * 0.05f, 0));
     }
 
     public void Run()

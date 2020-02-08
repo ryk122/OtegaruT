@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Moji_disp : MonoBehaviour {
-    public GameObject sora, doko,over;
+    public GameObject sora, doko,over,mizor,mizol;
     public Carmain cm;
     public MakeRoad mk;
     public Text all;
@@ -113,13 +113,22 @@ public class Moji_disp : MonoBehaviour {
                 Invoke("Setoffdoko", 0.5f);
             }
         }
-        if(other.gameObject.tag == "mizo")
+        if (other.gameObject.tag == "mizo")
         {
-            Vector3 vec = other.gameObject.transform.position - transform.position;
+            Vector3 vec = other.gameObject.transform.position - cm.transform.position;
             float a = Vector3.Cross(vec, cm.gameObject.transform.forward).y;
-            rb.AddForce(cm.transform.right*(a<0 ? 1:-1)*cm.speed*0.25f);
-            Debug.Log(cm.speed * 0.25f);
+            if (a < 0)
+            {
+                cm.mizo = 1;
+                mizor.SetActive(true);
+            }
+            else
+            {
+                cm.mizo = -1;
+                mizol.SetActive(true);
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -155,5 +164,10 @@ public class Moji_disp : MonoBehaviour {
             if(!auto)
                 other.gameObject.tag = "Untagged";
         }
+        if (other.gameObject.tag == "mizo") {
+            cm.mizo = 0;
+            mizor.SetActive(false);
+            mizol.SetActive(false);
+         }
     }
 }

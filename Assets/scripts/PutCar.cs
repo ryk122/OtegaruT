@@ -21,7 +21,7 @@ public class PutCar : MonoBehaviour
 
     [System.Serializable]
     public class Moji{   
-    public GameObject sora, doko, over;
+    public GameObject sora, doko, over,mizor,mizol;
     public Carmain cm;
     public MakeRoad mk;
     public Text all;
@@ -46,6 +46,9 @@ public class PutCar : MonoBehaviour
         mj.sora = mojiDisp.sora;
         mj.doko = mojiDisp.doko;
         mj.over = mojiDisp.over;
+        mj.mizor = mojiDisp.mizor;
+        mj.mizol = mojiDisp.mizol;
+
         mj.cm = racecar.GetComponent<Carmain>();
         mj.mk = mojiDisp.mk;
         mj.all = mojiDisp.all;
