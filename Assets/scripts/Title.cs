@@ -168,7 +168,7 @@ public class Title : MonoBehaviour {
             case 0: SceneManager.LoadScene("main"); break;
             case 1: SceneManager.LoadScene("free"); break;
             case 2: SceneManager.LoadScene("vs"); break;
-            case 3: SceneManager.LoadScene("hillclimbtest");break;
+            case 3: SceneManager.LoadScene("hillclimb");break;
             case 4: SceneManager.LoadScene("loadstage");break;
             default:break;
         }
