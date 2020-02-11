@@ -223,6 +223,7 @@ public class UserStage : MakeRoad
                 case '1': putroad = Road[5]; break;
                 case '2': putroad = Road[6]; break;
                 case '3': putroad = Road[7]; break;
+                case '4': putroad = Road[10]; break;
                 case '9': putroad = Road[8]; break;
                 default://未定義エラー
                     ErrPrint(0, str);
