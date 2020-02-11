@@ -5904,7 +5904,7 @@ MonoBehaviour:
     \ <\u5236\u4F5C\u5354\u529B\u8005\u52DF\u96C6\u4E2D>\nnew mode \"real touge\"
     is making now.\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
     cars are being made : (sil80,g86,nsx etc..)\n\n\u8ECA\u306E\u6319\u52D5\u3092\u5C11\u3057\u4FEE\u6B63\u3057\u307E\u3057\u305F\u3002Car
-    behavior is fixed.\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
+    behavior is fixed.\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8558,7 +8558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1125132908
 RectTransform:
   m_ObjectHideFlags: 0
