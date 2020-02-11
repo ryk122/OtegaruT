@@ -17,7 +17,7 @@ public class UserStage : MakeRoad
     public GameObject cone, section, stop, streetlamp;
     public bool pc;
     string stagestr;
-    string[] data;
+    protected string[] data;
     public InputField inputField;
     public Text laptext; public static Text ltext;
     public Text buttontext;
@@ -277,7 +277,6 @@ public class UserStage : MakeRoad
             lcanvas.SetActive(false);
             if (!pc)
                 android.SetActive(true);
-            //adcrl.Start();
         }
     }
 
