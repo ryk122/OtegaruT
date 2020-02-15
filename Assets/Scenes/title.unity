@@ -5900,9 +5900,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
   m_Text: "#Update News!\n\u6E9D\u843D\u3057\u3092\u5B9F\u88C5\u3057\u307E\u3057\u305F\u3002\u82E5\u5E72\u306E\u52B9\u679C\u304C\u3042\u308A\u307E\u3059\u3002\nyou
-    can \u201DMizo otoshi\u201D\n\n\u65B0\u30E2\u30FC\u30C9\u300C\u30EA\u30A2\u30EB\u5CE0(\u4EEE\u79F0)\u300D\u5236\u4F5C\u4E2D
-    \ <\u5236\u4F5C\u5354\u529B\u8005\u52DF\u96C6\u4E2D>\nnew mode \"real touge\"
-    is making now.\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
+    can \u201DMizo otoshi\u201D\n\n\u65B0\u30E2\u30FC\u30C9\u300CD-Touge\u300D\u5236\u4F5C\u4E2D
+    \ <\u5236\u4F5C\u5354\u529B\u8005\u52DF\u96C6\u4E2D>\nnew mode \"D-Touge\" is
+    making now.\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
     cars are being made : (sil80,g86,nsx etc..)\n\n\u8ECA\u306E\u6319\u52D5\u3092\u5C11\u3057\u4FEE\u6B63\u3057\u307E\u3057\u305F\u3002Car
     behavior is fixed.\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
@@ -8897,9 +8897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'RealTouge
-
-    coming soon'
+  m_Text: D-Touge
 --- !u!222 &1166078802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9221,7 +9219,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1259684712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 29775148}
+        m_MethodName: RealTouge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1259684712
@@ -9237,7 +9246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+  m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

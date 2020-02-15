@@ -22,8 +22,8 @@ public class UserStage : MakeRoad
     public Text laptext; public static Text ltext;
     public Text buttontext;
 
-    private bool err;
-    private float scale;
+    protected bool err;
+    protected float scale;
 
     // Start is called before the first frame update
     void Start()

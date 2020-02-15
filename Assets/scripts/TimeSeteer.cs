@@ -42,6 +42,12 @@ public class TimeSeteer : MonoBehaviour
         }
     }
 
+    public void ChangeTime(int t)
+    {
+        PlayerPrefs.SetInt("time", t);
+        Start();
+    }
+
     // Update is called once per frame
     void Update()
     {

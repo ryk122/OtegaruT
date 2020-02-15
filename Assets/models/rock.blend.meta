@@ -1,32 +1,22 @@
 fileFormatVersion: 2
-guid: 303a2539f08258a4f99f5fa99dd3acc8
+guid: 1eafd06e1cd03474684a6c8c4c977dea
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: //RootNode
-    100004: "NURBS\u30D1\u30B9"
-    100006: "\u5E73\u9762"
-    400000: Cube
-    400002: //RootNode
-    400004: "NURBS\u30D1\u30B9"
-    400006: "\u5E73\u9762"
+    100000: //RootNode
+    400000: //RootNode
     2100000: unnamed
-    2100002: Material
-    2100004: "\u30DE\u30C6\u30EA\u30A2\u30EB"
-    2300000: Cube
-    2300002: "NURBS\u30D1\u30B9"
-    2300004: "\u5E73\u9762"
-    3300000: Cube
-    3300002: "NURBS\u30D1\u30B9"
-    3300004: "\u5E73\u9762"
-    4300000: "\u5E73\u9762"
-    4300002: "NURBS\u30D1\u30B9"
-    4300004: Cube
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: "ICO\u7403"
     7400000: Default Take
     9500000: //RootNode
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 773f8d02196134243a12234f0fcd7225, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

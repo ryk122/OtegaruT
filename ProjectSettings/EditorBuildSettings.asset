@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/loadstage.unity
     guid: c8f5428eb49f05f40abc52bec4e28c72
+  - enabled: 1
+    path: Assets/Scenes/RealTouge.unity
+    guid: 2be338847b21f9b469d4abec06429391
   m_configObjects: {}

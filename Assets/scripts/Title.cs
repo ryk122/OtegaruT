@@ -180,6 +180,12 @@ public class Title : MonoBehaviour {
         //ShowAd();
     }
 
+    public void RealTouge()
+    {
+        Loading();
+        SceneManager.LoadScene("RealTouge");
+    }
+
 
     public void TechTubu()
     {
