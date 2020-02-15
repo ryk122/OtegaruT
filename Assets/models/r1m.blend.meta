@@ -237,7 +237,12 @@ ModelImporter:
     4300080: "\u5E73\u9762_019"
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u30DE\u30C6\u30EA\u30A2\u30EB_003"
+    second: {fileID: 2100000, guid: f6f35c36e9f1e164084d6785667b1b7c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
