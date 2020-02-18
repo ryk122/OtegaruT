@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 7014511147297291868}
   - component: {fileID: 3191289790823951284}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Section
   m_TagString: Section
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,6 +447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d21e03570af7d4499a69c5c9e0504e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  end: 0
+  stagename: 
 --- !u!82 &3191289790823951284
 AudioSource:
   m_ObjectHideFlags: 0

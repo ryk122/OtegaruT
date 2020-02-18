@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Section : MonoBehaviour
 {
     public static Text laptext;
-    float time;
+    public bool end;
+    public string stagename;
+    float time, alltime;
     bool start;
     static float[] laps;
     static int l;

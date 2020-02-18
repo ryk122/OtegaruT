@@ -151,6 +151,11 @@ public class Moji_disp : MonoBehaviour {
             if(!free)
                 tmp.text = time.ToString();
         }
+
+        if (other.gameObject.tag == "wall")
+        {
+            Debug.Log("wall");
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -171,5 +176,10 @@ public class Moji_disp : MonoBehaviour {
             mizor.SetActive(false);
             mizol.SetActive(false);
          }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
     }
 }

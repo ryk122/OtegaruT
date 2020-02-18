@@ -94,6 +94,14 @@ public class UserStage : MakeRoad
                 Debug.Log("section");
                 return Instantiate(section, transform.position, transform.rotation);
             }
+            else if (str.Length>11 && str.Substring(0,11).Equals("#ENDSECTION"))
+            {
+                Debug.Log("Endsection");
+                GameObject g = Instantiate(section, transform.position, transform.rotation);
+                Section s = g.transform.GetChild(0).GetComponent<Section>();
+                s.end = true; s.stagename = str.Substring(11, str.Length - 11);
+                return g;
+            }
             else if (str.Equals("#LAMPL"))
             {
                 Debug.Log("section");
