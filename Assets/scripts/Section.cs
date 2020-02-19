@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class Section : MonoBehaviour
 {
     public static Text laptext;
+    public static Section nowsection;
     public bool end;
     public string stagename;
-    float time, alltime;
-    bool start;
+    static float time;
+    public bool start;
     static float[] laps;
     static int l;
     private AudioSource aus;
@@ -32,7 +33,6 @@ public class Section : MonoBehaviour
         {
             time += Time.deltaTime;
             laps[l] = time;
-            //laptext.text = laps[0] + "\n" + laps[1] + "\n" + laps[2] + "\n" + laps[3];
             laptext.text = ToTime(laps[0])+ ToTime(laps[1])+ ToTime(laps[2])+ ToTime(laps[3]) + ToTime(laps[4]);
         }
     }
@@ -53,13 +53,30 @@ public class Section : MonoBehaviour
     {
         if (collision.gameObject.tag == "Car")//拡張性無視の激やば実装
         {//startctrl問い合わせてプレイヤのcarかの判断すればいけるか・・
-            aus.Play();
-            start = true;
-            time = 0;
-            if (l == 4)
-                ShiftData();
+            if (end)
+            {
+                if(nowsection != null) nowsection.start = false;
+                start = false;
+                time = 0;
+                for (int i=l; i >= 0; i--)
+                    time += laps[l];
+                
+                aus.Play();
+                laptext.text = ToTime(laps[0]) + ToTime(laps[1]) + ToTime(laps[2]) + ToTime(laps[3]) + ToTime(laps[4]);
+                laptext.text += "  " + ToTime(time);
+            }
             else
-                l++;
+            {
+                if (nowsection != null) nowsection.start = false;
+                nowsection = this;
+                aus.Play();
+                start = true;
+                time = 0;
+                if (l == 4)
+                    ShiftData();
+                else
+                    l++;
+            }
 
         }
     }
