@@ -58,7 +58,7 @@ public class PutCar : MonoBehaviour
         mj.auto = mojiDisp.auto;
 
         mj.cm.gyaobj = gya;
-        mj.cm.cmr = ecm;
+        mj.cm.efcmr = ecm;
 
         mj.mk.mj = mj;
     }

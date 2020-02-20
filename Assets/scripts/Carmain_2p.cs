@@ -32,7 +32,7 @@ public class Carmain_2p : MonoBehaviour
         maxs = cms.maxs;b = cms.b;str = cms.str;
         tlight = cms.tlight;gyaobj = cms.gyaobj;ur = cms.ur;
         kemuri1 = cms.kemuri1;kemuri2 = cms.kemuri2;kemuri3 = cms.kemuri3;kemuri4 = cms.kemuri4;
-        ftr = cms.ftr;ftl = cms.ftl;cmr = cms.cmr;
+        ftr = cms.ftr;ftl = cms.ftl;cmr = cms.efcmr;
         cms.enabled = false;
 
         smf.target = this.transform;

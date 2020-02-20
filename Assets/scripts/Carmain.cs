@@ -16,7 +16,7 @@ public class Carmain : MonoBehaviour {
     public float rl,rl2;
     public GameObject kemuri1, kemuri2,kemuri3,kemuri4;
     public Transform ftr, ftl;
-    public Camera cmr;
+    public Camera efcmr;
     private ParticleSystem k1, k2, k3, k4;
     public int ct=0,gt=0;
     public bool turbo,android, auto;
@@ -79,18 +79,18 @@ public class Carmain : MonoBehaviour {
 
         if(!auto)
         if (speed > 19)
-            cmr.enabled = true;
+            efcmr.enabled = true;
         else
-            cmr.enabled = false;
+            efcmr.enabled = false;
 
         Vector3 rot = transform.localEulerAngles;
 
-        if (!(rot.z > 300 || rot.z < 60))
+        if (!(rot.z > 330 || rot.z < 30))
         {
             rot.z = 0;
             transform.localEulerAngles = rot;
         }
-        if (!(rot.x > 280 || rot.x < 80))
+        if (!(rot.x > 300 || rot.x < 80))
         {
             rot.x = 0;
             transform.localEulerAngles = rot;
@@ -190,7 +190,7 @@ public class Carmain : MonoBehaviour {
 
 
         //mizo
-        rb.AddForce(transform.right * mizo* speed * 0.35f);
+        rb.AddForce(transform.right * mizo* speed * 0.55f);
         rb.AddTorque(transform.forward * mizo * speed * -80f);
         rb.AddTorque(transform.right * mizo * speed * 50f);
         transform.Rotate(new Vector3(0, Mathf.Pow(speed, 0.5f) * mizo * 0.05f, 0));
@@ -298,7 +298,7 @@ public class Carmain : MonoBehaviour {
         b = 0;
         gyaa = false;
         gyaimg.color = new Color(1, 1, 1, 0);
-        cmr.enabled = false;
+        efcmr.enabled = false;
         k = false;
         auds.Stop();
         rb.AddForce(transform.up * -5, ForceMode.VelocityChange);

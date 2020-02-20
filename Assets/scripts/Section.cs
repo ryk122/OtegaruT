@@ -58,12 +58,23 @@ public class Section : MonoBehaviour
                 if(nowsection != null) nowsection.start = false;
                 start = false;
                 time = 0;
-                for (int i=l; i >= 0; i--)
-                    time += laps[l];
+                for (int i = l; i >= 0; i--)
+                    time += laps[i];
+                
                 
                 aus.Play();
                 laptext.text = ToTime(laps[0]) + ToTime(laps[1]) + ToTime(laps[2]) + ToTime(laps[3]) + ToTime(laps[4]);
                 laptext.text += "  " + ToTime(time);
+
+                if (PlayerPrefs.HasKey(stagename))
+                {
+                    if (PlayerPrefs.GetFloat(stagename) > time)
+                        PlayerPrefs.SetFloat(stagename, time);
+                }
+                else
+                {
+                    PlayerPrefs.SetFloat(stagename, time);
+                }
             }
             else
             {
