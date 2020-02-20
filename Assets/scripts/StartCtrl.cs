@@ -15,6 +15,12 @@ public class StartCtrl : MonoBehaviour {
     public int vscar=-1;
     public AutoCar3 atc;
     AudioSource ads;
+
+    bool pov;
+    [SerializeField]
+    Transform maincmr,pos1,pos2;
+    
+
 	// Use this for initialization
 	void Start () {
         dcar = PlayerPrefs.GetInt("dcar");
@@ -49,6 +55,8 @@ public class StartCtrl : MonoBehaviour {
         //if (PlayerPrefs.GetInt("time") == 0) { Light(); }
 
         Change.Reset();
+
+        pov = false;
     }
 	
     void S()
@@ -83,5 +91,32 @@ public class StartCtrl : MonoBehaviour {
     public void Light()
     {
         cm.LightOnOff();
+    }
+
+    public void CamChange()
+    {
+        /*cm.POV();
+        if (maincam.activeSelf)
+            maincam.SetActive(false);
+        else
+            maincam.SetActive(true);*/
+        if (pov)
+        {
+            pov = false;
+            smf.rotationDamping -= 500;
+            smf.heightDamping -= 500;
+            maincmr.position = pos1.position;
+            smf.distance = 3;
+            smf.height = 0.5f;
+        }
+        else
+        {
+            smf.rotationDamping += 500;
+            smf.heightDamping += 500;
+            smf.distance = 2;
+            smf.height = 0.2f;
+            pov = true;
+            maincmr.position = pos2.position;
+        }
     }
 }
