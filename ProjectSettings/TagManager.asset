@@ -10,6 +10,7 @@ TagManager:
   - Check
   - Section
   - mizo
+  - wall
   layers:
   - Default
   - TransparentFX

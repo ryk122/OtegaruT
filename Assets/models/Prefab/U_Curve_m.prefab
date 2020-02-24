@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 473936865586951205}
   m_Layer: 0
   m_Name: "\u5E73\u9762_012"
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

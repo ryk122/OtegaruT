@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: wall2
   dynamicFriction: 0
   staticFriction: 0
-  bounciness: 0.7
+  bounciness: 0
   frictionCombine: 2
-  bounceCombine: 3
+  bounceCombine: 2

@@ -154,7 +154,9 @@ public class Moji_disp : MonoBehaviour {
 
         if (other.gameObject.tag == "wall")
         {
-            Debug.Log("wall");
+            //Debug.Log("wall");
+            //壁衝突中は、溝効果0
+            cm.mizo = 0;
         }
     }
     private void OnTriggerExit(Collider other)

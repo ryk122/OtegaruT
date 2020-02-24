@@ -75,6 +75,7 @@ public class Section : MonoBehaviour
                 {
                     PlayerPrefs.SetFloat(stagename, time);
                 }
+                Destroy(this);
             }
             else
             {

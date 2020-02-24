@@ -4958,7 +4958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 215
+  buildnum: 223
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5899,11 +5899,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News!\n1\u4EBA\u79F0\u8996\u70B9\u3092\u8FFD\u52A0\u3057\u307E\u3057\u305F\u3002\n\u30B2\u30FC\u30E0\u4E2D(\u73FE\u5728\u306FTestRun,TimeAttack\u306E\u307F)\u5DE6\u4E0A\u306E\u30AB\u30E1\u30E9\u30DC\u30BF\u30F3\u3092\n\u62BC\u3059\u3068\u30AB\u30E1\u30E9\u304C\u5909\u308F\u308A\u307E\u3059\u3002\nP.O.V
-    mode is available(only TestRun,TimeAttack now)\n\n\u8ECA\u306E\u6319\u52D5\u3092\u5C11\u3057\u4FEE\u6B63\u3057\u307E\u3057\u305F\u3002Car
-    behavior is fixed.\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
-    cars are being made : (sil80,g86,nsx etc..)\n\n\u8ECA\u306E\u6319\u52D5\u3092\u5C11\u3057\u4FEE\u6B63\u3057\u307E\u3057\u305F\u3002Car
-    behavior is fixed.\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
+  m_Text: "#Update News!\n\u8ECA\u306E\u6319\u52D5\u304A\u3088\u3073\u6E9D\u843D\u3057\u3092\u4FEE\u6B63\u3002\nCar
+    behavior and \"mizo otoshi\" is fixed.\n\n1\u4EBA\u79F0\u8996\u70B9\u3092\u4E00\u90E8\u30B2\u30FC\u30E0\u306B\u8FFD\u52A0(\u30C6\u30B9\u30C8\u6A5F\u80FD)\nP.O.V
+    mode is available in some mode.(testing)\n\nD-Touge\u30E2\u30FC\u30C9\u306B\u30B3\u30FC\u30B9\u30EC\u30B3\u30FC\u30C9\u6A5F\u80FD\u3068\u300C\u8D64\u57CE\u300D\u3092\u8FFD\u52A0\nAdd
+    Time Record and \"Mt.Akagi\" for D-Touge\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002\nthese
+    cars are being made : (sil80,g86,nsx etc..)\n\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
   m_ObjectHideFlags: 0
