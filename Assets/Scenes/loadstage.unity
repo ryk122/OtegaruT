@@ -684,7 +684,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 150
+  far clip plane: 130
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -19220,7 +19220,7 @@ MonoBehaviour:
   kemuri4: {fileID: 1214658561}
   ftr: {fileID: 1838477856}
   ftl: {fileID: 212331035}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -35897,7 +35897,7 @@ MonoBehaviour:
   kemuri4: {fileID: 1111677845}
   ftr: {fileID: 68893327}
   ftl: {fileID: 346202376}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -45971,7 +45971,7 @@ MonoBehaviour:
   kemuri4: {fileID: 916316774}
   ftr: {fileID: 2148894}
   ftl: {fileID: 339292714}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -66582,7 +66582,7 @@ MonoBehaviour:
   kemuri4: {fileID: 500303699}
   ftr: {fileID: 1950566102}
   ftl: {fileID: 611866108}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -76933,7 +76933,7 @@ MonoBehaviour:
   kemuri4: {fileID: 522376294}
   ftr: {fileID: 1480645388}
   ftl: {fileID: 1000527134}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -82576,6 +82576,9 @@ MonoBehaviour:
   vs: 0
   vscar: -1
   atc: {fileID: 0}
+  maincmr: {fileID: 0}
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
 --- !u!114 &1307187088
 MonoBehaviour:
   m_ObjectHideFlags: 0

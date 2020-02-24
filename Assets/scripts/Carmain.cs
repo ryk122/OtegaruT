@@ -190,10 +190,13 @@ public class Carmain : MonoBehaviour {
 
 
         //mizo
-        rb.AddForce(transform.right * mizo* speed * 0.55f);
-        rb.AddTorque(transform.forward * mizo * speed * -80f);
-        rb.AddTorque(transform.right * mizo * speed * 50f);
-        transform.Rotate(new Vector3(0, Mathf.Pow(speed, 0.5f) * mizo * 0.05f, 0));
+        if (mizo != 0)
+        {
+            rb.AddForce(transform.right * mizo * speed * 0.55f);
+            rb.AddTorque(transform.forward * mizo * speed * -80f);
+            rb.AddTorque(transform.right * mizo * speed * 50f);
+            transform.Rotate(new Vector3(0, Mathf.Pow(speed, 0.5f) * mizo * 0.05f, 0));
+        }
     }
 
     public void Run()
