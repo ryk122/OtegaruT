@@ -12,7 +12,7 @@ public class CloseButton : MonoBehaviour {
         RequestInterstitial();
     }
 
-    //ad
+    //ad https://developers.google.com/admob/unity/start?hl=ja
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID

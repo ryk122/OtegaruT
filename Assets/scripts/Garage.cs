@@ -66,9 +66,16 @@ public class Garage : MonoBehaviour {
 
         gcsetter.GCStart(dcar, gt.ts);//g-color setterにtsとdcar伝達
 
+        string adUnitId;
+#if UNITY_ANDROID
+        adUnitId = "ca-app-pub-7102752236968696/8032259842";
+#elif UNITY_IPHONE
+        adUnitId = "ca-app-pub-3940256099942544/1712485313";
+#else
+        adUnitId = "unexpected_platform";
+#endif
+        this.rewardedAd = new RewardedAd(adUnitId);
 
-        this.rewardedAd = new RewardedAd("ca-app-pub-7102752236968696/8032259842");
-        //this.rewardedAd = new RewardedAd("ca-app-pub-3940256099942544/5224354917");
         // Called when the user should be rewarded for interacting with the ad.
         this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
         // Create an empty ad request.
