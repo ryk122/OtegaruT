@@ -154,6 +154,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.ryuukunkoubou.touge
+    iOS: com.ryuukunkoubou.touge
   buildNumber: {}
   AndroidBundleVersionCode: 27
   AndroidMinSdkVersion: 22
