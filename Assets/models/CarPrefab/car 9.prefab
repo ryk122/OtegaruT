@@ -103,6 +103,7 @@ MonoBehaviour:
   h: 0
   back: 0
   slip: 17
+  mizo: 0
   lvec: 0
   tlight: {fileID: 2249928950240962800}
   gyaobj: {fileID: 0}
@@ -119,7 +120,7 @@ MonoBehaviour:
   kemuri4: {fileID: 2249928950100216439}
   ftr: {fileID: 2249928950538187370}
   ftl: {fileID: 2249928951379562232}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -5227,6 +5228,8 @@ MonoBehaviour:
   sora: {fileID: 0}
   doko: {fileID: 0}
   over: {fileID: 0}
+  mizor: {fileID: 0}
+  mizol: {fileID: 0}
   cm: {fileID: 2249928949630798109}
   mk: {fileID: 0}
   all: {fileID: 0}
@@ -5520,7 +5523,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 0.2
+  m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -5694,7 +5697,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 0.2
+  m_Range: 1
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -20732,6 +20735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalcolor: {r: 0.10588236, g: 0, b: 1, a: 0}
+  noremicolor: {r: 0, g: 0, b: 0, a: 0}
   garage: 0
 --- !u!114 &6131895598591524799
 MonoBehaviour:
@@ -20746,6 +20750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalcolor: {r: 0.10588236, g: 0, b: 1, a: 0}
+  noremicolor: {r: 0, g: 0, b: 0, a: 0}
   garage: 0
 --- !u!1001 &2249928950515407640
 PrefabInstance:
