@@ -5899,7 +5899,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News!\n\u8ECA\u7A2E\u8FFD\u52A0 new car : ns1\n\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002(\u6642\u9593\u304C\u639B\u304B\u308A\u307E\u3059)\nIt
+  m_Text: "#Update News!\n\u8ECA\u7A2E\u8FFD\u52A0 new car : ns1, a8L\n\n\n\u8981\u671B\u304C\u3042\u3063\u305F\u8ECA\u7A2E(\u4E0B\u8A18)\u306F\u73FE\u5728\u5236\u4F5C\u4E2D\u3067\u3059\u3002(\u6642\u9593\u304C\u639B\u304B\u308A\u307E\u3059)\nIt
     will take long time,but\nthese cars are being made : (sil80,g86 etc..) \n\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:

@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalcolor: {r: 1, g: 0, b: 0, a: 0}
+  noremicolor: {r: 0, g: 0, b: 0, a: 0}
   garage: 0
 --- !u!1 &8833532082585995259
 GameObject:
@@ -15103,6 +15104,7 @@ MonoBehaviour:
   h: 0
   back: 0
   slip: 15
+  mizo: 0
   lvec: 0
   tlight: {fileID: 8833532082612744064}
   gyaobj: {fileID: 0}
@@ -15119,7 +15121,7 @@ MonoBehaviour:
   kemuri4: {fileID: 8833532084374913777}
   ftr: {fileID: 8833532084271954668}
   ftl: {fileID: 8833532083505792638}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -20554,6 +20556,8 @@ MonoBehaviour:
   sora: {fileID: 0}
   doko: {fileID: 0}
   over: {fileID: 0}
+  mizor: {fileID: 0}
+  mizol: {fileID: 0}
   cm: {fileID: 8833532083904512411}
   mk: {fileID: 0}
   all: {fileID: 0}
@@ -21149,7 +21153,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cf58b64214317e74fb3341d17cb15b8e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 92afb4621bc02b641964055f08ce4077, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 92afb4621bc02b641964055f08ce4077, type: 3}
 --- !u!1 &8833532082526872653 stripped
 GameObject:

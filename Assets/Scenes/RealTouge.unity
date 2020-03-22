@@ -82765,6 +82765,7 @@ MonoBehaviour:
   - {fileID: 8851590955503034761, guid: 0e4b8dac19dd88c46ac782aba6be1bac, type: 3}
   - {fileID: 3946199063290091699, guid: f86d85959b4b2884cb27a84290310de4, type: 3}
   - {fileID: 6446396813364390008, guid: d91601aeaaca223409fb62f0847faba8, type: 3}
+  - {fileID: 9009299163132163030, guid: eba7aecf0b23fb244807f48795e6367b, type: 3}
   gya: {fileID: 815396517}
   ecm: {fileID: 1088668915}
   mojiDisp:
