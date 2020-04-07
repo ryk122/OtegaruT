@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalcolor: {r: 1, g: 1, b: 1, a: 0}
+  noremicolor: {r: 0, g: 0, b: 0, a: 0}
   garage: 0
 --- !u!114 &4176802203319223629
 MonoBehaviour:
@@ -27,6 +28,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalcolor: {r: 1, g: 1, b: 1, a: 0}
+  noremicolor: {r: 0, g: 0, b: 0, a: 0}
   garage: 0
 --- !u!114 &5970541313106815474
 MonoBehaviour:
@@ -41,6 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalcolor: {r: 1, g: 1, b: 1, a: 0}
+  noremicolor: {r: 0, g: 0, b: 0, a: 0}
   garage: 0
 --- !u!114 &6033782263297192376
 MonoBehaviour:
@@ -5542,6 +5545,8 @@ MonoBehaviour:
   sora: {fileID: 0}
   doko: {fileID: 0}
   over: {fileID: 0}
+  mizor: {fileID: 0}
+  mizol: {fileID: 0}
   cm: {fileID: 6033782264979618117}
   mk: {fileID: 0}
   all: {fileID: 0}
@@ -6322,6 +6327,7 @@ MonoBehaviour:
   h: 0
   back: 0
   slip: 9
+  mizo: 0
   lvec: 0
   tlight: {fileID: 6033782264689336239}
   gyaobj: {fileID: 0}
@@ -6338,7 +6344,7 @@ MonoBehaviour:
   kemuri4: {fileID: 6033782265305604521}
   ftr: {fileID: 6033782264389467428}
   ftl: {fileID: 6033782265135213777}
-  cmr: {fileID: 0}
+  efcmr: {fileID: 0}
   ct: 0
   gt: 0
   turbo: 0
@@ -21314,6 +21320,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 2.639435
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.22513849
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.976812
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.15684795
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.1289525
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fdd2dee5560d2d45a74a96ff704fa01, type: 2}
     - target: {fileID: 400004, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -21371,42 +21413,6 @@ PrefabInstance:
       value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1fdd2dee5560d2d45a74a96ff704fa01, type: 2}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: 2.639435
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: 0.22513849
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 0.976812
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 0.15684795
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.1289525
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: da6a7415fc41a7a41a5122b2bdd64a00, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1fdd2dee5560d2d45a74a96ff704fa01, type: 2}

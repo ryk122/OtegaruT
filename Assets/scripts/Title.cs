@@ -186,6 +186,11 @@ public class Title : MonoBehaviour {
         SceneManager.LoadScene("RealTouge");
     }
 
+    public void OnlineGame()
+    {
+        Loading();
+        SceneManager.LoadScene("PunBasics-Launcher");
+    }
 
     public void TechTubu()
     {
