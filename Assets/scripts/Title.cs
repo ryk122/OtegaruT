@@ -14,6 +14,10 @@ public class Title : MonoBehaviour {
     [SerializeField]
     GameObject cmas,maincam,logb;
     private InterstitialAd interstitial;
+    [SerializeField]
+    GameObject policypanel;
+    [SerializeField]
+    int policy_ver;
 
 
     private void Start()
@@ -48,6 +52,15 @@ public class Title : MonoBehaviour {
             PlayerPrefs.SetInt("mir", 0);
         if (!PlayerPrefs.HasKey("sev"))
             PlayerPrefs.SetFloat("sev", 1.0f);
+
+        if (PlayerPrefs.HasKey("policy"))
+        {
+            int s = PlayerPrefs.GetInt("policy");
+            if (s != policy_ver)
+                policypanel.SetActive(true);
+        }
+        else
+            policypanel.SetActive(true);
         /*
          name   dcar    gcar
          
@@ -278,12 +291,14 @@ public class Title : MonoBehaviour {
 
     private void TimeEvent(DateTime today)
     {
+        /*C mas Event*/
         if(today.Month == 12 && today.Day >= 20 && today.Day < 28)
         {
             StartCoroutine(CmasSound());
             Instantiate(cmas);
             maincam.SetActive(false);
         }
+        /*Login Bonus*/
         if(!PlayerPrefs.HasKey("login") || !PlayerPrefs.GetString("login").Equals(today.Month.ToString() + today.Day.ToString()))
         {
             int c = PlayerPrefs.GetInt("money");
@@ -291,6 +306,13 @@ public class Title : MonoBehaviour {
             PlayerPrefs.SetString("login", today.Month.ToString() + today.Day.ToString());
             logb.SetActive(true);
         }
+        /*Online time setter (NOT GOOD CODE!!)*/
+        if (today.Hour >= 6 && today.Hour <= 15)
+            PlayerPrefs.SetInt("on_time", 0);
+        else if(today.Hour >= 4 && today.Hour < 6 || today.Hour > 15 && today.Hour < 18)
+            PlayerPrefs.SetInt("on_time", 1);
+        else
+            PlayerPrefs.SetInt("on_time", 2);
     }
 
     private IEnumerator CmasSound()
@@ -312,5 +334,20 @@ public class Title : MonoBehaviour {
     public void CloseLogB()
     {
         logb.SetActive(false);
+    }
+
+    public void OpenPolicy()
+    {
+        Application.OpenURL("http://ryuukun.web.fc2.com/prcy/ote/");
+    }
+    public void Agree()
+    {
+        PlayerPrefs.SetInt("policy", policy_ver);
+        policypanel.SetActive(false);
+    }
+    public void DisAgree()
+    {
+        
+        SceneManager.LoadScene("title");
     }
 }

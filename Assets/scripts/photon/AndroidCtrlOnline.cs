@@ -114,6 +114,7 @@ namespace Photon.Pun.Demo.PunBasics
         public void BackU()
         {
             b = false;
+            cm.Boff();
         }
 
         public void LeaveRoom()

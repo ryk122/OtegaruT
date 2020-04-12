@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class TimeSeteer : MonoBehaviour
 {
-    public Material day, sunset, night;
+    [SerializeField]
+    Material day, sunset, night;
     public Light light;
+    [SerializeField]
+    bool online;
 
 
     // Start is called before the first frame update
@@ -13,7 +16,10 @@ public class TimeSeteer : MonoBehaviour
     {
         int time;
         //PlayerPrefs.SetInt("time", 0);
-        time = PlayerPrefs.GetInt("time");
+        if (!online)
+            time = PlayerPrefs.GetInt("time");
+        else
+            time = PlayerPrefs.GetInt("on_time");
         
         //0 day  1 sunset  2 night
         if (time == 0)

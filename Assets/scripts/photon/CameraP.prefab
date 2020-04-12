@@ -319,4 +319,4 @@ MonoBehaviour:
   distance: 3
   height: 0.5
   rotationDamping: 1
-  heightDamping: 3
+  heightDamping: 10

@@ -16,7 +16,7 @@ namespace Photon.Pun.Demo.PunBasics
         public float b, a, str;
         public int h, back, slip, mizo;
         public float lvec;
-        public GameObject tlight, gyaobj, light1, light2;
+        public GameObject tlight, light1, light2;
         public SkinnedMeshRenderer skm;
         public Transform ur, ur2;
         Rigidbody rb;
@@ -28,7 +28,7 @@ namespace Photon.Pun.Demo.PunBasics
         public int ct = 0, gt = 0;
         public bool turbo, android, auto;
         AudioSource auds, eds, tsound;
-        bool gyaa, imgfadeout ,lightstate;
+        bool gyaa ,lightstate;
 
         RaycastHit uhit;
         TuneSetter ts;
@@ -62,19 +62,18 @@ namespace Photon.Pun.Demo.PunBasics
             auds = audioSources[0];
             eds = audioSources[1];
             vol = PlayerPrefs.GetFloat("sev");
-            //
-            vol = 1;
+            //vol = 1;
             if (turbo)
             {
                 tsound = audioSources[2]; tsound.volume = vol;
             }
             auds.volume = vol * 0.6f; eds.volume = vol;
             gyaa = false;
-            imgfadeout = true;
+            
 
             ts = GetComponent<TuneSetter>();
 
-
+            
             foreach (ChangeColor cc in ts.changecolor)
             {
                 cc.Start();
@@ -84,9 +83,14 @@ namespace Photon.Pun.Demo.PunBasics
             //if (PlayerPrefs.GetInt("time") == 0)
                 lightstate = false;
 
-            LightOnOff();
+            LightOnOff(false);
 
             photonView = GetComponent<PhotonView>();
+
+            //if (PlayerPrefs.GetInt("time") == 0)
+            lightstate = false;
+
+            LightOnOff(false);
 
             if (photonView.IsMine)
             {
@@ -141,12 +145,7 @@ namespace Photon.Pun.Demo.PunBasics
                 tsound.Play();
             }
 
-            //roman
-            /*
-            turn = (Input.mousePosition.x - Screen.width/2)/(Screen.width/2)*2.5f;
-            if (Mathf.Abs(turn) > 1) turn /= Mathf.Abs(turn);
-            Debug.Log(turn);
-            */
+
         }
 
         // Update is called once per frame
@@ -159,9 +158,7 @@ namespace Photon.Pun.Demo.PunBasics
 
             speed = rb.velocity.magnitude;
             a = 0;
-            //Ray uray = new Ray(ur.position, ur.forward);
             Physics.Raycast(ur.position, ur.forward, out uhit, 16);
-            //Debug.DrawRay(uray.origin, uray.direction * 16, Color.red, 0.1f,true);
             rl = uhit.distance;
 
             if (rl > 0.7f)//0.33
@@ -172,7 +169,7 @@ namespace Photon.Pun.Demo.PunBasics
             }
 
             back = 1;
-            tlight.SetActive(false);
+            //tlight.SetActive(false);
 
             if (!android && !auto)
             //if (!auto)
@@ -205,7 +202,7 @@ namespace Photon.Pun.Demo.PunBasics
                     //TRModel(0);
                     photonView.RPC("TRModel", RpcTarget.AllViaServer,0);
                     ct = 0;
-                    imgfadeout = true;
+                    
                     Vector3 rot = transform.eulerAngles;
                     ftl.eulerAngles = rot;
                     ftr.eulerAngles = rot;
@@ -217,7 +214,7 @@ namespace Photon.Pun.Demo.PunBasics
                         {
                             auds.Stop();
                             k = false;
-                            imgfadeout = true;
+                            
 
                             gyaa = false;
                             gt = 0;
@@ -256,20 +253,20 @@ namespace Photon.Pun.Demo.PunBasics
         public void Back()
         {
             sliptime = 0;
-            tlight.SetActive(true);
-            //
+            photonView.RPC("BLamp", RpcTarget.AllViaServer, true);
+
             float bspeed = Vector3.Dot(transform.forward, rb.velocity);
-            //Debug.Log("speed" + bspeed.ToString());
+            
             if (bspeed > 0 && speed > 5)
             {
                 h = 0;
                 k = true;
-                //k1.Play(); k2.Play(); k3.Play(); k4.Play();
+                
 
                 if (!gyaa)
                 {
                     gyaa = true;
-                    imgfadeout = false;
+                    
                     auds.Play();
                 }
             }
@@ -283,6 +280,16 @@ namespace Photon.Pun.Demo.PunBasics
             lvec = -a * 0.9f;
 
         }
+        [PunRPC]
+        public void BLamp(bool s)
+        {
+            tlight.SetActive(s);
+        }
+        public void Boff()
+        {
+            photonView.RPC("BLamp", RpcTarget.AllViaServer, false);
+        }
+
         public void N()
         {
             if (sliptime > 10)
@@ -358,7 +365,7 @@ namespace Photon.Pun.Demo.PunBasics
         public void AndrC()
         {
             ct = 0;
-            imgfadeout = true;
+            
             Vector3 rot = transform.eulerAngles;
             ftl.eulerAngles = rot;
             ftr.eulerAngles = rot;
@@ -370,7 +377,7 @@ namespace Photon.Pun.Demo.PunBasics
                 {
                     auds.Stop();
                     k = false;
-                    imgfadeout = true;
+                    
 
                     gyaa = false;
                     gt = 0;
@@ -397,11 +404,11 @@ namespace Photon.Pun.Demo.PunBasics
         }
 
         [PunRPC]
-        public void LightOnOff()
+        public void LightOnOff(bool lightstate)
         {
             if (lightstate)
             {
-                lightstate = false;
+                
                 light1.SetActive(false); light2.SetActive(false);
                 if (skm != null)
                 {
@@ -416,7 +423,7 @@ namespace Photon.Pun.Demo.PunBasics
             }
             else
             {
-                lightstate = true;
+                
                 light1.SetActive(true); light2.SetActive(true);
                 if (skm != null)
                 {
@@ -432,7 +439,8 @@ namespace Photon.Pun.Demo.PunBasics
         }
         public void LightButton()
         {
-            photonView.RPC("LightOnOff", RpcTarget.AllViaServer);
+            photonView.RPC("LightOnOff", RpcTarget.AllViaServer,lightstate);
+            lightstate = !lightstate;
         }
 
     }

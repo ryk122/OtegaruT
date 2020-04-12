@@ -134,6 +134,9 @@ ModelImporter:
     100256: "\u7ACB\u65B9\u4F53_117"
     100258: "\u7ACB\u65B9\u4F53_118"
     100260: "\u7ACB\u65B9\u4F53_119"
+    100262: Cube_001
+    100264: Cube_002
+    100266: Cube_003
     400000: Cube
     400002: "NURBS\u30D1\u30B9"
     400004: //RootNode
@@ -265,6 +268,9 @@ ModelImporter:
     400256: "\u7ACB\u65B9\u4F53_117"
     400258: "\u7ACB\u65B9\u4F53_118"
     400260: "\u7ACB\u65B9\u4F53_119"
+    400262: Cube_001
+    400264: Cube_002
+    400266: Cube_003
     2100000: unnamed
     2100002: road_tex__road_png
     2100004: green_001__road_png
@@ -412,6 +418,9 @@ ModelImporter:
     2300254: "\u7ACB\u65B9\u4F53_117"
     2300256: "\u7ACB\u65B9\u4F53_118"
     2300258: "\u7ACB\u65B9\u4F53_119"
+    2300260: Cube_001
+    2300262: Cube_002
+    2300264: Cube_003
     3300000: Cube
     3300002: "NURBS\u30D1\u30B9"
     3300004: "\u5186\u67F1"
@@ -542,6 +551,9 @@ ModelImporter:
     3300254: "\u7ACB\u65B9\u4F53_117"
     3300256: "\u7ACB\u65B9\u4F53_118"
     3300258: "\u7ACB\u65B9\u4F53_119"
+    3300260: Cube_001
+    3300262: Cube_002
+    3300264: Cube_003
     4300000: "NURBS\u30D1\u30B9"
     4300002: "\u5E73\u9762_006"
     4300004: "\u5E73\u9762_005"
@@ -672,6 +684,9 @@ ModelImporter:
     4300254: "\u7ACB\u65B9\u4F53_001"
     4300256: Cube
     4300258: "\u7ACB\u65B9\u4F53"
+    4300260: Cube_002
+    4300262: Cube_001
+    4300264: Cube_003
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

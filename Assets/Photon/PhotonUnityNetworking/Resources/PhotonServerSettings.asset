@@ -36,5 +36,6 @@ MonoBehaviour:
   - RespawnSpaceship
   - LightOnOff
   - TRModel
+  - BLamp
   DisableAutoOpenWizard: 1
   ShowSettings: 1
