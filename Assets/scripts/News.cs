@@ -17,9 +17,15 @@ public class News : MonoBehaviour
         int n = PlayerPrefs.GetInt("news");
         if (n != buildnum)
         {
+            if (buildnum == 413)
+            {
+                int c = PlayerPrefs.GetInt("money");
+                PlayerPrefs.SetInt("money", c + 100);
+            }
             newspanel.SetActive(true);
             PlayerPrefs.SetInt("news", buildnum);
         }
+        
     }
 
     public void Close()

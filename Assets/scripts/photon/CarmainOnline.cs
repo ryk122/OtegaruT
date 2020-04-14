@@ -39,6 +39,7 @@ namespace Photon.Pun.Demo.PunBasics
         GameObject efcam_prefab,adc_prefab,camera;
 
         private GameObject cameraObject;
+        AndroidCtrlOnline adc;
 
 
         private PhotonView photonView;
@@ -73,30 +74,19 @@ namespace Photon.Pun.Demo.PunBasics
 
             ts = GetComponent<TuneSetter>();
 
-            
-            foreach (ChangeColor cc in ts.changecolor)
-            {
-                cc.Start();
-                cc.GetEmitColor();
-            }
 
-            //if (PlayerPrefs.GetInt("time") == 0)
-                lightstate = false;
 
-            LightOnOff(false);
+
 
             photonView = GetComponent<PhotonView>();
 
-            //if (PlayerPrefs.GetInt("time") == 0)
-            lightstate = false;
 
-            LightOnOff(false);
 
             if (photonView.IsMine)
             {
                 efcmr = Instantiate(efcam_prefab).GetComponent<Camera>();
 
-                AndroidCtrlOnline adc = Instantiate(adc_prefab).GetComponent<AndroidCtrlOnline>();
+                adc = Instantiate(adc_prefab).GetComponent<AndroidCtrlOnline>();
                 adc.cm = this;
                 android = true;
                 DontDestroyOnLoad(adc.gameObject);
@@ -105,9 +95,20 @@ namespace Photon.Pun.Demo.PunBasics
                 smf.target = transform;
                 DontDestroyOnLoad(smf.gameObject);
                 cameraObject = smf.gameObject;
-            }
 
-            
+
+                /*foreach (ChangeColor cc in ts.changecolor)
+                {
+                    cc.Start();
+                    cc.GetEmitColor();
+                }*/
+            }
+            //if (PlayerPrefs.GetInt("time") == 0)
+            lightstate = false;
+
+            LightOnOff(false);
+
+
         }
 
         private void Update()
@@ -443,5 +444,9 @@ namespace Photon.Pun.Demo.PunBasics
             lightstate = !lightstate;
         }
 
+        private void OnDestroy()
+        {
+            adc.LeaveRoom();
+        }
     }
 }

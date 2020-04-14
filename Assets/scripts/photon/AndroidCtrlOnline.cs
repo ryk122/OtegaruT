@@ -26,8 +26,8 @@ namespace Photon.Pun.Demo.PunBasics
                 b1.SetActive(false); b2.SetActive(false);
             }
             trlevel = PlayerPrefs.GetFloat("trlevel");
-            GameObject car = GameObject.Find("car");
-            cm = car.GetComponent<CarmainOnline>();
+            //GameObject car = GameObject.Find("car");
+            //cm = car.GetComponent<CarmainOnline>();
             r = l = g = b = false;
             cm.android = true;
         }

@@ -20216,7 +20216,7 @@ GameObject:
   - component: {fileID: 2620102402375033397}
   - component: {fileID: 2620102402375033396}
   m_Layer: 8
-  m_Name: car12
+  m_Name: car 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20850,7 +20850,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7348912089446456753}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b58238f5d6d305d43b4193321f9266fa, type: 3}
   m_Name: 
@@ -21197,30 +21197,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: nsx
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: 0.03766656
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: -0.015543014
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 1.930717
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 4.225445
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.984457
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21276,6 +21252,30 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.03766656
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.015543014
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.930717
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.225445
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.984457
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}

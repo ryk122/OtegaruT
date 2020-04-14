@@ -72,8 +72,12 @@ namespace Photon.Pun.Demo.PunBasics
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                     //PhotonNetwork.Instantiate(this.playerPrefab.name + PhotonNetwork.CurrentRoom.PlayerCount, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
                     //int r = Random.Range(1, 3);
-                    PhotonNetwork.Instantiate("car "+ PlayerPrefs.GetInt("dcar"), new Vector3(0f,5f,0f), Quaternion.identity, 0);
-				}else{
+                    //PhotonNetwork.Instantiate("car "+ PlayerPrefs.GetInt("dcar"), new Vector3(0f,5f,0f), Quaternion.identity, 0);
+                    PhotonNetwork.Instantiate("car " + PlayerPrefs.GetInt("dcar"), transform.position, transform.rotation, 0);
+
+                }
+                else
+                {
 
 					Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
 				}

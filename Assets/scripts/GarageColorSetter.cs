@@ -78,6 +78,7 @@ public class GarageColorSetter : MonoBehaviour
         string newsave = save.Substring(0, save.Length - 7) +"#"+ ColorUtility.ToHtmlStringRGB(colorpicker.Color);
         Debug.Log(newsave);
         PlayerPrefs.SetString("car" + car, newsave);
+        gg.DispCoin(c - 500);
         gg.CloseColor();
     }
 
