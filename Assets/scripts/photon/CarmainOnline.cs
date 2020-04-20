@@ -146,12 +146,12 @@ namespace Photon.Pun.Demo.PunBasics
                 tsound.Play();
             }
 
-
         }
 
         // Update is called once per frame
         void FixedUpdate()
         {
+            
             if (!photonView.IsMine)
             {
                 return;
@@ -311,13 +311,13 @@ namespace Photon.Pun.Demo.PunBasics
         /*Turn*/
         public void TR(float x)
         {
-            /*
+            
             Vector3 rot = ftl.transform.localEulerAngles;
             rot.y = 40 * x;
             ftl.localEulerAngles = rot;
-            ftr.localEulerAngles = rot;*/
+            ftr.localEulerAngles = rot;
             //TRModel(x);
-            photonView.RPC("TRModel", RpcTarget.AllViaServer, x);
+            //photonView.RPC("TRModel", RpcTarget.AllViaServer, x);
 
             ct += 1;
             transform.Rotate(new Vector3(0, str * Mathf.Pow(speed, 0.5f) * h * x, 0));
@@ -341,6 +341,7 @@ namespace Photon.Pun.Demo.PunBasics
                 auds.Stop();
             }
         }
+        /*
         [PunRPC]
         public void TRModel(float x)
         {
@@ -348,7 +349,7 @@ namespace Photon.Pun.Demo.PunBasics
             rot.y = 40 * x;
             ftl.localEulerAngles = rot;
             ftr.localEulerAngles = rot;
-        }
+        }*/
 
         public void TIme_Up()
         {

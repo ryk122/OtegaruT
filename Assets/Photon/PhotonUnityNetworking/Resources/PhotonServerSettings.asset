@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 21158fbf-f4e8-485a-a884-e009f8af3bf8
+    AppIdRealtime: 2d5117fa-dd28-46c3-9bfd-767dd0de2616
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
@@ -37,5 +37,6 @@ MonoBehaviour:
   - LightOnOff
   - TRModel
   - BLamp
+  - SpeedSet
   DisableAutoOpenWizard: 1
   ShowSettings: 1
