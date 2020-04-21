@@ -200,8 +200,6 @@ namespace Photon.Pun.Demo.PunBasics
                 }
                 else
                 {
-                    //TRModel(0);
-                    photonView.RPC("TRModel", RpcTarget.AllViaServer,0);
                     ct = 0;
                     
                     Vector3 rot = transform.eulerAngles;
@@ -441,8 +439,9 @@ namespace Photon.Pun.Demo.PunBasics
         }
         public void LightButton()
         {
-            photonView.RPC("LightOnOff", RpcTarget.AllViaServer,lightstate);
             lightstate = !lightstate;
+            photonView.RPC("LightOnOff", RpcTarget.AllViaServer,lightstate);
+            
         }
 
         private void OnDestroy()

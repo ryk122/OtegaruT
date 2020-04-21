@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace Photon.Pun.Demo.PunBasics
 {
     public class AndroidCtrlOnline : MonoBehaviour
     {
-        
+        [SerializeField]
+        Text playernum;
         public CarmainOnline cm;
         public GameObject b1, b2;
         float trlevel;
@@ -30,6 +32,8 @@ namespace Photon.Pun.Demo.PunBasics
             //cm = car.GetComponent<CarmainOnline>();
             r = l = g = b = false;
             cm.android = true;
+
+            InvokeRepeating("PlayerNumChange", 0, 3);
         }
 
         private void Update()
@@ -42,6 +46,11 @@ namespace Photon.Pun.Demo.PunBasics
                 else if (rot < -1) rot = -1;
             }
 
+        }
+
+        private void PlayerNumChange()
+        {
+            playernum.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString()+" players";
         }
 
         // Update is called once per frame

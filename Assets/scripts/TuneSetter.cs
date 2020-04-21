@@ -9,13 +9,13 @@ public class TuneSetter : MonoBehaviour
     [SerializeField]
     Carmain cm;
     [SerializeField]
-    float pmaxs, pslip, pstr;
+    public float pmaxs, pslip, pstr;
     [SerializeField]
-    bool skinmesh,bodytune,turbo,garage;
+    public bool skinmesh,bodytune,turbo,garage;
     [SerializeField]
-    GameObject nomal, tuned;
+    public GameObject nomal, tuned;
     [SerializeField]
-    GameObject[] wheel;
+    public GameObject[] wheel;
     public Material[] material;
 
     public ChangeColor[] changecolor;
