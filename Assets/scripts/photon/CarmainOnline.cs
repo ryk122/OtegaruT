@@ -31,7 +31,7 @@ namespace Photon.Pun.Demo.PunBasics
         bool gyaa ,lightstate;
 
         RaycastHit uhit;
-        TuneSetter ts;
+        TuneSetterOnline ts;
         bool k;
         int sliptime;
         float vol;
@@ -72,11 +72,7 @@ namespace Photon.Pun.Demo.PunBasics
             gyaa = false;
             
 
-            ts = GetComponent<TuneSetter>();
-
-
-
-
+            ts = GetComponent<TuneSetterOnline>();
 
             photonView = GetComponent<PhotonView>();
 
@@ -97,22 +93,27 @@ namespace Photon.Pun.Demo.PunBasics
                 cameraObject = smf.gameObject;
 
 
-                /*foreach (ChangeColor cc in ts.changecolor)
+                foreach(ChangeColorOnline cc in ts.changecolor)
                 {
+                    //cc.photonView = photonView;
                     cc.Start();
-                    cc.GetEmitColor();
-                }*/
+                    //cc.GetEmitColor();
+                }
             }
             //if (PlayerPrefs.GetInt("time") == 0)
             lightstate = false;
 
-            LightOnOff(false);
+            photonView.RPC("LightOnOff", RpcTarget.AllViaServer, lightstate);
 
 
         }
 
         private void Update()
         {
+            if (!photonView.IsMine)
+            {
+                return;
+            }
 
             if (!auto && efcmr!=null)
                 if (speed > 19)
@@ -252,7 +253,7 @@ namespace Photon.Pun.Demo.PunBasics
         public void Back()
         {
             sliptime = 0;
-            photonView.RPC("BLamp", RpcTarget.AllViaServer, true);
+            //photonView.RPC("BLamp", RpcTarget.AllViaServer, true);
 
             float bspeed = Vector3.Dot(transform.forward, rb.velocity);
             
@@ -288,6 +289,10 @@ namespace Photon.Pun.Demo.PunBasics
         {
             photonView.RPC("BLamp", RpcTarget.AllViaServer, false);
         }
+        public void Bon()
+        {
+            photonView.RPC("BLamp", RpcTarget.AllViaServer, true);
+        }
 
         public void N()
         {
@@ -309,13 +314,14 @@ namespace Photon.Pun.Demo.PunBasics
         /*Turn*/
         public void TR(float x)
         {
-            
+            /*
             Vector3 rot = ftl.transform.localEulerAngles;
             rot.y = 40 * x;
             ftl.localEulerAngles = rot;
-            ftr.localEulerAngles = rot;
+            ftr.localEulerAngles = rot;*/
             //TRModel(x);
-            //photonView.RPC("TRModel", RpcTarget.AllViaServer, x);
+            if(ct==0)
+                photonView.RPC("TRModel", RpcTarget.AllViaServer, (float)x);
 
             ct += 1;
             transform.Rotate(new Vector3(0, str * Mathf.Pow(speed, 0.5f) * h * x, 0));
@@ -339,7 +345,6 @@ namespace Photon.Pun.Demo.PunBasics
                 auds.Stop();
             }
         }
-        /*
         [PunRPC]
         public void TRModel(float x)
         {
@@ -347,6 +352,10 @@ namespace Photon.Pun.Demo.PunBasics
             rot.y = 40 * x;
             ftl.localEulerAngles = rot;
             ftr.localEulerAngles = rot;
+        }
+        /*public void Toff()
+        {
+            photonView.RPC("TRModel", RpcTarget.AllViaServer, 0.0f);
         }*/
 
         public void TIme_Up()
@@ -364,11 +373,16 @@ namespace Photon.Pun.Demo.PunBasics
 
         public void AndrC()
         {
-            ct = 0;
-            
+            if(ct!=0)
+                photonView.RPC("TRModel", RpcTarget.AllViaServer, 0.0f);
+
+            /*
             Vector3 rot = transform.eulerAngles;
             ftl.eulerAngles = rot;
             ftr.eulerAngles = rot;
+            */
+
+            ct = 0;
 
             if (gyaa)
             {
@@ -416,7 +430,7 @@ namespace Photon.Pun.Demo.PunBasics
                 }
 
                 if (!auto)
-                    foreach (ChangeColor cc in ts.changecolor)
+                    foreach (ChangeColorOnline cc in ts.changecolor)
                     {
                         cc.SetEmmison(0);
                     }
@@ -431,7 +445,7 @@ namespace Photon.Pun.Demo.PunBasics
                 }
 
                 if (!auto)
-                    foreach (ChangeColor cc in ts.changecolor)
+                    foreach (ChangeColorOnline cc in ts.changecolor)
                     {
                         cc.SetEmmison(1);
                     }

@@ -6,7 +6,7 @@ public class ChangeColor : MonoBehaviour
 {
     //public Color newcolor;
     public Color normalcolor;
-    [SerializeField]Color noremicolor;
+    public Color noremicolor;
     [SerializeField]
     bool garage;
     Renderer rd;

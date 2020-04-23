@@ -10,6 +10,12 @@ namespace Photon.Pun.Demo.PunBasics
         CarmainOnline cm;
         public float p;
 
+
+        private void Start()
+        {
+            
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -17,5 +23,6 @@ namespace Photon.Pun.Demo.PunBasics
             rot.z += cm.speed * cm.back * p * Time.deltaTime;
             transform.eulerAngles = rot;
         }
+
     }
 }

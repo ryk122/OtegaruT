@@ -6,6 +6,7 @@ namespace Photon.Pun.Demo.PunBasics
 {
     //コピペで解決シリーズと見せかけて
     //ガレージ内で使用されないこと前提の仕様
+    //CarmainOnlineで、新規ログインを検知。updateないで判定してます
     public class TuneSetterOnline : MonoBehaviour
     {
         [SerializeField]
@@ -20,7 +21,7 @@ namespace Photon.Pun.Demo.PunBasics
         GameObject[] wheel;
         public Material[] material;
 
-        public ChangeColor[] changecolor;
+        public ChangeColorOnline[] changecolor;
 
         PhotonView photonView;
 
@@ -40,7 +41,7 @@ namespace Photon.Pun.Demo.PunBasics
             nomal = ts.nomal; tuned = ts.tuned;
             wheel = ts.wheel;
             material = ts.material;
-            changecolor = ts.changecolor;
+            //changecolor = ts.changecolor;
             //
 
             if (!photonView.IsMine)
@@ -92,10 +93,16 @@ namespace Photon.Pun.Demo.PunBasics
 
         private void Update()
         {
-            if (photonView.IsMine &&added)
+            if (photonView.IsMine &&added)//呼びかけの実体
             {
                 photonView.RPC("SetTune", RpcTarget.AllViaServer, tune_num, m_num);
-                Debug.LogWarning("Tune!");
+
+                foreach(ChangeColorOnline cc in changecolor)
+                {
+                    cc.ReSetColor();
+                }
+                added = false;
+                //Debug.LogWarning("Tune!");
             }
         }
 
@@ -153,7 +160,7 @@ namespace Photon.Pun.Demo.PunBasics
         }
 
         [PunRPC]
-        public void NewCar()
+        public void NewCar()//carmianonlineから呼び出し
         {
             added = true;
         }

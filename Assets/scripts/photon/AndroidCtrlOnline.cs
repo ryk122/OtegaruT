@@ -106,6 +106,7 @@ namespace Photon.Pun.Demo.PunBasics
         public void BackD()
         {
             b = true;
+            cm.Bon();
         }
         public void RightU()
         {
