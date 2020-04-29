@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 423
+  buildnum: 430
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5905,10 +5905,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News! v4.01\n\n\u30AA\u30F3\u30E9\u30A4\u30F3\u30B2\u30FC\u30E0\u3067\u30C1\u30E5\u30FC\u30F3\u8A2D\u5B9A\u30FB\u30AB\u30E9\u30FC\u8A2D\u5B9A\u304C\n\u9069\u7528\u3055\u308C\u308B\u3088\u3046\u306B\u3057\u307E\u3057\u305F\u3002\nWheel,Body
-    tune and Body color setting are available\nin this version.\n\n\u203B\u30AA\u30F3\u30E9\u30A4\u30F3\u30B2\u30FC\u30E0\u3067\u4ED6\u306E\u4EBA\u3068\u4E00\u7DD2\u306B\u904A\u3076\u306B\u306F\u3001\n
-    \    \u30A2\u30D7\u30EA\u306E\u30D0\u30FC\u30B8\u30E7\u30F3\u3092\u305D\u308D\u3048\u3066\u304F\u3060\u3055\u3044\u3002\nIf
-    you play with your friend, you should use same version app.\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u884C\u3044\u307E\u3057\u305F\nminor
+  m_Text: "#Update News! v4.02\n\nOnline\u30E2\u30FC\u30C9\u3067\u8996\u70B9\u3092\u5909\u66F4\u3067\u304D\u308B\u3088\u3046\u306B\u3057\u307E\u3057\u305F\u3002\n\u307E\u305F\u3001Online\u306B\u30D0\u30C3\u30AF\u30DF\u30E9\u30FC\u3092\u8FFD\u52A0\u3057\u307E\u3057\u305F\u3002\n\u30D7\u30EC\u30A4\u4E2D\u3001\u753B\u9762\u4E0A\u90E8\u306E\u8272\u304C\u9055\u3046\u90E8\u5206\u306B\u89E6\u308C\u308B\u304B\u3001Garage\u304B\u3089\n\u300Croom
+    mirror always on\u300D\u306E\u8A2D\u5B9A\u3092\u5909\u66F4\u3057\u3066\u304F\u3060\u3055\u3044\u3002\n\nChange-VeiwPoint
+    funtion is available in Online.\nAnd you can use room mirror in Online mode.\nTouch
+    top of screen while playing , or Change settin in Garage\n \"room mirror  always
+    on\"\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u884C\u3044\u307E\u3057\u305F\nminor
     bug fixed\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
@@ -9521,7 +9522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -29.999939}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185545215
@@ -23178,7 +23179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.0000305}
+  m_AnchoredPosition: {x: 0, y: 1.000061}
   m_SizeDelta: {x: 0.7862549, y: -1.6755981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2018632762

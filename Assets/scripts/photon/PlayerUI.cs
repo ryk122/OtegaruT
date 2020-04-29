@@ -74,11 +74,11 @@ namespace Photon.Pun.Demo.PunBasics
 				return;
 			}
 
-
+            /*
 			// Reflect the Player Health
 			if (playerHealthSlider != null) {
-				playerHealthSlider.value = target.Health;
-			}
+				//playerHealthSlider.value = target.Health;
+			}*/
 		}
 
 		/// <summary>
@@ -90,6 +90,10 @@ namespace Photon.Pun.Demo.PunBasics
 			// Do not show the UI if we are not visible to the camera, thus avoid potential bugs with seeing the UI, but not the player itself.
 			if (targetRenderer!=null)
 			{
+                //if there are 2 more cameras, the target is visible unless it is out of main camera
+                //so it judge wheter target is front of main camera or not
+                if (Vector3.Dot(Camera.main.transform.forward, targetTransform.position - Camera.main.transform.position) < 0)
+                    return;
 				this._canvasGroup.alpha = targetRenderer.isVisible ? 1f : 0f;
 			}
 			

@@ -98,6 +98,8 @@ namespace Photon.Pun.Demo.PunBasics
             {
                 GameObject _uiGo = Instantiate(this.playerUiPrefab);
                 _uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+                if (photonView.IsMine)
+                    AndroidCtrlOnline.nameui = _uiGo;
             }
             else
             {

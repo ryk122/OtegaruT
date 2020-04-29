@@ -41,6 +41,9 @@ namespace Photon.Pun.Demo.PunBasics
         private GameObject cameraObject;
         AndroidCtrlOnline adc;
 
+        public SmoothFollow smf;
+        public CameraPManager cpm;
+
 
         private PhotonView photonView;
 
@@ -87,11 +90,11 @@ namespace Photon.Pun.Demo.PunBasics
                 android = true;
                 DontDestroyOnLoad(adc.gameObject);
 
-                SmoothFollow smf = Instantiate(camera).GetComponent<SmoothFollow>();
+                smf = Instantiate(camera).GetComponent<SmoothFollow>();
                 smf.target = transform;
                 DontDestroyOnLoad(smf.gameObject);
                 cameraObject = smf.gameObject;
-
+                cpm = cameraObject.GetComponent<CameraPManager>();
 
                 foreach(ChangeColorOnline cc in ts.changecolor)
                 {

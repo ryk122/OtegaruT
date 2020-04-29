@@ -11,12 +11,15 @@ namespace Photon.Pun.Demo.PunBasics
         [SerializeField]
         Text playernum;
         public CarmainOnline cm;
-        public GameObject b1, b2;
+        public GameObject b1, b2,rcam;
         float trlevel;
         bool r, l, g, b;
         bool accont;
+        int camstate;
         Vector3 acc;
         float rot;
+
+        public static GameObject nameui;//set by PlayerManager to on off ui
 
         // Use this for initialization
         public void Start()
@@ -33,7 +36,12 @@ namespace Photon.Pun.Demo.PunBasics
             r = l = g = b = false;
             cm.android = true;
 
+            rcam.transform.parent = cm.transform;
+            rcam.transform.position = cm.transform.position;
+
             InvokeRepeating("PlayerNumChange", 0, 3);
+
+            camstate = 0;
         }
 
         private void Update()
@@ -138,6 +146,48 @@ namespace Photon.Pun.Demo.PunBasics
         public void Light()
         {
             cm.LightButton();
+        }
+
+        public void CamChange()
+        {
+            FollowingCamera fcam = cm.cpm.gameObject.GetComponent<FollowingCamera>();
+            camstate++;
+
+            if (camstate == 0)//to third person
+            {
+                nameui.SetActive(false);
+
+                fcam.enabled = false;
+                cm.smf.enabled = true;
+                
+
+                cm.smf.rotationDamping -= 500;
+                cm.smf.heightDamping -= 500;
+                cm.cpm.maincam.transform.position = cm.cpm.pos1.position;
+                cm.smf.distance = 3;
+                cm.smf.height = 0.5f;
+                nameui.SetActive(true);
+            }
+            else if(camstate == 1)//first person
+            {
+                nameui.SetActive(false);
+                cm.smf.rotationDamping += 500;
+                cm.smf.heightDamping += 500;
+                cm.smf.distance = 2;
+                cm.smf.height = 0.2f;
+                cm.cpm.maincam.position = cm.cpm.pos2.position;
+            }
+            else//around camera
+            {
+                
+                fcam.target = cm.gameObject;
+                cm.smf.enabled = false;
+                fcam.enabled = true;
+
+                
+                camstate = -1;
+                nameui.SetActive(true);
+            }
         }
 
     }

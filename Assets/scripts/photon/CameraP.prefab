@@ -279,6 +279,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7690248955500391841}
   - component: {fileID: 7690248955500391846}
+  - component: {fileID: 785320671080793557}
+  - component: {fileID: 990438250576227154}
   m_Layer: 0
   m_Name: CameraP
   m_TagString: Untagged
@@ -320,3 +322,42 @@ MonoBehaviour:
   height: 0.5
   rotationDamping: 1
   heightDamping: 10
+--- !u!114 &785320671080793557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690248955500391847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ada4b179b9fea94e9fb15d99e753f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 7690248955019982634}
+  pos2: {fileID: 7690248955176775011}
+  maincam: {fileID: 7690248954908352554}
+--- !u!114 &990438250576227154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690248955500391847}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90856376e191b0f45998eb1b81089587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  distance: 10
+  polarAngle: 45
+  azimuthalAngle: 45
+  minDistance: 1
+  maxDistance: 7
+  minPolarAngle: 5
+  maxPolarAngle: 95
+  mouseXSensitivity: 5
+  mouseYSensitivity: 5
+  scrollSensitivity: 5
