@@ -1,23 +1,18 @@
 fileFormatVersion: 2
-guid: 6cf5c146aa0f6e8468bdc10c3014e62c
+guid: 4849a86acc82d3c4994e010530c0e18d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material__gtrtex_png
+    2100000: Material__s13tex_png
     2100002: Material
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material__gtrtex_png
-    second: {fileID: 2100000, guid: 918aec87f74c2184a9ecdf2c564afcf2, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

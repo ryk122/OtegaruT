@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6cf5c146aa0f6e8468bdc10c3014e62c
+guid: 639d2b1c126f81f41aa332081fb23774
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,6 +7,8 @@ ModelImporter:
     400000: //RootNode
     2100000: Material__gtrtex_png
     2100002: Material
+    2100004: "\u30DE\u30C6\u30EA\u30A2\u30EB"
+    2100006: Material__gtr_png
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
@@ -16,7 +18,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material__gtrtex_png
+      name: Material__gtr_png
     second: {fileID: 2100000, guid: 918aec87f74c2184a9ecdf2c564afcf2, type: 2}
   materials:
     importMaterials: 1

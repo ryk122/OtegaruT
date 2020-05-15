@@ -259,7 +259,7 @@ public class Garage : MonoBehaviour {
             t = 0; m = 0;
         }
 
-        if (dcar == 0 || dcar == 4 || dcar == 5)
+        if (dcar == 0 || dcar == 2  || dcar == 4 || dcar == 5 || dcar == 8)
         {
             gt.ts.SetTune(t);
             tunebt.SetActive(true);

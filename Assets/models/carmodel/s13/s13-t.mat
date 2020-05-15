@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: gtr
+  m_Name: s13-t
   m_Shader: {fileID: 4800000, guid: a52524c5a66246149835cbc70930b9d7, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -36,15 +36,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 81c935d055652a94f80fe126a0b5b969, type: 3}
+        m_Texture: {fileID: 2800000, guid: 170a16ec682cb044cb4be594141631ba, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c6cfa4a903913ec42ba60e5a1f023262, type: 3}
+        m_Texture: {fileID: 2800000, guid: d06a71bc2948cec498d227955c4321e7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: bf93658d71e505c4da2e27230ca391a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6287518ee5f7a5749997150d52ee05ab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -69,9 +69,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.423
+    - _Glossiness: 0.215
     - _GlossyReflections: 1
-    - _Metallic: 1
+    - _Metallic: 0.812
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -81,5 +81,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
+    - _Color: {r: 0.7264151, g: 0.024653988, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

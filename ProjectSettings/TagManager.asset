@@ -11,6 +11,7 @@ TagManager:
   - Section
   - mizo
   - wall
+  - Slider
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - PostProcessing
   - 
   - other
-  - 
-  - 
+  - soccer
+  - soccer_wall
   - 
   - 
   - 
