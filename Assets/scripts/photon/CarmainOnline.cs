@@ -87,7 +87,7 @@ namespace Photon.Pun.Demo.PunBasics
 
                 adc = Instantiate(adc_prefab).GetComponent<AndroidCtrlOnline>();
                 adc.cm = this;
-                android = true;
+                //android = true;
                 DontDestroyOnLoad(adc.gameObject);
 
                 smf = Instantiate(camera).GetComponent<SmoothFollow>();
