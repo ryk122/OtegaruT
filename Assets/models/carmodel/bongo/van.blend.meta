@@ -6,12 +6,18 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Material
+    2100002: Material__van_png
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__van_png
+    second: {fileID: 2100000, guid: 87b64ef2c2661e84cb48d58fdf21b47f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
