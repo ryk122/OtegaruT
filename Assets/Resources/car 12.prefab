@@ -20515,7 +20515,7 @@ MonoBehaviour:
   gyaobj: {fileID: 0}
   light1: {fileID: 1811722452710437603}
   light2: {fileID: 1811722452355529792}
-  skm: {fileID: 0}
+  skm: {fileID: 7348912089460052147}
   ur: {fileID: 1811722453034430205}
   ur2: {fileID: 1811722452381997334}
   rl: 0
@@ -21574,6 +21574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: nsx
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
       propertyPath: m_AABB.m_Center.y
       value: 0.03766656
@@ -21653,10 +21657,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
       propertyPath: m_AABB.m_Center.y
