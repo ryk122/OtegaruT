@@ -4,13 +4,23 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cube
+    100004: "\u7ACB\u65B9\u4F53"
     400000: //RootNode
+    400002: Cube
+    400004: "\u7ACB\u65B9\u4F53"
     2100000: Material__nsx_tex_png
     2100002: Material
+    2100004: unnamed
+    2100006: None__nsx_tex_png
+    2300000: "\u7ACB\u65B9\u4F53"
+    3300000: "\u7ACB\u65B9\u4F53"
     4300000: Cube
+    4300002: "\u7ACB\u65B9\u4F53"
     7400000: Default Take
     9500000: //RootNode
     13700000: //RootNode
+    13700002: Cube
   externalObjects:
   - first:
       type: UnityEngine:Material
