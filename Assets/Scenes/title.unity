@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 509
+  buildnum: 531
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5905,9 +5905,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News! v4.03\n\u65B0\u305F\u306B2\u8ECA\u7A2E\u3067tune\u304C\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308A\u307E\u3057\u305F\u3002\ntune
-    option is added in 2 cars.\n\nOnline\u30E2\u30FC\u30C9\u3067\u3001\u8857\u306B\u3001\u30B5\u30C3\u30AB\u30FC\u30DC\u30FC\u30EB\u3092\u914D\u7F6E\u3057\u307E\u3057\u305F\u3002\nIn
-    Online mode, now you can play soccer in city!\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u884C\u3044\u307E\u3057\u305F\nminor
+  m_Text: "#Update News! v4.04\n\n\u8ECA\u7A2E\u8FFD\u52A0 add new car (van)\n\n\u65B0\u305F\u306B1\u8ECA\u7A2E\u3067tune\u304C\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308A\u307E\u3057\u305F\u3002\ntune
+    option is added in a car. (ns1)\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u884C\u3044\u307E\u3057\u305F\nminor
     bug fixed\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:

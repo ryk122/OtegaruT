@@ -15280,7 +15280,7 @@ MonoBehaviour:
   cm: {fileID: 6446396813364390015}
   pmaxs: 0
   pslip: 0
-  pstr: 0
+  pstr: 0.02
   skinmesh: 1
   bodytune: 1
   turbo: 0

@@ -20788,7 +20788,7 @@ MonoBehaviour:
   cm: {fileID: 1811722453227448862}
   pmaxs: 0
   pslip: 0
-  pstr: 0
+  pstr: 0.02
   skinmesh: 1
   bodytune: 1
   turbo: 0
@@ -20892,7 +20892,7 @@ MonoBehaviour:
   cm: {fileID: 0}
   pmaxs: 0
   pslip: 0
-  pstr: 0
+  pstr: 0.02
   skinmesh: 0
   bodytune: 0
   turbo: 0
