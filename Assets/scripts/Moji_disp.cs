@@ -100,7 +100,7 @@ public class Moji_disp : MonoBehaviour {
     {
         if (disp)
         {
-            if (other.gameObject.tag == "Sora")
+            if (other.CompareTag("Sora"))
             {
                 sora.SetActive(true);
                 CancelInvoke("Setoffsora");
@@ -135,7 +135,8 @@ public class Moji_disp : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Check")
+        //if (other.gameObject.tag == "Check")
+        if(other.CompareTag("Check"))
         {
             if (i < 3)
                 time += 21 - i*2;
@@ -152,7 +153,7 @@ public class Moji_disp : MonoBehaviour {
                 tmp.text = time.ToString();
         }
 
-        if (other.gameObject.tag == "wall")
+        if (other.CompareTag("other"))
         {
             //Debug.Log("wall");
             //壁衝突中は、溝効果0
@@ -161,7 +162,8 @@ public class Moji_disp : MonoBehaviour {
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Check")
+        //if (other.gameObject.tag == "Check")
+        if (other.CompareTag("Check"))
         {
             if (!dbp)
             {
@@ -169,19 +171,15 @@ public class Moji_disp : MonoBehaviour {
                 other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
                 mk.Destroy_Road();
             }
-               
-            if(!auto)
+
+            if (!auto)
                 other.gameObject.tag = "Untagged";
         }
-        if (other.gameObject.tag == "mizo") {
+        if (other.CompareTag("mizo"))
+        {
             cm.mizo = 0;
             mizor.SetActive(false);
             mizol.SetActive(false);
-         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
+        }
     }
 }
