@@ -106,14 +106,14 @@ public class Moji_disp : MonoBehaviour {
                 CancelInvoke("Setoffsora");
                 Invoke("Setoffsora", 0.8f);
             }
-            if (other.gameObject.tag == "Doko")
+            if (other.CompareTag("Doko"))
             {
                 doko.SetActive(true);
                 CancelInvoke("Setoffdoko");
                 Invoke("Setoffdoko", 0.5f);
             }
         }
-        if (other.gameObject.tag == "mizo")
+        if (other.CompareTag("mizo"))
         {
             Vector3 vec = other.gameObject.transform.position - cm.transform.position;
             float a = Vector3.Cross(vec, cm.gameObject.transform.forward).y;
@@ -153,7 +153,7 @@ public class Moji_disp : MonoBehaviour {
                 tmp.text = time.ToString();
         }
 
-        if (other.CompareTag("other"))
+        if (other.CompareTag("wall"))
         {
             //Debug.Log("wall");
             //壁衝突中は、溝効果0
