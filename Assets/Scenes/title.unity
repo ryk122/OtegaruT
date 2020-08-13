@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 531
+  buildnum: 813
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5565,14 +5565,14 @@ RectTransform:
   m_GameObject: {fileID: 161238699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4285713, y: 1.25, z: 1}
+  m_LocalScale: {x: 1.4285852, y: 1.1111112, z: 1}
   m_Children: []
   m_Father: {fileID: 1125132908}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394, y: 218}
+  m_AnchoredPosition: {x: 393.9999, y: 193.77776}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &161238701
@@ -5862,14 +5862,14 @@ RectTransform:
   m_GameObject: {fileID: 272947053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0714285, y: 0.9375, z: 1}
+  m_LocalScale: {x: 1.0714285, y: 0.83333343, z: 1}
   m_Children: []
   m_Father: {fileID: 1125132908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -65}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 149.99998, y: -260.1}
   m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272947055
@@ -5905,9 +5905,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News! v4.04\n\n\u8ECA\u7A2E\u8FFD\u52A0 add new car (van)\n\n\u65B0\u305F\u306B1\u8ECA\u7A2E\u3067tune\u304C\u3067\u304D\u308B\u3088\u3046\u306B\u306A\u308A\u307E\u3057\u305F\u3002\ntune
-    option is added in a car. (ns1)\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u3092\u884C\u3044\u307E\u3057\u305F\nminor
-    bug fixed\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
+  m_Text: "#Update News! v4.10\n\n\u65B0\u6A5F\u80FD\u300C\u611B\u8ECA\u30EC\u30D9\u30EB\u300D\u3092\u5C0E\u5165\u3057\u307E\u3057\u305F\u3002\n\u30EC\u30D9\u30EB\u3092\u4E0A\u3052\u308B\u3068\u8ECA\u304C\u3061\u3087\u3063\u3068\u3060\u3051\u65E9\u304F\u306A\u308A\u307E\u3059\u3002\n\u30B2\u30FC\u30E0\u30D7\u30EC\u30A4\u3068\u30AC\u30EC\u30FC\u30B8\u306E\u6D17\u8ECA\u3067\u30EC\u30D9\u30EB\u3092\u4E0A\u3052\u3089\u308C\u307E\u3059\u3002\n\n\"Car
+    Level\" is available now\nhigher car level, the faster a car\nYou can level up
+    car with  playing game or washing \na car in garage.\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u30FB\u8ABF\u6574\u3092\u884C\u3044\u307E\u3057\u305F\nbug
+    fixed and minor change\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8385,7 +8386,7 @@ RectTransform:
   m_GameObject: {fileID: 1039888590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4285852, y: 1.2499999, z: 1}
+  m_LocalScale: {x: 1.4285852, y: 1.1111112, z: 1}
   m_Children:
   - {fileID: 2112124063}
   m_Father: {fileID: 1125132908}
@@ -8393,7 +8394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238.8, y: 201}
+  m_AnchoredPosition: {x: 238.80006, y: 167.1}
   m_SizeDelta: {x: 120, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039888592
@@ -9065,7 +9066,7 @@ RectTransform:
   m_GameObject: {fileID: 1125132907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.69999325, y: 0.8000001, z: 1}
+  m_LocalScale: {x: 0.69999325, y: 0.9, z: 1}
   m_Children:
   - {fileID: 272947054}
   - {fileID: 161238700}
