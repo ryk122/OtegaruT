@@ -93,9 +93,9 @@ public class GarageTune : MonoBehaviour
     public void SetSelectWheel()
     {
         int c = PlayerPrefs.GetInt("money");
-        if (c > 10)
+        if (c > 100)
         {
-            c -= 10;
+            c -= 100;
             PlayerPrefs.SetInt("money", c);
             g.DispCoin(c);
             data = PlayerPrefs.GetString("car" + dcar);
