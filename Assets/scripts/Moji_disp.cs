@@ -57,11 +57,13 @@ public class Moji_disp : MonoBehaviour {
             {//win
                 c += 1000;
                 stc.count.text = "win";
+                GetExp(100, PlayerPrefs.GetInt("dcar"));
             }
             else
             {
                 c += 100;
                 stc.count.text = "lose";
+                GetExp(10, PlayerPrefs.GetInt("dcar"));
             }
 
             PlayerPrefs.SetInt("money", c);
@@ -77,6 +79,8 @@ public class Moji_disp : MonoBehaviour {
             PlayerPrefs.SetInt("money", c);
             if(!dbp)
                 naichilab.RankingLoader.Instance.SendScoreAndShowRanking(alltime);
+
+            GetExp(alltime, PlayerPrefs.GetInt("dcar"));
         }
         else
         {
@@ -181,5 +185,33 @@ public class Moji_disp : MonoBehaviour {
             mizor.SetActive(false);
             mizol.SetActive(false);
         }
+    }
+
+    static private void GetExp(int exp,int dcar)
+    {
+        //carlev:level carexp now
+        //int dcar = PlayerPrefs.GetInt("dcar");
+
+        if (!PlayerPrefs.HasKey("carlev" + dcar))
+        {
+            PlayerPrefs.SetInt("carlev" + dcar, 1);
+        }
+        int carlevel = PlayerPrefs.GetInt("carlev" + dcar);
+        int carexp = PlayerPrefs.GetInt("carexp" + dcar);
+
+        carexp += exp;
+
+        int thisLevelExp = (int)Mathf.Pow(carlevel, 1.2f)*100;
+
+        while(carexp >= thisLevelExp)
+        {
+            carexp -= thisLevelExp;
+            carlevel++;
+            thisLevelExp = (int)Mathf.Pow(carlevel, 1.2f) * 100;
+        }
+
+        PlayerPrefs.SetInt("carlev" + dcar, carlevel);
+        PlayerPrefs.SetInt("carexp" + dcar, carexp);
+     
     }
 }

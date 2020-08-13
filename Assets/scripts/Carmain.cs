@@ -66,6 +66,12 @@ public class Carmain : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("time") == 0)
             LightOnOff();
+
+        //carlev
+        int dcar = PlayerPrefs.GetInt("dcar");
+        int carlev = PlayerPrefs.GetInt("carlev" + dcar);
+        Debug.Log(carlev);
+        maxs += 0.02f * carlev;
     }
 
     private void Update()

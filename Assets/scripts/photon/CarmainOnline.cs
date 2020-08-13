@@ -79,6 +79,12 @@ namespace Photon.Pun.Demo.PunBasics
 
             photonView = GetComponent<PhotonView>();
 
+            //carlev
+            int dcar = PlayerPrefs.GetInt("dcar");
+            int carlev = PlayerPrefs.GetInt("carlev" + dcar);
+            Debug.Log(carlev);
+            maxs += 0.02f * carlev;
+
 
 
             if (photonView.IsMine)

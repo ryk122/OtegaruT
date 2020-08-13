@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections;
 using GoogleMobileAds.Api;
 
 public class Garage : MonoBehaviour {
@@ -10,8 +11,8 @@ public class Garage : MonoBehaviour {
     int max = 6;
     public GameObject[] car;
     public TextMeshProUGUI coin;
-    public Text buttontex,value,strengthvalue,sevol;
-    public Slider slider,slider2,slider3;
+    public Text buttontex,value,strengthvalue,sevol,levellabel;
+    public Slider slider,slider2,slider3,expslider;
     public GameObject ad,opt;
     public Toggle toggle_b,toggle_e,toggle_a,toggle_m;
     bool having,bgm,effect,accont,mir;
@@ -20,13 +21,15 @@ public class Garage : MonoBehaviour {
     [SerializeField]
     GarageTune gt;
     [SerializeField]
-    GameObject tunebt, tunepl, opbt, rb, lb, picker, colorbt;
+    GameObject tunebt, tunepl, polishpl, opbt, rb, lb, picker, colorbt;
     [SerializeField]
     Dropdown drop;
     [SerializeField]
     GarageColorSetter gcsetter;
     [SerializeField]
     GarageColorSetter gcs;
+    [SerializeField]
+    ParticleSystem polisheffect;
 
     Transform carobj;
 
@@ -63,6 +66,7 @@ public class Garage : MonoBehaviour {
         gt.ts = carobj.GetComponent<TuneSetter>();
 
         OnOffTune();
+        DispCarLevel(dcar);
 
         gcsetter.GCStart(dcar, gt.ts);//g-color setterにtsとdcar伝達
 
@@ -142,6 +146,7 @@ public class Garage : MonoBehaviour {
         gt.ts = carobj.GetComponent<TuneSetter>();//tune対象を伝達
         gcsetter.GCStart(dcar, gt.ts);//g-color setterにtsとdcar伝達
         OnOffTune();
+        DispCarLevel(dcar);
     }
 
 
@@ -185,6 +190,19 @@ public class Garage : MonoBehaviour {
         //int c;
         //c = PlayerPrefs.GetInt("money");
         coin.text = "coin:" + c.ToString(); ;
+    }
+
+    private void DispCarLevel(int carnum)
+    {
+        if (!PlayerPrefs.HasKey("carlev" + carnum))
+        {
+            PlayerPrefs.SetInt("carlev" + carnum, 1);
+        }
+        int carlevel = PlayerPrefs.GetInt("carlev" + carnum);
+        int thisLevelExp = (int)Mathf.Pow(carlevel, 1.2f) * 100;
+        expslider.maxValue = thisLevelExp;
+        expslider.value = PlayerPrefs.GetInt("carexp" + carnum);
+        levellabel.text = "Level " + carlevel;
     }
 
     public void HandleUserEarnedReward(object sender, Reward args)
@@ -316,6 +334,69 @@ public class Garage : MonoBehaviour {
         colorbt.SetActive(false);
         gcs.changing = false ;
         gcs.Closed();
+    }
+
+    public void OpenPolish()
+    {
+        tunepl.SetActive(false);
+        polishpl.SetActive(true);
+    }
+
+    public void ClosePolish()
+    {
+        tunepl.SetActive(true);
+        polishpl.SetActive(false);
+    }
+
+    public void PolishCar()
+    {
+        int c = PlayerPrefs.GetInt("money");
+        if (c > 500)
+            c -= 500;
+        else
+            return;
+
+        DispCoin(c);
+        polisheffect.Play();
+        PlayerPrefs.SetInt("money", c);
+
+        int carlevel = PlayerPrefs.GetInt("carlev" + dcar);
+        int carexp = PlayerPrefs.GetInt("carexp" + dcar);
+
+        carexp += 50;
+
+
+
+        int thisLevelExp = (int)Mathf.Pow(carlevel, 1.2f) * 100;
+
+        while (carexp >= thisLevelExp)
+        {
+            carexp -= thisLevelExp;
+            carlevel++;
+            thisLevelExp = (int)Mathf.Pow(carlevel, 1.2f) * 100;
+            //expslider.maxValue = thisLevelExp;
+        }
+
+
+        PlayerPrefs.SetInt("carlev" + dcar, carlevel);
+        PlayerPrefs.SetInt("carexp" + dcar, carexp);
+
+        DispCarLevel(dcar);
+        StartCoroutine(SliderAnime(carexp));
+    }
+
+    private IEnumerator SliderAnime(int dest)
+    {
+
+        while (expslider.value != dest)
+        {
+            yield return new WaitForSeconds(0.01f);
+            if (expslider.value == expslider.maxValue)
+            {
+                expslider.value = 0;
+            }
+            expslider.value++;
+        }
     }
 
 }
