@@ -24,7 +24,7 @@ public class PutCar : MonoBehaviour
     public GameObject sora, doko, over,mizor,mizol;
     public Carmain cm;
     public MakeRoad mk;
-    public Text all;
+    public Text all,speed;
     public TextMeshProUGUI tmp;
     public bool free, dbp, auto;
     }
@@ -41,6 +41,7 @@ public class PutCar : MonoBehaviour
         Transform hitbox = racecar.transform.Find("hitbox");
         Moji_disp mj = hitbox.GetComponent<Moji_disp>();
 
+        racecar.GetComponent<Carmain>().speedText = mojiDisp.speed;
        
 
         mj.sora = mojiDisp.sora;
