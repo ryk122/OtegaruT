@@ -156,9 +156,9 @@ PlayerSettings:
     Android: com.ryuukunkoubou.touge
     iOS: com.ryuukunkoubou.touge
   buildNumber: {}
-  AndroidBundleVersionCode: 33
+  AndroidBundleVersionCode: 34
   AndroidMinSdkVersion: 22
-  AndroidTargetSdkVersion: 0
+  AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
