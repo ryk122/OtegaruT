@@ -45,7 +45,11 @@ namespace Photon.Pun.Demo.PunBasics
 				}
 			}
 
-			PhotonNetwork.NickName =	defaultName;
+            //add to show car level
+            int dcar = PlayerPrefs.GetInt("dcar");
+            int lev = PlayerPrefs.GetInt("carlev" + dcar);
+
+            PhotonNetwork.NickName =	defaultName + "  Lv" + lev.ToString();
 		}
 
 		#endregion
@@ -58,13 +62,19 @@ namespace Photon.Pun.Demo.PunBasics
 		/// <param name="value">The name of the Player</param>
 		public void SetPlayerName(string value)
 		{
+            //add to show car level
+            int dcar = PlayerPrefs.GetInt("dcar");
+            int lev = PlayerPrefs.GetInt("carlev" + dcar);
+            string name = value + "  Lv" + lev.ToString();
+            //
+
 			// #Important
-		    if (string.IsNullOrEmpty(value))
+		    if (string.IsNullOrEmpty(name))
 		    {
                 Debug.LogError("Player Name is null or empty");
 		        return;
 		    }
-			PhotonNetwork.NickName = value;
+			PhotonNetwork.NickName = name;
 
 			PlayerPrefs.SetString(playerNamePrefKey, value);
 		}
