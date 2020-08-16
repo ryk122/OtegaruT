@@ -20,6 +20,7 @@ public class Carmain : MonoBehaviour {
     private ParticleSystem k1, k2, k3, k4;
     public int ct=0,gt=0;
     public bool turbo,android, auto;
+    public Text speedText;
     AudioSource auds,eds,tsound;
     bool gyaa,imgfadeout;
     Image gyaimg;
@@ -28,6 +29,8 @@ public class Carmain : MonoBehaviour {
     bool k;
     int sliptime;
     float vol;
+
+    float speedRate=4.2f;
 
     // Use this for initialization
     void Start () {
@@ -71,7 +74,7 @@ public class Carmain : MonoBehaviour {
         int dcar = PlayerPrefs.GetInt("dcar");
         int carlev = PlayerPrefs.GetInt("carlev" + dcar);
         Debug.Log(carlev);
-        maxs += 0.02f * carlev;
+        maxs += 0.05f * carlev;
     }
 
     private void Update()
@@ -114,6 +117,8 @@ public class Carmain : MonoBehaviour {
         {
             tsound.Play();
         }
+
+        speedText.text = ((int)(speed * speedRate)).ToString()+"km/h";
 
         //roman
         /*

@@ -33,6 +33,9 @@ public class Moji_disp : MonoBehaviour {
         if (PlayerPrefs.GetInt("etext") == 1) disp = true; else disp = false;
 
         rb = cm.gameObject.GetComponent<Rigidbody>();
+
+        float vol = PlayerPrefs.GetFloat("sev");
+        ads.volume = vol;
     }
 	
     void TimeCount()
