@@ -350,4 +350,9 @@ public class Title : MonoBehaviour {
         
         SceneManager.LoadScene("title");
     }
+
+    public void ButtonOfNewsContent()
+    {
+        Application.OpenURL("http://ryuukunblog.blog.fc2.com/blog-entry-87.html");
+    }
 }
