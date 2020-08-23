@@ -9837,7 +9837,8 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 0
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -9854,7 +9855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 2143651445712736569}
-  p: 100
+  p: -100
 --- !u!1 &2143651444872582851
 GameObject:
   m_ObjectHideFlags: 0
@@ -20052,7 +20053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 2143651445712736569}
-  p: 100
+  p: -100
 --- !u!114 &2143651445666471220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20578,7 +20579,7 @@ MonoBehaviour:
   pslip: 0
   pstr: 0
   skinmesh: 0
-  bodytune: 0
+  bodytune: 1
   turbo: 0
   garage: 0
   nomal: {fileID: 971982390379080878}

@@ -5720,7 +5720,7 @@ MonoBehaviour:
   pslip: 0
   pstr: 0
   skinmesh: 0
-  bodytune: 0
+  bodytune: 1
   turbo: 0
   garage: 0
   nomal: {fileID: 2960099225184162413}
