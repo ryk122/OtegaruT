@@ -241,6 +241,18 @@ public class Garage : MonoBehaviour {
         opt.SetActive(true);
     }
 
+    public void LevelRankingButton()
+    {
+        int highlevel = 1;
+        for(int i = 0; i < car.Length; i++)
+        {
+            int carlevel = PlayerPrefs.GetInt("carlev" + i);
+            if (carlevel > highlevel)
+                highlevel = carlevel;
+        }
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(highlevel, 1);
+    }
+
     /*
     public void OptSet()
     {

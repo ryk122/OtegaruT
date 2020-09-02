@@ -38,7 +38,7 @@ public class SampleSceneManager : MonoBehaviour
 
 	public void OnResultButtonPresset ()
 	{
-	    naichilab.RankingLoader.Instance.SendScoreAndShowRanking(this.score);
+	    naichilab.RankingLoader.Instance.SendScoreAndShowRanking(this.score,0);
 	}
 
     public void LocalSaveReset()

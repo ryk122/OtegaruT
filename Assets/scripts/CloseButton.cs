@@ -40,4 +40,9 @@ public class CloseButton : MonoBehaviour {
         }
         SceneManager.LoadScene("title");
     }
+
+    public void CloseLevelRanking()
+    {
+        SceneManager.LoadScene("garage");
+    }
 }

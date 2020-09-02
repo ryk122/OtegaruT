@@ -18,6 +18,7 @@ namespace naichilab
 		[SerializeField] GameObject rankingNodePrefab;
 		[SerializeField] GameObject readingNodePrefab;
 		[SerializeField] GameObject notFoundNodePrefab;
+        [SerializeField] string unit;
 
 		private const string OBJECT_ID = "objectId";
 		private string _objectid = null;
@@ -33,7 +34,8 @@ namespace naichilab
 			}
 		}
 
-		private const string RankingDataClassName = "RankingData";
+        [SerializeField]
+		private string RankingDataClassName = "RankingData";
 		private NCMBObject highScoreSpreadSheetObject;
 
 		/// <summary>
@@ -179,7 +181,7 @@ namespace naichilab
 					rankNode.NameText.text = r ["name"].ToString ();
 
 					var s = RankingLoader.Instance.BuildScore (r ["hiscore"].ToString ());
-					rankNode.ScoreText.text = s != null ? s.TextForDisplay : "エラー";
+					rankNode.ScoreText.text = s != null ? unit + s.TextForDisplay : "エラー";
 
 					Debug.Log (r ["hiscore"].ToString ());
 				}

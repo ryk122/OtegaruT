@@ -81,7 +81,7 @@ public class Moji_disp : MonoBehaviour {
             c += alltime;
             PlayerPrefs.SetInt("money", c);
             if(!dbp)
-                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(alltime);
+                naichilab.RankingLoader.Instance.SendScoreAndShowRanking(alltime,0);
 
             GetExp(alltime, PlayerPrefs.GetInt("dcar"));
         }

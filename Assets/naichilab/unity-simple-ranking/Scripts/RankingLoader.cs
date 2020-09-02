@@ -41,25 +41,29 @@ namespace naichilab
 			}
 
 			this.Score = new TimeScore (time, this.setting.CustomFormat);
-			this.LoadRankingScene ();
+			this.LoadRankingScene (0);
 		}
 
-		public void SendScoreAndShowRanking (double score)
+		public void SendScoreAndShowRanking (double score,int rankingname)
 		{
 			if (this.setting.Type != ScoreType.Number) {
 				throw new ArgumentException ("スコアの型が違います。");
 			}
 
 			this.Score = new NumberScore (score, this.setting.CustomFormat);
-			this.LoadRankingScene ();
+			this.LoadRankingScene (rankingname);
 		}
 
-		private void LoadRankingScene ()
-		{			
-			SceneManager.LoadScene ("Ranking", LoadSceneMode.Additive);
-		}
+		private void LoadRankingScene (int rankingname)
+		{
+            if (rankingname == 0)
+                SceneManager.LoadScene("Ranking", LoadSceneMode.Additive);
+            else
+                SceneManager.LoadScene("Ranking2", LoadSceneMode.Additive);
 
-		public IScore BuildScore (string scoreText)
+        }
+
+        public IScore BuildScore (string scoreText)
 		{
 			try {
 				switch (this.setting.Type) {
