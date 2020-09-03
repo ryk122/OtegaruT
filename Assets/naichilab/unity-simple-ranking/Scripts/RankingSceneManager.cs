@@ -20,7 +20,8 @@ namespace naichilab
 		[SerializeField] GameObject notFoundNodePrefab;
         [SerializeField] string unit;
 
-		private const string OBJECT_ID = "objectId";
+        [SerializeField]
+		private string OBJECT_ID = "objectId";
 		private string _objectid = null;
 
 		private string ObjectID {

@@ -786,6 +786,7 @@ MonoBehaviour:
   notFoundNodePrefab: {fileID: 1912475606491428, guid: 6520466e4818e49ffbd84ef9c9af17ba,
     type: 3}
   unit: Lv.
+  OBJECT_ID: objectId2
   RankingDataClassName: CarLevel
 --- !u!4 &699432289
 Transform:
