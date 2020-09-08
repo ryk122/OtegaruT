@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#manualy added
+[Aa]ssets/GoogleMobileAds/*
+[Aa]ssets/Lens Flares/*
+[Aa]ssets/Photon/*
+[Aa]ssets/PlayServicesResolver/*
+[Aa]ssets/SkySerie Freebie/*
+[Aa]ssets/Standard Assets/*
