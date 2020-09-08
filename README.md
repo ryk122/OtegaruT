@@ -2,7 +2,7 @@
 
 ## はじめに　Notice
 このリポジトリに含まれるものの使用はすべて自己責任でお願いします。ライセンスもご確認ください。<br>
-Use this at one's own risk adn follow the licence.
+Use this at one's own risk and follow the licence.
 
 ## これは何？　What is this?
 「御手軽T」は、スマホ向けカーアクションゲームです。以下に示すバージョンは「りゅうくんの工房」が作成したものです。<br>
