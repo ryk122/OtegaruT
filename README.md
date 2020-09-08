@@ -25,8 +25,8 @@ __プルリク歓迎です。__<br>
 些細な修正や機能追加でも構いません。ゲームの進化にご協力を!<br>
 
 <br>
-You can do anything but you should follow the licence.<br>
-__Send me pull request!__<br>
+You can do anything but you should follow the licence.<br> 
+Send me pull request!<br>
 Let's upgrade game togather!
 
 ## 質問など If you have Questions
