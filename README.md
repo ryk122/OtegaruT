@@ -15,6 +15,10 @@ Game is on [Google Play](https://play.google.com/store/apps/details?id=com.ryuuk
 上記のゲームに関する内容はGooglePlayページなどで確認ください。<br>
 If you want to know about this game, check GooglePlay.
 
+## Unity バージョンについて
+使用しているUnityのバージョンは2018.3です。
+Unity version is 2018.3
+
 ## ライセンスについて　about LICENCE
 GPL-3.0 License です。__内容を把握していない方は必ず確認してください。__<br>
 Licence is GPL-3.0 License. __If you don't know this licence, you should read and understand.__
