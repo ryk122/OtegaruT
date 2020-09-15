@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
 
 public class CloseButton : MonoBehaviour {
+
+    [SerializeField] GameObject stopmenu;
     private InterstitialAd interstitial;
+
+
     private void Start()
     {
         //ad load==========================================
@@ -39,6 +43,18 @@ public class CloseButton : MonoBehaviour {
             interstitial.Show();
         }
         SceneManager.LoadScene("title");
+    }
+
+    public void TempStop()
+    {
+        stopmenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void CancelStop()
+    {
+        Time.timeScale = 1.0f;
+        stopmenu.SetActive(false);
     }
 
     public void CloseLevelRanking()
