@@ -33,8 +33,10 @@ __Send me pull request!__<br>
 Let's upgrade game togather!
 
 ## 質問など If you have Questions
-メールかTwitterで<br>
-Send me email or Twitter
+メールまたはDiscordで<br>
+Send me email or Discord
 
 mail: fujisann0209(gmail.com)<br>
-twitter:@ryuukunkoubou
+
+Discord(御手軽T公式サーバ):
+https://discord.com/invite/b2BXj4Z
