@@ -6,7 +6,7 @@ public class MakeRoad : MonoBehaviour {
     public GameObject[] Road;
     public GameObject Checkpoint;
     public GameObject Target;
-    public Moji_disp mj;
+    public HitChecker hitCheck;
     public bool VS;
     int length,j,u;
     GameObject[] index = new GameObject[30];
@@ -24,7 +24,7 @@ public class MakeRoad : MonoBehaviour {
     {
         int i, x;
         GameObject Put,Endobj;
-        mj.pinturn = 0;
+        hitCheck.pinturn = 0;
         for (i = 0; i < 10; i++)
         {
             x = Random.Range(0, length * 2);
@@ -32,7 +32,7 @@ public class MakeRoad : MonoBehaviour {
             Put = Instantiate(Road[x / 2], transform.position, transform.rotation);
             index[i + j] = Put;
             if (x / 2 == 2)
-                mj.pinturn++;
+                hitCheck.pinturn++;
             if (x % 2 == 1)
             {
                 Vector3 size = Put.transform.localScale;

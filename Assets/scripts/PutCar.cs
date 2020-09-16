@@ -39,7 +39,7 @@ public class PutCar : MonoBehaviour
         racecar.name = "car";
         sctrl.car[dcar] = racecar;
         Transform hitbox = racecar.transform.Find("hitbox");
-        Moji_disp mj = hitbox.GetComponent<Moji_disp>();
+        HitChecker mj = hitbox.GetComponent<HitChecker>();
 
         racecar.GetComponent<Carmain>().speedText = mojiDisp.speed;
        

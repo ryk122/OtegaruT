@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Moji_disp : MonoBehaviour {
+public class HitChecker : MonoBehaviour {
     public GameObject sora, doko,over,mizor,mizol;
     public Carmain cm;
     public MakeRoad mk;
