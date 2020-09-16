@@ -61,7 +61,7 @@ public class PutCar : MonoBehaviour
         mj.cm.gyaobj = gya;
         mj.cm.efcmr = ecm;
 
-        mj.mk.mj = mj;
+        mj.mk.hitCheck = mj;
     }
 
 }
