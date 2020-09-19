@@ -32,6 +32,12 @@ You can do anything but you should follow the licence.<br>
 __Send me pull request!__<br>
 Let's upgrade game togather!
 
+## 非同封のアセットについて
+以下のアセットをインポートすれば最低限動作すると思います。<br>
+(推奨インポート順番)<br>
+・[Google Mobile Ads Unity Plugin v5.3.0](https://github.com/googleads/googleads-mobile-unity/releases/tag/v5.3.0)<br>
+・[PUN 2 - FREE](https://assetstore.unity.com/packages/tools/network/pun-2-free-119922)
+
 ## 質問など If you have Questions
 メールまたはDiscordで<br>
 Send me email or Discord
