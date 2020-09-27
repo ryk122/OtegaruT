@@ -9666,7 +9666,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 90, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1825382606
 MonoBehaviour:
@@ -9772,6 +9772,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopmenu: {fileID: 1354176182}
   cam: {fileID: 918930762}
+  logo: {fileID: 266380034207437155, guid: ae6a2460a1aa10146b03ebc00dba3d11, type: 3}
+  photodisableObjects:
+  - {fileID: 1966584966}
+  - {fileID: 903882827}
+  - {fileID: 1830613495}
+  - {fileID: 130849404}
+  - {fileID: 1517676076}
+  - {fileID: 13332718}
 --- !u!1 &1830613495
 GameObject:
   m_ObjectHideFlags: 0
@@ -9826,6 +9834,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopmenu: {fileID: 0}
   cam: {fileID: 0}
+  logo: {fileID: 0}
+  photodisableObjects: []
 --- !u!114 &1830613498
 MonoBehaviour:
   m_ObjectHideFlags: 0

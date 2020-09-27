@@ -83,7 +83,7 @@ namespace Photon.Pun.Demo.PunBasics
             int dcar = PlayerPrefs.GetInt("dcar");
             int carlev = PlayerPrefs.GetInt("carlev" + dcar);
             Debug.Log(carlev);
-            maxs += 0.05f * carlev;
+            maxs += 0.1f * carlev;
 
 
 

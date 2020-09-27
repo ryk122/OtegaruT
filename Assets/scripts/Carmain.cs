@@ -74,7 +74,7 @@ public class Carmain : MonoBehaviour {
         int dcar = PlayerPrefs.GetInt("dcar");
         int carlev = PlayerPrefs.GetInt("carlev" + dcar);
         Debug.Log(carlev);
-        maxs += 0.05f * carlev;
+        maxs += 0.1f * carlev;
     }
 
     private void Update()

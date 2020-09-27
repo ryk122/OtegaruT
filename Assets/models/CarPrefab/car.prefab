@@ -20412,6 +20412,7 @@ MonoBehaviour:
   turbo: 0
   android: 0
   auto: 0
+  speedText: {fileID: 0}
 --- !u!82 &5905016196657078139
 AudioSource:
   m_ObjectHideFlags: 0

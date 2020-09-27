@@ -5312,6 +5312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopmenu: {fileID: 0}
   cam: {fileID: 0}
+  logo: {fileID: 0}
+  photodisableObjects: []
 --- !u!114 &179179747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6054,6 +6056,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopmenu: {fileID: 0}
   cam: {fileID: 0}
+  logo: {fileID: 0}
+  photodisableObjects: []
 --- !u!114 &428705312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12790,6 +12794,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopmenu: {fileID: 1339961799}
   cam: {fileID: 918930762}
+  logo: {fileID: 266380034207437155, guid: ae6a2460a1aa10146b03ebc00dba3d11, type: 3}
+  photodisableObjects:
+  - {fileID: 42686839}
+  - {fileID: 327400964}
+  - {fileID: 428705309}
+  - {fileID: 130849404}
+  - {fileID: 111551987}
 --- !u!114 &1678158898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12897,7 +12908,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 90, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1693206843
 GameObject:
