@@ -353,6 +353,6 @@ public class Title : MonoBehaviour {
 
     public void ButtonOfNewsContent()
     {
-        Application.OpenURL("http://ryuukunblog.blog.fc2.com/blog-entry-87.html");
+        Application.OpenURL("https://github.com/ryk122/OtegaruT");
     }
 }
