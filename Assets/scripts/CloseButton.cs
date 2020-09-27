@@ -6,9 +6,10 @@ using GoogleMobileAds.Api;
 
 public class CloseButton : MonoBehaviour {
 
-    [SerializeField] GameObject stopmenu;
+    [SerializeField] GameObject stopmenu,cam;
     private InterstitialAd interstitial;
 
+    private bool photomode = false;
 
     private void Start()
     {
@@ -47,8 +48,32 @@ public class CloseButton : MonoBehaviour {
 
     public void TempStop()
     {
+        if (!photomode)
+        {
+            stopmenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            CancelPhotoMode();
+        }
+    }
+
+    public void TakePhotoMode()
+    {
+        photomode = true;
+        stopmenu.SetActive(false);
+        cam.GetComponent<UnityStandardAssets.Utility.SmoothFollow>().enabled = false;
+        cam.GetComponent<FollowingCamera>().enabled = true;
+        cam.GetComponent<FollowingCamera>().target = cam.GetComponent<UnityStandardAssets.Utility.SmoothFollow>().target.gameObject;
+    }
+
+    public void CancelPhotoMode()
+    {
+        photomode = false;
         stopmenu.SetActive(true);
-        Time.timeScale = 0;
+        cam.GetComponent<UnityStandardAssets.Utility.SmoothFollow>().enabled = true;
+        cam.GetComponent<FollowingCamera>().enabled = false;
     }
 
     public void CancelStop()
