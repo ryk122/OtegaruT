@@ -17,7 +17,8 @@ public class Garage : MonoBehaviour {
     public Toggle toggle_b,toggle_e,toggle_a,toggle_m;
     bool having,bgm,effect,accont,mir;
     int unitytime, sm, ss ,mm,ms;
-    int sw, sh;
+    int sw, sh, tuneTabState;
+
     [SerializeField]
     GarageTune gt;
     [SerializeField]
@@ -31,9 +32,14 @@ public class Garage : MonoBehaviour {
     [SerializeField]
     ParticleSystem polisheffect;
 
+    [SerializeField]
+    GameObject[] TuneContents;
+
     Transform carobj;
 
     private RewardedAd rewardedAd;
+
+    const int TUNE_TAB = 2;
 
 
     // Use this for initialization
@@ -308,6 +314,8 @@ public class Garage : MonoBehaviour {
         rb.SetActive(false);
         lb.SetActive(false);
         gt.TurnOnTunePanel();
+
+        tuneTabState = 0;
     }
 
     public void CloseTune()
@@ -317,6 +325,22 @@ public class Garage : MonoBehaviour {
         rb.SetActive(true);
         lb.SetActive(true);
         gt.TurnOnTunePanel();
+    }
+
+    public void ChangeTuneTab(int x)
+    {
+        if (x == 1)
+        {
+            tuneTabState++;
+            if (tuneTabState >= TUNE_TAB)
+                tuneTabState -= TUNE_TAB;
+        }
+        else if(x==-1)
+        {
+            tuneTabState--;
+            if (tuneTabState < 0)
+                tuneTabState += TUNE_TAB;
+        }
     }
 
     public void CloseOption()
