@@ -15073,6 +15073,7 @@ MonoBehaviour:
   turbo: 0
   android: 0
   auto: 0
+  speedText: {fileID: 0}
 --- !u!82 &6446396813364390014
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15281,7 +15282,7 @@ MonoBehaviour:
   pmaxs: 0
   pslip: 0
   pstr: 0.02
-  skinmesh: 1
+  skinmesh: 0
   bodytune: 1
   turbo: 0
   garage: 0
@@ -20794,28 +20795,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: nsx
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: 0.03766656
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: -0.015543014
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 1.930717
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 4.225445
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.984457
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_DirtyAABB
+    - target: {fileID: 100004, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
@@ -20874,14 +20855,34 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.35
       objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 70a17566f2126ed4281740d92f6871dc, type: 2}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.03766656
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.015543014
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.930717
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 4.225445
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.984457
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79864fbe6505894ab63026f2b7d6685, type: 3}
 --- !u!1 &2715143756041183188 stripped
