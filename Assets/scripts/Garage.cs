@@ -39,7 +39,7 @@ public class Garage : MonoBehaviour {
 
     private RewardedAd rewardedAd;
 
-    const int TUNE_TAB = 2;
+    const int TUNE_TAB = 3;
 
 
     // Use this for initialization
@@ -310,17 +310,20 @@ public class Garage : MonoBehaviour {
     public void OpenTune()
     {
         tunepl.SetActive(true);
+
         opbt.SetActive(false);
         rb.SetActive(false);
         lb.SetActive(false);
         gt.TurnOnTunePanel();
 
         tuneTabState = 0;
+        TuneContents[tuneTabState].SetActive(true);
     }
 
     public void CloseTune()
     {
         tunepl.SetActive(false);
+
         opbt.SetActive(true);
         rb.SetActive(true);
         lb.SetActive(true);
@@ -329,6 +332,7 @@ public class Garage : MonoBehaviour {
 
     public void ChangeTuneTab(int x)
     {
+        TuneContents[tuneTabState].SetActive(false);
         if (x == 1)
         {
             tuneTabState++;
@@ -341,6 +345,7 @@ public class Garage : MonoBehaviour {
             if (tuneTabState < 0)
                 tuneTabState += TUNE_TAB;
         }
+        TuneContents[tuneTabState].SetActive(true);
     }
 
     public void CloseOption()
