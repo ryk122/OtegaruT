@@ -42,6 +42,10 @@ public class Garage : MonoBehaviour {
     const int TUNE_TAB = 3;
 
 
+    //ひどい変数
+    public static bool showOption=false;
+
+
     // Use this for initialization
     void Start () {
         max = car.Length -1;
@@ -75,6 +79,13 @@ public class Garage : MonoBehaviour {
         DispCarLevel(dcar);
 
         gcsetter.GCStart(dcar, gt.ts);//g-color setterにtsとdcar伝達
+
+        //オプションを表示
+        if (showOption)
+        {
+            Option();
+            showOption = false;
+        }
 
         string adUnitId;
 #if UNITY_ANDROID

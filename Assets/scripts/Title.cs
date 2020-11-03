@@ -210,6 +210,13 @@ public class Title : MonoBehaviour {
         Application.OpenURL("https://youtu.be/uJ6LTdyRyyQ");
     }
 
+    public void Option()
+    {
+        //一時的にGarageのものを使用
+        Garage.showOption = true;
+        GoGarage();
+    }
+
     public void newswiki()
     {
         Application.OpenURL("https://otegarut.wiki.fc2.com/wiki/update%20news");
