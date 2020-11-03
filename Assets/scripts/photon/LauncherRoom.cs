@@ -15,7 +15,7 @@ public class LauncherRoom : MonoBehaviour
 #if UNITY_ANDROID
             string appId = "ca-app-pub-3940256099942544~3347511713";
 #elif UNITY_IPHONE
-            string appId = "ca-app-pub-3940256099942544~1458002511";
+            string appId = "ca-app-pub-7102752236968696~8033569977";
 #else
         string appId = "unexpected_platform";
 #endif
@@ -41,7 +41,7 @@ public class LauncherRoom : MonoBehaviour
 #if UNITY_ANDROID
             string adUnitId = "ca-app-pub-7102752236968696/5538342226";
 #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-3940256099942544/2934735716";
+            string adUnitId = "ca-app-pub-7102752236968696/9147341097";
 #else
         string adUnitId = "unexpected_platform";
 #endif

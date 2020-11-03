@@ -28,7 +28,7 @@ public class CloseButton : MonoBehaviour {
 #if UNITY_ANDROID
         string adUnitId = "ca-app-pub-7102752236968696/4649270801";
 #elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+        string adUnitId = "ca-app-pub-7102752236968696/1553907636";
 #else
         string adUnitId = "unexpected_platform";
 #endif
