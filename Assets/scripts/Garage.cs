@@ -310,7 +310,6 @@ public class Garage : MonoBehaviour {
     public void OpenTune()
     {
         tunepl.SetActive(true);
-
         opbt.SetActive(false);
         rb.SetActive(false);
         lb.SetActive(false);
@@ -323,11 +322,15 @@ public class Garage : MonoBehaviour {
     public void CloseTune()
     {
         tunepl.SetActive(false);
-
         opbt.SetActive(true);
         rb.SetActive(true);
         lb.SetActive(true);
         gt.TurnOnTunePanel();
+
+        foreach(GameObject g in TuneContents)
+        {
+            g.SetActive(false);
+        }
     }
 
     public void ChangeTuneTab(int x)
