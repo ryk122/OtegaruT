@@ -6648,7 +6648,7 @@ MonoBehaviour:
   - {fileID: 7943562510078819214, guid: 2d8d6ef0f0bc1b8468b75d49aeca8794, type: 3}
   Checkpoint: {fileID: 1880967342305586, guid: d2457c1c43d653a48a41a9fefe5f671c, type: 3}
   Target: {fileID: 2043030393647565335, guid: ae758b875deb02a43be9f97718b0b25e, type: 3}
-  mj: {fileID: 0}
+  hitCheck: {fileID: 0}
   VS: 0
   strtctrl: {fileID: 1307187087}
   lcanvas: {fileID: 1003258331}
@@ -8029,7 +8029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -164.99988, y: 180}
+  m_AnchoredPosition: {x: -164.99988, y: 153}
   m_SizeDelta: {x: 150, y: 140}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &374856393
@@ -8044,6 +8044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fdc51680665c5439a2b672a8ec4160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopmenu: {fileID: 0}
+  cam: {fileID: 0}
+  logo: {fileID: 0}
+  photodisableObjects: []
 --- !u!114 &374856394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24860,6 +24864,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fdc51680665c5439a2b672a8ec4160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopmenu: {fileID: 0}
+  cam: {fileID: 0}
+  logo: {fileID: 0}
+  photodisableObjects: []
 --- !u!114 &639302412
 MonoBehaviour:
   m_ObjectHideFlags: 0

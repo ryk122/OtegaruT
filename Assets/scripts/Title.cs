@@ -39,7 +39,13 @@ public class Title : MonoBehaviour {
         if (!PlayerPrefs.HasKey("bgm"))
             PlayerPrefs.SetInt("bgm", 1);
         if (!PlayerPrefs.HasKey("etext"))
+#if UNITY_ANDROID
             PlayerPrefs.SetInt("etext", 1);
+#elif UNITY_IPHONE
+            PlayerPrefs.SetInt("etext", 0);
+#else
+            PlayerPrefs.SetInt("etext", 1);
+#endif
         if (!PlayerPrefs.HasKey("accont"))
             PlayerPrefs.SetInt("accont", 0);
         if (!PlayerPrefs.HasKey("trlevel"))
