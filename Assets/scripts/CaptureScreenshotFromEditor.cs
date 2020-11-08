@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace djkusuha.Utility
-{
+{/*
     /// <summary>
     /// Unityエディタ上からGameビューのスクリーンショットを撮るEditor拡張
     /// </summary>
@@ -15,6 +15,7 @@ namespace djkusuha.Utility
         /// Edit > CaptureScreenshot に追加。
         /// HotKeyは Ctrl + Shift + F12。
         /// </remarks>
+        /// 
         [MenuItem("Edit/CaptureScreenshot #%F12")]
         private static void CaptureScreenshot()
         {
@@ -35,5 +36,5 @@ namespace djkusuha.Utility
 
             Debug.Log("ScreenShot: " + filename);
         }
-    }
+    }*/
 }

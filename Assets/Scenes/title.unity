@@ -4963,7 +4963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 1103
+  buildnum: 1108
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5827,9 +5827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News! v4.20.1\n\nUI\u3092\u6539\u4FEE\u3057\u307E\u3057\u305F\nUI
-    is fixed.\n\n\u305D\u306E\u4ED6\u7D30\u304B\u3044\u4FEE\u6B63\u30FB\u8ABF\u6574\u3092\u884C\u3044\u307E\u3057\u305F\nbug
-    fixed and minor change\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
+  m_Text: "#Update News! v4.20.1\n\n\n\u5FA1\u624B\u8EFDT\u306E\u30A4\u30F3\u30B9\u30C8\u30FC\u30EB\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
   m_ObjectHideFlags: 0
