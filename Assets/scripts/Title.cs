@@ -22,16 +22,6 @@ public class Title : MonoBehaviour {
 
     private void Start()
     {
-        //rot
-        //
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-        Screen.autorotateToPortrait = false; // 縦
-        Screen.autorotateToLandscapeLeft = true; // 左
-        Screen.autorotateToLandscapeRight = true; // 右
-        Screen.autorotateToPortraitUpsideDown = false; // 上下逆
-        Screen.orientation = ScreenOrientation.AutoRotation;
-
-
         //ad load==========================================
         RequestInterstitial();
         //=================================================
