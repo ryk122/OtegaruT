@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Sora
-  - Doko
-  - Car
-  - Check
-  - Section
-  - mizo
-  - wall
-  - Slider
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -23,9 +15,9 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - other
-  - soccer
-  - soccer_wall
+  - 
+  - 
+  - 
   - 
   - 
   - 

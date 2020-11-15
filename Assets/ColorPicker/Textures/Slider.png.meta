@@ -1,18 +1,12 @@
 fileFormatVersion: 2
 guid: a013bbc51c4ac534da36b1f065fba857
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: Slider_0
-  - first:
-      213: 21300002
-    second: Slider_1
-  - first:
-      213: 21300004
-    second: Slider_2
+  fileIDToRecycleName:
+    21300000: Slider_0
+    21300002: Slider_1
+    21300004: Slider_2
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,9 +60,8 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -79,7 +72,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -99,7 +91,6 @@ TextureImporter:
       tessellationDetail: -1
       bones: []
       spriteID: b174c4dac0423024e8c06755aa495d29
-      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -120,7 +111,6 @@ TextureImporter:
       tessellationDetail: -1
       bones: []
       spriteID: bd0cd17aaf1f8f145be8c03385e604ca
-      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -141,7 +131,6 @@ TextureImporter:
       tessellationDetail: -1
       bones: []
       spriteID: 8b39f821899d42c458659634b7813279
-      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -150,12 +139,10 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 
-    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
