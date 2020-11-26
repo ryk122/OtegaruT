@@ -31,7 +31,6 @@
             <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
         </activity>
             
-      
 		<!---ダイアログ -->
 		<activity
   			android:name="com.nifcloud.mbaas.ncmbfcmplugin.NCMBDialogActivity"
