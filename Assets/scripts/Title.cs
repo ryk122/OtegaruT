@@ -94,7 +94,6 @@ public class Title : MonoBehaviour {
         //Check Day
         StartCoroutine(GetText());
 
-
     }
 
     public void MainGame()
@@ -260,7 +259,8 @@ public class Title : MonoBehaviour {
 
     IEnumerator GetText()
     {
-        UnityWebRequest request = UnityWebRequest.Get("https://ntp-a1.nict.go.jp/cgi-bin/ntp");
+        //UnityWebRequest request = UnityWebRequest.Get("https://ntp-a1.nict.go.jp/cgi-bin/ntp");
+        UnityWebRequest request = UnityWebRequest.Get("https://us-central1-otegaru-api.cloudfunctions.net/get_time");
         // 下記でも可
         // UnityWebRequest request = new UnityWebRequest("http://example.com");
         // methodプロパティにメソッドを渡すことで任意のメソッドを利用できるようになった
@@ -291,12 +291,16 @@ public class Title : MonoBehaviour {
     private void Totime(string text)
     {
         float t;
+        /*
         int start = text.IndexOf("<BODY>") + 6;
         int end = text.IndexOf("</BODY>") - 1;
+        */
+        int start = 8;
+        int end = text.Length;
 
-        if (float.TryParse(text.Substring(start, end - start + 1), out t))
+        if (float.TryParse(text.Substring(start, end - start -1), out t))
         {
-            DateTime now = new DateTime(1900, 1, 1).AddMilliseconds(t*1000).ToLocalTime();
+            DateTime now = new DateTime(1970, 1, 1).AddMilliseconds(t).ToLocalTime();
             Debug.Log(now);
             TimeEvent(now);
         }
@@ -306,7 +310,7 @@ public class Title : MonoBehaviour {
     private void TimeEvent(DateTime today)
     {
         /*C mas Event*/
-        if(today.Month == 12 && today.Day >= 20 && today.Day < 28)
+        if(today.Month == 12 && today.Day >= 10 && today.Day < 28)
         {
             StartCoroutine(CmasSound());
             Instantiate(cmas);
@@ -333,7 +337,7 @@ public class Title : MonoBehaviour {
     {
 
 
-        string url = "http://ryuukun.at-ninja.jp/wewish.mp3";
+        string url = "https://ryuukun.at-ninja.jp/wewish.mp3";
 
         WWW www = new WWW(url);
         yield return www;
