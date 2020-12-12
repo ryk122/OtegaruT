@@ -310,7 +310,7 @@ public class Title : MonoBehaviour {
     private void TimeEvent(DateTime today)
     {
         /*C mas Event*/
-        if(today.Month == 12 && today.Day >= 10 && today.Day < 28)
+        if(today.Month == 12 && today.Day >= 20 && today.Day < 28)
         {
             StartCoroutine(CmasSound());
             Instantiate(cmas);
