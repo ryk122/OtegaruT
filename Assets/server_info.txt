@@ -1,0 +1,13 @@
+[GET]現在時刻の取得
+https://us-central1-otegaru-api.cloudfunctions.net/get_time
+javascriptのdate.nowを返してるだけだから形式等指定あったらご連絡お願いします
+[POST]アクティブログの保存
+bodyこんなかんじで投げると保存してidを返してくれます
+{
+    "coin": 230,
+    "os": "ios"
+}
+https://us-central1-otegaru-api.cloudfunctions.net/active_logs
+[GET]アクティブログの全取得
+ここを叩くとログ全部確認できるよ
+https://us-central1-otegaru-api.cloudfunctions.net/get_active_logs

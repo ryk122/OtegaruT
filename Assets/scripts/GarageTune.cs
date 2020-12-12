@@ -15,6 +15,8 @@ public class GarageTune : MonoBehaviour
     Garage g;
     [SerializeField]
     Dropdown drop;
+    [SerializeField]
+    Slider shakouSlider;
 
     public TuneSetter ts;//Garageから伝達
     [SerializeField]
@@ -23,6 +25,13 @@ public class GarageTune : MonoBehaviour
     public void TurnOnTunePanel()
     {
         GetData();
+    }
+
+    public void LoadShakou(int dcar)
+    {
+        ts.GetBasePos(dcar);
+        shakouSlider.value = PlayerPrefs.GetFloat("shakou" + dcar);
+        ChangeShakou();
     }
 
     void GetData()
@@ -102,5 +111,25 @@ public class GarageTune : MonoBehaviour
             PlayerPrefs.SetString("car" + dcar, data[0] + drop.value.ToString() +data.Substring(2, data.Length - 2));
             gg.CloseTune();
         }
+    }
+
+    public void ChangeShakou()
+    {
+        ts.SetShakou(shakouSlider.value);
+    }
+
+    public void SetShakou()
+    {/*
+        int c = PlayerPrefs.GetInt("money");
+        if (c > 300)
+        {
+            c -= 300;
+            PlayerPrefs.SetInt("money", c);
+            g.DispCoin(c);
+            */
+            PlayerPrefs.SetFloat("shakou" + dcar, shakouSlider.value);
+            gg.CloseTune();
+
+        //}
     }
 }

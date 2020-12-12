@@ -20,15 +20,21 @@ public class TuneSetter : MonoBehaviour
 
     public ChangeColor[] changecolor;
 
+    Vector3 nombasePos,tunbasePos;
+    bool tunedMode;
+
     // Start is called before the first frame update
     void Start()
     {
         if (wheel.Length == 0)
             Debug.LogError("No Wheel Material");
+
         if (garage)
             return;
+
         int tune;
         int dcar = PlayerPrefs.GetInt("dcar");
+        GetBasePos(dcar);
         if (PlayerPrefs.HasKey("car" + dcar)){
             string data = PlayerPrefs.GetString("car" + dcar);
             tune = data[0] - '0';
@@ -36,7 +42,8 @@ public class TuneSetter : MonoBehaviour
             if (m < material.Length)
                 SetWheel(material[m]);
 
-
+            float shakou = PlayerPrefs.GetFloat("shakou" + dcar);
+            SetShakou(shakou);
         }
         else
         {
@@ -60,15 +67,20 @@ public class TuneSetter : MonoBehaviour
     public void SetTune(int tune)
     {
         Debug.Log("tune :" + tune);
+
         if (tune == 0)
         {
             tuned.SetActive(false);
             nomal.SetActive(true);
+            //nombasePos = nomal.transform.localPosition;
+            tunedMode = false;
         }
         else if (tune == 1)
         {
             tuned.SetActive(true);
             nomal.SetActive(false);
+            //tunbasePos = tuned.transform.localPosition;
+            tunedMode = true;
             if (cm != null)
             {
                 cm.maxs += pmaxs;
@@ -88,4 +100,25 @@ public class TuneSetter : MonoBehaviour
         }
     }
 
+    public void SetShakou(float diff)
+    {
+        nomal.transform.localPosition = new Vector3(0, diff, 0) + nombasePos;
+        if(tuned!=null)
+            tuned.transform.localPosition = new Vector3(0, diff, 0) + tunbasePos;
+
+        if (!garage)
+            GetComponent<Carmain>().tlight.transform.localPosition += new Vector3(0, diff, 0);
+    }
+
+    public void GetBasePos(int dcar)
+    {
+        string data = PlayerPrefs.GetString("car" + dcar);
+        int tune = data[0] - '0';
+
+        nombasePos = nomal.transform.localPosition;
+        if (tuned != null)
+            tunbasePos = tuned.transform.localPosition;
+
+        Debug.Log("nompos:" + nombasePos);
+    }
 }
