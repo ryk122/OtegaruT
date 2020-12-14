@@ -11,3 +11,5 @@ https://us-central1-otegaru-api.cloudfunctions.net/active_logs
 [GET]アクティブログの全取得
 ここを叩くとログ全部確認できるよ
 https://us-central1-otegaru-api.cloudfunctions.net/get_active_logs
+
+https://console.firebase.google.com/u/0/project/otegaru-api/

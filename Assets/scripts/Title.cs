@@ -319,12 +319,14 @@ public class Title : MonoBehaviour {
         /*Login Bonus*/
         if(!PlayerPrefs.HasKey("login") || !PlayerPrefs.GetString("login").Equals(today.Month.ToString() + today.Day.ToString()))
         {
+            GetComponent<DataServer>().CheckServerData();
+
             int c = PlayerPrefs.GetInt("money");
             PlayerPrefs.SetInt("money", c + 50);
             PlayerPrefs.SetString("login", today.Month.ToString() + today.Day.ToString());
             logb.SetActive(true);
         }
-        /*Online time setter (NOT GOOD CODE!!)*/
+        /*Online time setter*/
         if (today.Hour >= 6 && today.Hour <= 15)
             PlayerPrefs.SetInt("on_time", 0);
         else if(today.Hour >= 4 && today.Hour < 6 || today.Hour > 15 && today.Hour < 18)
@@ -335,8 +337,6 @@ public class Title : MonoBehaviour {
 
     private IEnumerator CmasSound()
     {
-
-
         string url = "https://ryuukun.at-ninja.jp/wewish.mp3";
 
         WWW www = new WWW(url);
