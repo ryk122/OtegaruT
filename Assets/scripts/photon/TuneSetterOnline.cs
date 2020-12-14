@@ -52,6 +52,8 @@ namespace Photon.Pun.Demo.PunBasics
                 return;
             }
 
+            //自分が入室したので、既にいた他人に自分の状態を知らせる&自分の状態変化
+
             if (wheel.Length == 0)
                 Debug.LogError("No Wheel Material");
 
@@ -66,8 +68,18 @@ namespace Photon.Pun.Demo.PunBasics
                     //SetWheel(material[m]);
                     photonView.RPC("SetWheel", RpcTarget.AllViaServer, m);
                 m_num = m;
-                
 
+                float shakou = PlayerPrefs.GetFloat("shakou" + dcar);
+                SetShakou(shakou);
+                //photonView.RPC("SetShakou", RpcTarget.AllViaServer, shakou);
+
+                float camber = PlayerPrefs.GetFloat("camber" + dcar);
+                SetCamber(camber);
+                //photonView.RPC("SetCamber", RpcTarget.AllViaServer, camber);
+
+                float width = PlayerPrefs.GetFloat("width" + dcar);
+                SetWidth(width);
+                //photonView.RPC("SetWidth", RpcTarget.AllViaServer, width);
             }
             else
             {
@@ -95,6 +107,7 @@ namespace Photon.Pun.Demo.PunBasics
         {
             if (photonView.IsMine &&added)//呼びかけの実体
             {
+                //他人が入室してきたとき、他人に自分のステータスを知らせる。
                 photonView.RPC("SetTune", RpcTarget.AllViaServer, tune_num, m_num);
 
                 foreach(ChangeColorOnline cc in changecolor)
@@ -102,6 +115,23 @@ namespace Photon.Pun.Demo.PunBasics
                     cc.ReSetColor();
                 }
                 added = false;
+
+                
+                int dcar = PlayerPrefs.GetInt("dcar");
+                float shakou = PlayerPrefs.GetFloat("shakou" + dcar);
+                photonView.RPC("SetShakou", RpcTarget.AllViaServer, shakou);
+
+
+                float camber = PlayerPrefs.GetFloat("camber" + dcar);
+                photonView.RPC("SetCamber", RpcTarget.AllViaServer, camber);
+
+                float width = PlayerPrefs.GetFloat("width" + dcar);
+                photonView.RPC("SetWidth", RpcTarget.AllViaServer, width);
+
+                //自分だけまき戻す
+                SetShakou(-shakou);
+                SetWidth(-width);
+
                 //Debug.LogWarning("Tune!");
             }
         }
@@ -158,6 +188,35 @@ namespace Photon.Pun.Demo.PunBasics
                 t.GetComponent<Renderer>().material = material[m];
             }
         }
+
+        [PunRPC]
+        public void SetCamber(float angle)
+        {
+            wheel[0].transform.localEulerAngles = new Vector3(-angle, 90, 0);
+            wheel[1].transform.localEulerAngles = new Vector3(-angle, -90, 0);
+            wheel[2].transform.localEulerAngles = new Vector3(-angle, 90, 0);
+            wheel[3].transform.localEulerAngles = new Vector3(-angle, -90, 0);
+        }
+
+        [PunRPC]
+        public void SetWidth(float widthDiff)
+        {
+            wheel[0].transform.localPosition += new Vector3(widthDiff, 0, 0);
+            wheel[1].transform.localPosition += new Vector3(-widthDiff, 0, 0);
+            wheel[2].transform.localPosition += new Vector3(widthDiff, 0, 0);
+            wheel[3].transform.localPosition += new Vector3(-widthDiff, 0, 0);
+        }
+
+        [PunRPC]
+        public void SetShakou(float diff)
+        {
+            nomal.transform.localPosition += new Vector3(0, diff, 0);
+            if (tuned != null)
+                tuned.transform.localPosition += new Vector3(0, diff, 0);
+
+            GetComponent<Carmain>().tlight.transform.localPosition += new Vector3(0, diff, 0);
+        }
+
 
         [PunRPC]
         public void NewCar()//carmianonlineから呼び出し
