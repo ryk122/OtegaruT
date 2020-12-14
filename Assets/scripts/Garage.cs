@@ -39,7 +39,7 @@ public class Garage : MonoBehaviour {
 
     private RewardedAd rewardedAd;
 
-    const int TUNE_TAB = 4;
+    const int TUNE_TAB = 6;
 
 
     //ひどい変数
@@ -80,6 +80,8 @@ public class Garage : MonoBehaviour {
 
         gcsetter.GCStart(dcar, gt.ts);//g-color setterにtsとdcar伝達
         gt.LoadShakou(dcar);
+        gt.LoadCamber(dcar);
+        gt.LoadWidth(dcar);
 
         //オプションを表示
         if (showOption)
@@ -125,6 +127,7 @@ public class Garage : MonoBehaviour {
     public void ChangeR()
     {
         car[dcar].GetComponent<TuneSetter>().SetShakou(0);
+        car[dcar].GetComponent<TuneSetter>().SetWidth(0);
         car[dcar].SetActive(false);
         if (dcar == max)
             dcar = 0;
@@ -135,6 +138,7 @@ public class Garage : MonoBehaviour {
     public void ChangeL()
     {
         car[dcar].GetComponent<TuneSetter>().SetShakou(0);
+        car[dcar].GetComponent<TuneSetter>().SetWidth(0);
         car[dcar].SetActive(false);
         if (dcar == 0)
             dcar = max;
@@ -166,6 +170,8 @@ public class Garage : MonoBehaviour {
         gt.ts = carobj.GetComponent<TuneSetter>();//tune対象を伝達
         gcsetter.GCStart(dcar, gt.ts);//g-color setterにtsとdcar伝達
         gt.LoadShakou(dcar);
+        gt.LoadCamber(dcar);
+        gt.LoadWidth(dcar);
 
         OnOffTune();
         DispCarLevel(dcar);

@@ -21,6 +21,7 @@ public class TuneSetter : MonoBehaviour
     public ChangeColor[] changecolor;
 
     Vector3 nombasePos,tunbasePos;
+    Vector3[] wheelpos = new Vector3[4];
     bool tunedMode;
 
     // Start is called before the first frame update
@@ -44,6 +45,12 @@ public class TuneSetter : MonoBehaviour
 
             float shakou = PlayerPrefs.GetFloat("shakou" + dcar);
             SetShakou(shakou);
+
+            float camber = PlayerPrefs.GetFloat("camber" + dcar);
+            SetCamber(camber);
+
+            float width = PlayerPrefs.GetFloat("width" + dcar);
+            SetWidth(width);
         }
         else
         {
@@ -100,6 +107,23 @@ public class TuneSetter : MonoBehaviour
         }
     }
 
+    public void SetCamber(float angle)
+    {
+        wheel[0].transform.localEulerAngles = new Vector3(-angle, 90, 0);
+        wheel[1].transform.localEulerAngles = new Vector3(-angle, -90, 0);
+        wheel[2].transform.localEulerAngles = new Vector3(-angle, 90, 0);
+        wheel[3].transform.localEulerAngles = new Vector3(-angle, -90, 0);
+
+    }
+
+    public void SetWidth(float widthDiff)
+    {
+        wheel[0].transform.localPosition = wheelpos[0] + new Vector3(widthDiff, 0, 0);
+        wheel[1].transform.localPosition = wheelpos[1] + new Vector3(-widthDiff, 0, 0);
+        wheel[2].transform.localPosition = wheelpos[2] + new Vector3(widthDiff, 0, 0);
+        wheel[3].transform.localPosition = wheelpos[3] + new Vector3(-widthDiff, 0, 0);
+    }
+
     public void SetShakou(float diff)
     {
         nomal.transform.localPosition = new Vector3(0, diff, 0) + nombasePos;
@@ -119,6 +143,9 @@ public class TuneSetter : MonoBehaviour
         if (tuned != null)
             tunbasePos = tuned.transform.localPosition;
 
-        Debug.Log("nompos:" + nombasePos);
+        for (int i = 0; i < 4; i++)
+        {         
+            wheelpos[i] = wheel[i].transform.localPosition;
+        }
     }
 }

@@ -16,7 +16,7 @@ public class GarageTune : MonoBehaviour
     [SerializeField]
     Dropdown drop;
     [SerializeField]
-    Slider shakouSlider;
+    Slider shakouSlider, camberSlider, widthSlider;
 
     public TuneSetter ts;//Garageから伝達
     [SerializeField]
@@ -25,6 +25,19 @@ public class GarageTune : MonoBehaviour
     public void TurnOnTunePanel()
     {
         GetData();
+    }
+
+    public void LoadCamber(int dcar)
+    {
+        camberSlider.value = PlayerPrefs.GetFloat("camber" + dcar);
+        ChangeCamber();
+    }
+
+    public void LoadWidth(int dcar)
+    {
+        widthSlider.value = PlayerPrefs.GetFloat("width" + dcar);
+        ChangeWidth();
+
     }
 
     public void LoadShakou(int dcar)
@@ -113,23 +126,68 @@ public class GarageTune : MonoBehaviour
         }
     }
 
+    public void ChangeCamber()
+    {
+        ts.SetCamber(camberSlider.value);
+    }
+
+    public void ChangeWidth()
+    {
+        ts.SetWidth(widthSlider.value);
+    }
+
     public void ChangeShakou()
     {
         ts.SetShakou(shakouSlider.value);
     }
 
-    public void SetShakou()
-    {/*
+
+
+    public void SaveCamber()
+    {
+        
         int c = PlayerPrefs.GetInt("money");
-        if (c > 300)
+        if (c > 100)
         {
-            c -= 300;
+            c -= 100;
             PlayerPrefs.SetInt("money", c);
             g.DispCoin(c);
-            */
+            
+            PlayerPrefs.SetFloat("camber" + dcar, camberSlider.value);
+            gg.CloseTune();
+
+        }
+    }
+
+    public void SaveWidth()
+    {
+        
+        int c = PlayerPrefs.GetInt("money");
+        if (c > 100)
+        {
+            c -= 100;
+            PlayerPrefs.SetInt("money", c);
+            g.DispCoin(c);
+            
+            PlayerPrefs.SetFloat("width" + dcar, widthSlider.value);
+            gg.CloseTune();
+
+        }
+    }
+
+
+    public void SaveShakou()
+    {
+        int c = PlayerPrefs.GetInt("money");
+        if (c > 100)
+        {
+            c -= 100;
+            PlayerPrefs.SetInt("money", c);
+            g.DispCoin(c);
+            
             PlayerPrefs.SetFloat("shakou" + dcar, shakouSlider.value);
             gg.CloseTune();
 
-        //}
+        }
     }
 }
