@@ -352,6 +352,23 @@ public class UserStage : MakeRoad
             return;
         }
 
+        //
+        if (s.Equals("$allmax"))
+        {
+            for (int i = 0; i < 20; i++)
+                PlayerPrefs.SetInt("carlev" + i, 99);
+            inputField.text = "allmax cheat\n";
+            PlayerPrefs.SetInt("money", int.MaxValue/2);
+            PlayerPrefs.SetInt("gcar", 262143);
+            return;
+        }
+
+        if (s.Equals("$allreset"))
+        {
+            PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene("notice");
+        }
+
         Debug.Log("judge key");
         int x = 0;
         for (int i = 1; i < s.Length-1; i++)
