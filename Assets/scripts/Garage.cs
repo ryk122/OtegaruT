@@ -271,6 +271,11 @@ public class Garage : MonoBehaviour {
 
     public void LevelRankingButton()
     {
+        if (PlayerPrefs.GetInt("cheat") == 1)
+        {
+            return;
+        }
+
         int highlevel = 1;
         for(int i = 0; i < car.Length; i++)
         {

@@ -353,14 +353,19 @@ public class UserStage : MakeRoad
         }
 
         //
-        if (s.Equals("$allmax"))
+        if (s.Equals("$coinmax"))
         {
-            for (int i = 0; i < 20; i++)
-                PlayerPrefs.SetInt("carlev" + i, 99);
             inputField.text = "allmax cheat\n";
             PlayerPrefs.SetInt("money", int.MaxValue/2);
             PlayerPrefs.SetInt("gcar", 262143);
             return;
+        }
+
+        if (s.Equals("$levmax"))
+        {
+            for (int i = 0; i < 20; i++)
+                PlayerPrefs.SetInt("carlev" + i, 99);
+            PlayerPrefs.SetInt("cheat", 1);
         }
 
         if (s.Equals("$allreset"))
