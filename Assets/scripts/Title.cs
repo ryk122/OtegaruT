@@ -19,6 +19,8 @@ public class Title : MonoBehaviour {
     [SerializeField]
     int policy_ver;
 
+    static int timeCheck = 0;
+
 
     private void Start()
     {
@@ -92,7 +94,15 @@ public class Title : MonoBehaviour {
         */
 
         //Check Day
-        StartCoroutine(GetText());
+        if (timeCheck < 1)
+        {
+            StartCoroutine(GetText());
+            timeCheck = 5;
+        }
+        else
+        {
+            timeCheck--;
+        }
 
     }
 
@@ -373,4 +383,5 @@ public class Title : MonoBehaviour {
     {
         Application.OpenURL("https://github.com/ryk122/OtegaruT");
     }
+
 }
