@@ -11,6 +11,8 @@ TagManager:
   - Check
   - Section
   - Car
+  - Slider
+  - coin
   layers:
   - Default
   - TransparentFX

@@ -471,5 +471,17 @@ namespace Photon.Pun.Demo.PunBasics
         {
             adc.LeaveRoom();
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "coin")
+            {
+                if (photonView.IsMine)
+                {
+                    Destroy(other.gameObject);
+                    PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 50);
+                }
+            }
+        }
     }
 }

@@ -46,7 +46,7 @@
 - (void)adLoader:(GADAdLoader *)adLoader didFailToReceiveAdWithError:(GADRequestError *)error {
   if (self.adFailedCallback) {
     NSString *errorMsg = [NSString
-        stringWithFormat:@"Failed to receive ad with error: %@", [error localizedDescription]];
+        stringWithFormat:@"Failed to receive ad with error: %@", [error localizedFailureReason]];
     self.adFailedCallback(self.adLoaderClient,
                           [errorMsg cStringUsingEncoding:NSUTF8StringEncoding]);
   }
@@ -58,7 +58,7 @@
     GADUObjectCache *cache = [GADUObjectCache sharedInstance];
     GADUNativeCustomTemplateAd *internalNativeAd =
         [[GADUNativeCustomTemplateAd alloc] initWithAd:nativeCustomTemplateAd];
-    cache[internalNativeAd.gadu_referenceKey] = internalNativeAd;
+    [cache.references setObject:internalNativeAd forKey:[internalNativeAd gadu_referenceKey]];
     self.customTemplateAdReceivedCallback(
         self.adLoaderClient, (__bridge GADUTypeNativeCustomTemplateAdRef)internalNativeAd,
         [nativeCustomTemplateAd.templateID cStringUsingEncoding:NSUTF8StringEncoding]);
