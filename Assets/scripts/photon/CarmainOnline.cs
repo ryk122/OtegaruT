@@ -478,8 +478,7 @@ namespace Photon.Pun.Demo.PunBasics
             {
                 if (photonView.IsMine)
                 {
-                    Destroy(other.gameObject);
-                    PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 50);
+                    other.gameObject.GetComponent<CoinObject>().GetCoin();
                 }
             }
         }
