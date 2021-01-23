@@ -19,7 +19,12 @@ public class Title : MonoBehaviour {
     [SerializeField]
     int policy_ver;
 
+    [SerializeField]
+    GameObject[] rankingobj;
+
     static int timeCheck = 0;
+
+    public static int YEAR,MONTH, DAY;
 
 
     private void Start()
@@ -104,6 +109,7 @@ public class Title : MonoBehaviour {
             timeCheck--;
         }
 
+        naichilab.RankingSceneManager.eventRankingData = false;
     }
 
     public void MainGame()
@@ -313,6 +319,10 @@ public class Title : MonoBehaviour {
             DateTime now = new DateTime(1970, 1, 1).AddMilliseconds(t).ToLocalTime();
             Debug.Log(now);
             TimeEvent(now);
+
+            YEAR = now.Year;
+            MONTH = now.Month;
+            DAY = now.Day;
         }
 
     }
@@ -382,6 +392,15 @@ public class Title : MonoBehaviour {
     public void ButtonOfNewsContent()
     {
         Application.OpenURL("https://github.com/ryk122/OtegaruT");
+    }
+
+    public void EventButton()
+    {
+        //trueにすることで、ランキング先を自動変更：現在は日付単位なので注意
+        //foreach (GameObject g in rankingobj)
+          //  g.SetActive(true);
+        naichilab.RankingSceneManager.eventRankingData = true;
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(5, 2);
     }
 
 }

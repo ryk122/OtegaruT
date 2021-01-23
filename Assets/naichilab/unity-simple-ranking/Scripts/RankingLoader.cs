@@ -58,9 +58,10 @@ namespace naichilab
 		{
             if (rankingname == 0)
                 SceneManager.LoadScene("Ranking", LoadSceneMode.Additive);
-            else
+            else if(rankingname == 1)
                 SceneManager.LoadScene("Ranking2", LoadSceneMode.Additive);
-
+            else
+                SceneManager.LoadScene("Ranking3", LoadSceneMode.Additive);
         }
 
         public IScore BuildScore (string scoreText)

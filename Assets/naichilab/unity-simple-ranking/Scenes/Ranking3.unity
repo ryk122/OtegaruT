@@ -787,8 +787,8 @@ MonoBehaviour:
   notFoundNodePrefab: {fileID: 1912475606491428, guid: 6520466e4818e49ffbd84ef9c9af17ba,
     type: 3}
   unit: 
-  OBJECT_ID: objectId
-  RankingDataClassName: RankingData
+  OBJECT_ID: objectId3
+  RankingDataClassName: EventData
 --- !u!4 &699432289
 Transform:
   m_ObjectHideFlags: 0
