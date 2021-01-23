@@ -24,16 +24,18 @@ namespace naichilab
 		private string OBJECT_ID = "objectId";
 		private string _objectid = null;
 
+        public static bool eventRankingData;
+
 		private string ObjectID {
 			get {
-				return _objectid ?? (_objectid = PlayerPrefs.GetString (OBJECT_ID, null));
+                return _objectid ?? (_objectid = PlayerPrefs.GetString (OBJECT_ID, null));
 			}
 			set {
-				if (_objectid == value)
+                if (_objectid == value)
 					return;
 				PlayerPrefs.SetString (OBJECT_ID, _objectid = value);
-			}
-		}
+            }
+        }
 
         [SerializeField]
 		private string RankingDataClassName = "RankingData";
@@ -56,7 +58,16 @@ namespace naichilab
 		{
 			this.sendScoreButton.interactable = false;
 
-			StartCoroutine (GetHighScoreAndRankingBoard ());
+            if (eventRankingData)
+            {
+                RankingDataClassName = EventName();
+            }
+            else
+            {
+                Debug.Log("normal ranking");
+            }
+
+            StartCoroutine (GetHighScoreAndRankingBoard ());
 		}
 
 		IEnumerator GetHighScoreAndRankingBoard ()
@@ -103,6 +114,32 @@ namespace naichilab
 					this.sendScoreButton.interactable = highScore.Value < score.Value;
 				}
 			}
+
+            //event時は、別に対応
+            if (eventRankingData)
+            {
+                var score = RankingLoader.Instance.Score;
+                //記録あり
+                if (PlayerPrefs.HasKey(EventName()))
+                {
+                    this.highScoreLabel.text = PlayerPrefs.GetInt(EventName()).ToString();
+                    if (score.Value > PlayerPrefs.GetInt(EventName()))
+                    {
+                        //記録更新
+                        this.sendScoreButton.interactable = true;
+                    }
+                    else
+                    {
+                        //記録更新せず
+                        this.sendScoreButton.interactable = false;
+                    }
+                }
+                else//初回
+                {
+                    this.sendScoreButton.interactable = true;
+                    this.highScoreLabel.text = "-----";
+                }
+            }
 		}
 
 
@@ -137,6 +174,12 @@ namespace naichilab
 			ObjectID = this.highScoreSpreadSheetObject.ObjectId;
 			
 			this.highScoreLabel.text = RankingLoader.Instance.Score.TextForDisplay;
+
+            //eventモードの対応
+            if (eventRankingData)
+            {
+                PlayerPrefs.SetInt(EventName(), (int)RankingLoader.Instance.Score.Value);
+            }
 
 			yield return StartCoroutine (LoadRankingBoard ());
 		}
@@ -206,6 +249,11 @@ namespace naichilab
 			m.enabled = false;
 			m.enabled = true;
 		}
+
+        private string EventName()
+        {
+            return "event" + Title.YEAR.ToString() + Title.MONTH.ToString() + "17";
+        }
 
 	}
 }
