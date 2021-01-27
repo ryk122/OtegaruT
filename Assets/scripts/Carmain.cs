@@ -32,6 +32,8 @@ public class Carmain : MonoBehaviour {
 
     float speedRate=4.2f;
 
+    bool driftEvent = false;
+
     // Use this for initialization
     void Start () {
         if(!auto)
@@ -75,6 +77,13 @@ public class Carmain : MonoBehaviour {
         int carlev = PlayerPrefs.GetInt("carlev" + dcar);
         Debug.Log(carlev);
         maxs += 0.1f * carlev;
+
+        //eventCheck: is this drift event?
+        if (naichilab.RankingSceneManager.eventRankingData && EventScene.EventType() == 1)
+        {
+            driftEvent = true;
+            EventScene.driftPoint = 0;
+        }
     }
 
     private void Update()
@@ -119,6 +128,14 @@ public class Carmain : MonoBehaviour {
         }
 
         speedText.text = ((int)(speed * speedRate)).ToString()+"km/h";
+
+        //if(driftEvent && (k ) && back != -1)
+        if (driftEvent)
+        {
+            float c = Vector3.Dot(rb.velocity, transform.right);
+            if (c * c > 100)
+                EventScene.driftPoint += Time.deltaTime * 10;
+        }
 
         //roman
         /*

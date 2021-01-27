@@ -26,7 +26,7 @@ public class PutCar : MonoBehaviour
     public MakeRoad mk;
     public Text all,speed;
     public TextMeshProUGUI tmp;
-    public bool free, dbp, auto;
+    public bool free, dbp, auto, eventmode;
     }
 
 
@@ -57,6 +57,7 @@ public class PutCar : MonoBehaviour
         mj.free = mojiDisp.free;
         mj.dbp = mojiDisp.dbp;
         mj.auto = mojiDisp.auto;
+        mj.eventmode = mojiDisp.eventmode;
 
         mj.cm.gyaobj = gya;
         mj.cm.efcmr = ecm;

@@ -22,6 +22,9 @@ public class Title : MonoBehaviour {
     [SerializeField]
     GameObject[] rankingobj;
 
+    [SerializeField]
+    GameObject eventButton;
+
     static int timeCheck = 0;
 
     public static int YEAR,MONTH, DAY;
@@ -110,6 +113,9 @@ public class Title : MonoBehaviour {
         }
 
         naichilab.RankingSceneManager.eventRankingData = false;
+
+        //event check
+        StartCoroutine(CheckEvent("https://ryuukun.web.fc2.com/otegaru/event.txt"));
     }
 
     public void MainGame()
@@ -396,11 +402,49 @@ public class Title : MonoBehaviour {
 
     public void EventButton()
     {
-        //trueにすることで、ランキング先を自動変更：現在は日付単位なので注意
-        //foreach (GameObject g in rankingobj)
-          //  g.SetActive(true);
         naichilab.RankingSceneManager.eventRankingData = true;
-        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(5, 2);
+        SceneManager.LoadScene("EventScene");
     }
+
+    IEnumerator CheckEvent(string uri)
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+        {
+            // Request and wait for the desired page.
+            yield return webRequest.SendWebRequest();
+
+            string[] pages = uri.Split('/');
+            int page = pages.Length - 1;
+
+            if (webRequest.isNetworkError)
+            {
+                Debug.Log(pages[page] + ": Error: " + webRequest.error);
+            }
+            else
+            {
+                Debug.Log(pages[page] + ":\nServerData Received: " + webRequest.downloadHandler.text);
+                if (webRequest.downloadHandler.text.Equals("0"))
+                {
+                    //no event
+                    eventButton.SetActive(false);
+                }
+                else
+                {
+                    if (webRequest.downloadHandler.text.Equals("1"))
+                    {
+                        eventButton.SetActive(true);
+                        Debug.Log("do event");
+                    }
+                    else if (webRequest.downloadHandler.text.Equals("2"))
+                    {
+                        //結果発表期間のみ表示
+                        if (EventScene.IsEventDay() == 2)
+                            eventButton.SetActive(true);
+                    }
+                }
+            }
+        }
+    }
+
 
 }

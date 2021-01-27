@@ -2,33 +2,132 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+
 
 public class EventScene : UserStage
 {
     [SerializeField]
-    TextAsset haruna, akagi;
+    TextAsset localdata;
 
+    [SerializeField]
+    GameObject errorPanel;
+
+    [SerializeField]
+    AudioClip crash, driftscore;
+
+    [SerializeField]
+    Text scoreText;
 
     string stagedata;
 
+    public static int tofu;
+    public static float driftPoint;
+
+    [SerializeField]
+    AudioSource ads;
+
+
+    int scoretmp;
+    int eventType;
+
     private void Start()
     {
+        if (Title.DAY == 0)
+            SceneManager.LoadScene("title");
+
         err = false;
         ltext = laptext;
         scale = 1;
 
+        naichilab.RankingSceneManager.eventRankingData = true;
+
+        eventType = EventType();
+        if (eventType == 0)
+        {
+            scoretmp = 100;
+            tofu = 100;
+            scoreText.text = "100/100";
+            InvokeRepeating("TofuScoreUpdate", 0.1f, 0.1f);
+        }
+        else
+        {
+            scoretmp = 0;
+            driftPoint = 0;
+            scoreText.text = "0";
+            InvokeRepeating("DriftScoreUpdate", 0.1f, 0.2f);
+        }
+
     }
 
-    public void Haruna()
+    void TofuScoreUpdate()
     {
-        stagedata = haruna.text;
-        GameStart();
+        int ns = tofu;
+        if(ns != scoretmp)
+        {
+            ads.PlayOneShot(crash);
+            scoretmp = ns;
+            scoreText.text = ns.ToString() + "/100";
+        }
     }
 
-    public void Akagi()
+    void DriftScoreUpdate()
     {
-        stagedata = akagi.text;
-        GameStart();
+        int ns = (int)driftPoint;
+        if (ns != scoretmp)
+        {
+            ads.PlayOneShot(driftscore);
+            scoretmp = ns;
+            scoreText.text = ns.ToString();
+        }
+    }
+
+
+    public void StartEvent()
+    {
+        Invoke("TimeOut",20);
+
+        if (localdata != null)
+        {
+            stagedata = localdata.text;
+            GameStart();
+            CancelInvoke("TimeOut");
+        }
+        else
+        {
+            StartCoroutine(LoadEventStage("https://ryuukun.web.fc2.com/otegaru/eventstagedata.txt"));
+        }
+    }
+
+    IEnumerator LoadEventStage(string uri)
+    {
+
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+        {
+            // Request and wait for the desired page.
+            yield return webRequest.SendWebRequest();
+
+            string[] pages = uri.Split('/');
+            int page = pages.Length - 1;
+
+            if (webRequest.isNetworkError)
+            {
+                Debug.Log(pages[page] + ": Error: " + webRequest.error);
+            }
+            else
+            {
+                //Debug.Log(pages[page] + ":\nServerData Received: " + webRequest.downloadHandler.text);
+                stagedata = webRequest.downloadHandler.text;
+                GameStart();
+                CancelInvoke("TimeOut");
+            }
+        }
+    }
+
+    void TimeOut()
+    {
+        errorPanel.SetActive(true);
     }
 
     void GameStart()
@@ -85,5 +184,69 @@ public class EventScene : UserStage
         }
     }
 
+    public static void EventGameOver()
+    {
+        int score = 0;
+        if (PlayerPrefs.HasKey(EventName()))
+        {
+            score = PlayerPrefs.GetInt(EventName());
+        }
+
+        if (EventType() == 0)
+        {
+            score += tofu;
+            naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score, 2);
+        }
+        else if (EventType() == 1)
+        {
+            score += (int)driftPoint;
+            naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score, 2);
+        }
+        else if(EventType() == 2)
+        {
+            naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score+1, 2);
+        }
+    }
+
+
+    public static int IsEventDay()
+    {
+        //1:on event
+        //2:result only
+        
+        if(Title.DAY<11 || (Title.DAY>15 && Title.DAY < 26))
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
+
+    public static int EventType()
+    {
+        //0:tofu transport
+        //1:drift charenge
+        //2:Number of drive
+        return 1;
+    }
+
+    public static string EventName()
+    {
+        string term;
+        term = (Title.DAY < 16) ? "a" : "b";
+        return "event" + Title.YEAR.ToString() + Title.MONTH.ToString() + term;
+    }
+
+    public void ReloadButton()
+    {
+        SceneManager.LoadScene("EventScene");
+    }
+
+    public void ExitButton()
+    {
+        SceneManager.LoadScene("title");
+    }
 
 }

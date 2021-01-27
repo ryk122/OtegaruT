@@ -49,7 +49,7 @@ public class DataServer : MonoBehaviour
 
     public void CheckServerData()
     {
-        StartCoroutine(GetRequest("https://ryuukun.web.fc2.com/otegaru/otegarudata.txt"));
+        StartCoroutine(GetRequest("https://ryuukun.web.fc2.com/otegaru/senddata.txt"));
     }
 
     IEnumerator GetRequest(string uri)

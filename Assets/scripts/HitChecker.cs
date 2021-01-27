@@ -12,7 +12,7 @@ public class HitChecker : MonoBehaviour {
     public TextMeshProUGUI tmp;
     public int pinturn;
     public int alltime;
-    public bool free, dbp, auto;
+    public bool free, dbp, auto, eventmode;
     bool disp;
     AudioSource ads;
 
@@ -20,6 +20,8 @@ public class HitChecker : MonoBehaviour {
 
     public int i;
     int time;
+
+    bool tofuEvent = false;
 
 	// Use this for initialization
 	void Start () {
@@ -36,8 +38,16 @@ public class HitChecker : MonoBehaviour {
 
         float vol = PlayerPrefs.GetFloat("sev");
         ads.volume = vol;
+
+        if (naichilab.RankingSceneManager.eventRankingData && EventScene.EventType() == 0)
+        {
+            tofuEvent = true;
+            EventScene.tofu = 100;
+            transform.localScale += new Vector3(0.2f, 0, 0);
+        }
+
     }
-	
+
     void TimeCount()
     {
         alltime++;
@@ -158,6 +168,17 @@ public class HitChecker : MonoBehaviour {
             ads.Play();
             if(!free)
                 tmp.text = time.ToString();
+
+        }
+        if (other.CompareTag("Section"))
+        {
+            Debug.Log("bool:" + naichilab.RankingSceneManager.eventRankingData);
+            if (naichilab.RankingSceneManager.eventRankingData)
+            {
+                Debug.Log("hit:gameover");
+                //ここでイベントゲームオーバー
+                EventScene.EventGameOver();
+            }
         }
 
         if (other.CompareTag("wall"))
@@ -165,6 +186,12 @@ public class HitChecker : MonoBehaviour {
             //Debug.Log("wall");
             //壁衝突中は、溝効果0
             cm.mizo = 0;
+
+
+            if (tofuEvent)
+            {
+                EventScene.tofu--;
+            }
         }
     }
     private void OnTriggerExit(Collider other)

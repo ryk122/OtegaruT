@@ -60,7 +60,7 @@ namespace naichilab
 
             if (eventRankingData)
             {
-                RankingDataClassName = EventName();
+                RankingDataClassName = EventScene.EventName();
             }
             else
             {
@@ -120,10 +120,10 @@ namespace naichilab
             {
                 var score = RankingLoader.Instance.Score;
                 //記録あり
-                if (PlayerPrefs.HasKey(EventName()))
+                if (PlayerPrefs.HasKey(EventScene.EventName()))
                 {
-                    this.highScoreLabel.text = PlayerPrefs.GetInt(EventName()).ToString();
-                    if (score.Value > PlayerPrefs.GetInt(EventName()))
+                    this.highScoreLabel.text = PlayerPrefs.GetInt(EventScene.EventName()).ToString();
+                    if (score.Value > PlayerPrefs.GetInt(EventScene.EventName()))
                     {
                         //記録更新
                         this.sendScoreButton.interactable = true;
@@ -139,6 +139,9 @@ namespace naichilab
                     this.sendScoreButton.interactable = true;
                     this.highScoreLabel.text = "-----";
                 }
+
+                //保存する
+                PlayerPrefs.SetInt(EventScene.EventName(), (int)score.Value);
             }
 		}
 
@@ -178,7 +181,7 @@ namespace naichilab
             //eventモードの対応
             if (eventRankingData)
             {
-                PlayerPrefs.SetInt(EventName(), (int)RankingLoader.Instance.Score.Value);
+                PlayerPrefs.SetInt(EventScene.EventName(), (int)RankingLoader.Instance.Score.Value);
             }
 
 			yield return StartCoroutine (LoadRankingBoard ());
@@ -250,10 +253,6 @@ namespace naichilab
 			m.enabled = true;
 		}
 
-        private string EventName()
-        {
-            return "event" + Title.YEAR.ToString() + Title.MONTH.ToString() + "17";
-        }
 
 	}
 }
