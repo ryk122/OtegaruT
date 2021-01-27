@@ -31,7 +31,7 @@ public class StartCtrl : MonoBehaviour {
         cm = car[dcar].GetComponent<Carmain>();
         ads = GetComponent<AudioSource>();
         float vol = PlayerPrefs.GetFloat("sev");
-        ads.volume = vol;
+        ads.volume = vol * 0.3f;
         w = cm.b;
         cm.b = 0;
         i = 3;
