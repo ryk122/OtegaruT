@@ -293,7 +293,7 @@ public class EventScene : UserStage
         }
         else
         {
-            return 1;
+            //return 1;
             return 2;
         }
     }
@@ -303,7 +303,9 @@ public class EventScene : UserStage
         //0:tofu transport
         //1:drift charenge
         //2:Number of drive
-        return 2;
+        int[] e = { 0, 2, 1, 0, 2, 1, 0, 2, 1, 0, 2, 1};
+        int index = Title.MONTH * 2 + ((Title.DAY < 16) ? -1 : 0);
+        return e[index-1];
     }
 
     public static string EventName()

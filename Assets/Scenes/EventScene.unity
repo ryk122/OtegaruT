@@ -1059,7 +1059,7 @@ MonoBehaviour:
   stop: {fileID: 655245818111007986, guid: 10abd366597d5644b80f8c8992374cc7, type: 3}
   streetlamp: {fileID: 4731090726700408671, guid: 6925306db398c0942aad345d948db0a5,
     type: 3}
-  pc: 1
+  pc: 0
   inputField: {fileID: 0}
   laptext: {fileID: 1251454968}
   buttontext: {fileID: 0}

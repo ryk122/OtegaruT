@@ -28,6 +28,9 @@ public class Title : MonoBehaviour {
     [SerializeField]
     Text eventText;
 
+    [SerializeField]
+    Sprite[] eventbanner;
+
     static int timeCheck = 0;
 
     public static int YEAR,MONTH, DAY;
@@ -439,6 +442,7 @@ public class Title : MonoBehaviour {
                     {
                         eventButton.SetActive(true);
                         eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+                        eventButton.GetComponent<Image>().sprite = eventbanner[EventScene.EventType()];
                         Debug.Log("do event");
                     }
                     else if (webRequest.downloadHandler.text.Equals("2"))
@@ -447,6 +451,7 @@ public class Title : MonoBehaviour {
                         if (EventScene.IsEventDay() == 2)
                         {
                             eventButton.SetActive(true);
+                            eventButton.GetComponent<Image>().sprite = eventbanner[EventScene.EventType()];
                             eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
                         }
                     }
