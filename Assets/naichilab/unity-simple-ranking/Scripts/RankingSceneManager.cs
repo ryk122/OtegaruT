@@ -24,6 +24,9 @@ namespace naichilab
 		private string OBJECT_ID = "objectId";
 		private string _objectid = null;
 
+        [SerializeField]
+        Text ranktext;
+        
         public static bool eventRankingData;
 
 		private string ObjectID {
@@ -119,10 +122,10 @@ namespace naichilab
             if (eventRankingData)
             {
                 var score = RankingLoader.Instance.Score;
-                //記録あり
-                if (PlayerPrefs.HasKey(EventScene.EventName()))
+                //ローカル記録あり
+                if (PlayerPrefs.HasKey("local"+EventScene.EventName()))
                 {
-                    this.highScoreLabel.text = PlayerPrefs.GetInt(EventScene.EventName()).ToString();
+                    this.highScoreLabel.text = PlayerPrefs.GetInt("local"+EventScene.EventName()).ToString();
                     if (score.Value > PlayerPrefs.GetInt(EventScene.EventName()))
                     {
                         //記録更新
@@ -140,8 +143,8 @@ namespace naichilab
                     this.highScoreLabel.text = "-----";
                 }
 
-                //保存する
-                PlayerPrefs.SetInt(EventScene.EventName(), (int)score.Value);
+                //ローカルは強制保存する
+                PlayerPrefs.SetInt("local"+EventScene.EventName(), (int)score.Value);
             }
 		}
 
@@ -220,6 +223,8 @@ namespace naichilab
 			if (so.Count > 0) {
 
 				int rank = 0;
+                int myscore = PlayerPrefs.GetInt(EventScene.EventName());
+                int myrank = -1;
 				foreach (var r in so.Result) {
 
 					var n = Instantiate (this.rankingNodePrefab, scrollViewContent);
@@ -231,9 +236,37 @@ namespace naichilab
 					rankNode.ScoreText.text = s != null ? unit + s.TextForDisplay : "エラー";
 
 					Debug.Log (r ["hiscore"].ToString ());
-				}
 
-			} else {
+                    if (eventRankingData && myrank ==-1)
+                    {
+                        int score;
+                        int.TryParse(r["hiscore"].ToString(), out score);
+                        if (score == myscore)
+                        {
+                            myrank = rank;
+                            ranktext.text = myrank.ToString()+"位";
+                            if (EventScene.IsEventDay() == 2)
+                            {
+                                GetComponent<EventResult>().GiveAward(myrank);
+                                Debug.Log("-------award");
+                            }
+                            Debug.Log("Myrank:"+myrank);
+                        }
+                    }
+
+
+                }
+                if (eventRankingData && myrank == -1)
+                {
+                    ranktext.text = "--位";
+                    if (EventScene.IsEventDay() == 2)
+                    {
+                        GetComponent<EventResult>().GiveAward(-1);
+                    }
+                }
+
+            }
+            else {
 				Instantiate (this.notFoundNodePrefab, scrollViewContent);
 			}
 		}

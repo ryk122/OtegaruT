@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
 using System;
 using UnityEngine.Networking;
-
+using UnityEngine.UI;
 
 public class Title : MonoBehaviour {
     public GameObject howto,dpd,timep,loadtext,hill;
@@ -24,6 +24,9 @@ public class Title : MonoBehaviour {
 
     [SerializeField]
     GameObject eventButton;
+
+    [SerializeField]
+    Text eventText;
 
     static int timeCheck = 0;
 
@@ -403,6 +406,8 @@ public class Title : MonoBehaviour {
     public void EventButton()
     {
         naichilab.RankingSceneManager.eventRankingData = true;
+        Loading();
+        PlayerPrefs.SetInt("time", 2);
         SceneManager.LoadScene("EventScene");
     }
 
@@ -433,13 +438,17 @@ public class Title : MonoBehaviour {
                     if (webRequest.downloadHandler.text.Equals("1"))
                     {
                         eventButton.SetActive(true);
+                        eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
                         Debug.Log("do event");
                     }
                     else if (webRequest.downloadHandler.text.Equals("2"))
                     {
                         //結果発表期間のみ表示
                         if (EventScene.IsEventDay() == 2)
+                        {
                             eventButton.SetActive(true);
+                            eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+                        }
                     }
                 }
             }

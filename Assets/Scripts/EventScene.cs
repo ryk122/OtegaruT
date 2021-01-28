@@ -15,10 +15,18 @@ public class EventScene : UserStage
     GameObject errorPanel;
 
     [SerializeField]
+    GameObject[] gameinfo;
+
+    [SerializeField]
     AudioClip crash, driftscore;
 
     [SerializeField]
-    Text scoreText;
+    Text scoreText,period;
+
+    [SerializeField]
+    Transform tofuicon, pointicon;
+    [SerializeField]
+    GameObject startButton;
 
     string stagedata;
 
@@ -32,6 +40,9 @@ public class EventScene : UserStage
     int scoretmp;
     int eventType;
 
+    int t = 0;
+    Vector3 iconpos;
+
     private void Start()
     {
         if (Title.DAY == 0)
@@ -43,6 +54,8 @@ public class EventScene : UserStage
 
         naichilab.RankingSceneManager.eventRankingData = true;
 
+        period.text = "~" + Title.YEAR.ToString() + "/" + Title.MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+
         eventType = EventType();
         if (eventType == 0)
         {
@@ -50,15 +63,33 @@ public class EventScene : UserStage
             tofu = 100;
             scoreText.text = "100/100";
             InvokeRepeating("TofuScoreUpdate", 0.1f, 0.1f);
+            tofuicon.gameObject.SetActive(true);
         }
-        else
+        else if(eventType == 1)
         {
             scoretmp = 0;
             driftPoint = 0;
             scoreText.text = "0";
             InvokeRepeating("DriftScoreUpdate", 0.1f, 0.2f);
+            pointicon.gameObject.SetActive(true);
+            iconpos = pointicon.transform.position;
         }
+        else if(eventType == 2)
+        {
 
+        }
+        gameinfo[eventType].SetActive(true);
+
+        if (IsEventDay() == 2)
+        {
+            startButton.SetActive(false);
+            int score = 0;
+            if (PlayerPrefs.HasKey(EventName()))
+            {
+                score = PlayerPrefs.GetInt("local" + EventName());
+            }
+            naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score, 2);
+        }
     }
 
     void TofuScoreUpdate()
@@ -69,6 +100,19 @@ public class EventScene : UserStage
             ads.PlayOneShot(crash);
             scoretmp = ns;
             scoreText.text = ns.ToString() + "/100";
+            InvokeRepeating("ShakeTofu", 0, 0.05f);
+        }
+    }
+    void ShakeTofu()
+    {
+        float r = Random.Range(-30.0f, 30.0f);
+        tofuicon.eulerAngles = new Vector3(0, 0, r);
+        t++;
+        if (t > 11)
+        {
+            t = 0;
+            CancelInvoke("ShakeTofu");
+            tofuicon.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 
@@ -80,6 +124,19 @@ public class EventScene : UserStage
             ads.PlayOneShot(driftscore);
             scoretmp = ns;
             scoreText.text = ns.ToString();
+            InvokeRepeating("PointIcon", 0, 0.01f);
+            pointicon.transform.position = -new Vector3(0, 20, 0) + iconpos;
+        }
+    }
+    void PointIcon()
+    {
+        pointicon.transform.position += new Vector3(0, 2, 0);
+        t++;
+        if (t > 9)
+        {
+            CancelInvoke("PointIcon");
+            t = 0;
+            pointicon.position = iconpos;
         }
     }
 
@@ -100,7 +157,19 @@ public class EventScene : UserStage
         }
     }
 
-    IEnumerator LoadEventStage(string uri)
+    public void DisplayRanking()
+    {
+        int score = 0;
+        if (PlayerPrefs.HasKey(EventName()))
+        {
+            score = PlayerPrefs.GetInt("local" + EventName());
+        }
+
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score, 2);
+
+    }
+
+        IEnumerator LoadEventStage(string uri)
     {
 
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
@@ -186,25 +255,29 @@ public class EventScene : UserStage
 
     public static void EventGameOver()
     {
+
         int score = 0;
         if (PlayerPrefs.HasKey(EventName()))
         {
-            score = PlayerPrefs.GetInt(EventName());
+            score = PlayerPrefs.GetInt("local"+EventName());
         }
 
         if (EventType() == 0)
         {
             score += tofu;
+            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + tofu);
             naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score, 2);
         }
         else if (EventType() == 1)
         {
             score += (int)driftPoint;
+            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + (int)driftPoint);
             naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score, 2);
         }
         else if(EventType() == 2)
         {
             naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score+1, 2);
+            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 100);
         }
     }
 
@@ -220,6 +293,7 @@ public class EventScene : UserStage
         }
         else
         {
+            return 1;
             return 2;
         }
     }
@@ -229,7 +303,7 @@ public class EventScene : UserStage
         //0:tofu transport
         //1:drift charenge
         //2:Number of drive
-        return 1;
+        return 2;
     }
 
     public static string EventName()

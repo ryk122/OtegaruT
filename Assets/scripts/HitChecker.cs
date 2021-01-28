@@ -190,7 +190,8 @@ public class HitChecker : MonoBehaviour {
 
             if (tofuEvent)
             {
-                EventScene.tofu--;
+                if (EventScene.tofu > 0)
+                    EventScene.tofu--;
             }
         }
     }
