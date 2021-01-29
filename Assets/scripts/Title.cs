@@ -116,13 +116,14 @@ public class Title : MonoBehaviour {
         else
         {
             timeCheck--;
+            //event check
+            StartCoroutine(CheckEvent("https://ryuukun.web.fc2.com/otegaru/event.txt"));
         }
 
         naichilab.RankingSceneManager.eventRankingData = false;
 
-        //event check
-        StartCoroutine(CheckEvent("https://ryuukun.web.fc2.com/otegaru/event.txt"));
     }
+
 
     public void MainGame()
     {
@@ -336,6 +337,9 @@ public class Title : MonoBehaviour {
             MONTH = now.Month;
             DAY = now.Day;
         }
+
+        //event check
+        StartCoroutine(CheckEvent("https://ryuukun.web.fc2.com/otegaru/event.txt"));
 
     }
 

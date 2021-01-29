@@ -46,7 +46,10 @@ public class EventScene : UserStage
     private void Start()
     {
         if (Title.DAY == 0)
+        {
             SceneManager.LoadScene("title");
+            return;
+        }
 
         err = false;
         ltext = laptext;
@@ -160,7 +163,7 @@ public class EventScene : UserStage
     public void DisplayRanking()
     {
         int score = 0;
-        if (PlayerPrefs.HasKey(EventName()))
+        if (PlayerPrefs.HasKey("local" + EventName()))
         {
             score = PlayerPrefs.GetInt("local" + EventName());
         }
@@ -255,9 +258,8 @@ public class EventScene : UserStage
 
     public static void EventGameOver()
     {
-
         int score = 0;
-        if (PlayerPrefs.HasKey(EventName()))
+        if (PlayerPrefs.HasKey("local" + EventName()))
         {
             score = PlayerPrefs.GetInt("local"+EventName());
         }

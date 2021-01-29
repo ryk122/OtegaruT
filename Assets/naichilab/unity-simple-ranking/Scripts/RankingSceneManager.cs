@@ -122,11 +122,14 @@ namespace naichilab
             if (eventRankingData)
             {
                 var score = RankingLoader.Instance.Score;
+                Debug.Log("scoreN " + score.Value);
+                Debug.Log("scoreLocal " + PlayerPrefs.GetInt("local" + EventScene.EventName()));
                 //ローカル記録あり
                 if (PlayerPrefs.HasKey("local"+EventScene.EventName()))
                 {
-                    this.highScoreLabel.text = PlayerPrefs.GetInt("local"+EventScene.EventName()).ToString();
-                    if (score.Value > PlayerPrefs.GetInt(EventScene.EventName()))
+                    this.highScoreLabel.text = PlayerPrefs.GetInt(EventScene.EventName()).ToString();
+                    this.scoreLabel.text = ((int)score.Value).ToString();
+                    if (score.Value> PlayerPrefs.GetInt(EventScene.EventName()))
                     {
                         //記録更新
                         this.sendScoreButton.interactable = true;
@@ -140,6 +143,8 @@ namespace naichilab
                 else//初回
                 {
                     this.sendScoreButton.interactable = true;
+                    this.scoreLabel.text = ((int)score.Value).ToString();
+                    PlayerPrefs.SetInt("local" + EventScene.EventName(), (int)score.Value);
                     this.highScoreLabel.text = "-----";
                 }
 
