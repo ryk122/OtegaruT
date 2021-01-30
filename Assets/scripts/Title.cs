@@ -124,6 +124,14 @@ public class Title : MonoBehaviour {
 
     }
 
+    /*
+    private void Update()
+    {
+        MONTH = 2;
+        DAY = 10;
+        Debug.LogError("update");
+    }*/
+    
 
     public void MainGame()
     {
@@ -457,6 +465,18 @@ public class Title : MonoBehaviour {
                             eventButton.SetActive(true);
                             eventButton.GetComponent<Image>().sprite = eventbanner[EventScene.EventType()];
                             eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+                        }
+                    }
+                    else if (webRequest.downloadHandler.text.Equals("3"))
+                    {
+                        //イベント実施期間のみ表示
+                        if (EventScene.IsEventDay() == 1)
+                        {
+                            eventButton.SetActive(true);
+                            eventButton.GetComponent<Image>().sprite = eventbanner[EventScene.EventType()];
+                            eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+                            Debug.Log("do event");
+
                         }
                     }
                 }

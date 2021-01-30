@@ -173,7 +173,7 @@ PlayerSettings:
     iPhone: com.ryuukunkoubou.touge
   buildNumber:
     iPhone: 1
-  AndroidBundleVersionCode: 43
+  AndroidBundleVersionCode: 44
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1

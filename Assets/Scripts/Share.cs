@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Share : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    GameObject sharePanel;
+
+    public void ShareButton()
     {
-        
+        //sharePanel.SetActive(true); 
+        Application.OpenURL("https://twitter.com/intent/tweet?text=%23%E5%BE%A1%E6%89%8B%E8%BB%BDT%20%23otegaruT%0Ahttps%3A%2F%2Fryuukun.web.fc2.com%2Fotegaru%2Fdownload.html");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CloseShaer()
     {
-        
+
     }
 }
