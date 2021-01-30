@@ -5039,7 +5039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 128
+  buildnum: 130
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5929,7 +5929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 149.99998, y: -260.1}
+  m_AnchoredPosition: {x: 149.99998, y: -260}
   m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272947055
@@ -5964,8 +5964,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News! v4.22.1\n\u30A4\u30D9\u30F3\u30C8\u30E2\u30FC\u30C9\u3092\u8FFD\u52A0\u3057\u307E\u3057\u305F\u3002\nEvent
-    mode is added.\n\n\u30AA\u30F3\u30E9\u30A4\u30F3\u30B2\u30FC\u30E0\u5185\u306Bcoin\u3092\u8A2D\u7F6E\u3057\u307E\u3057\u305F\u3002\nYou
+  m_Text: "#Update News! v4.23.1\n\u30A4\u30D9\u30F3\u30C8\u30922/1\u3088\u308A\u958B\u59CB\u3057\u307E\u3059\u3002\nThe
+    event will start on February 1st.\n\n\u30AA\u30F3\u30E9\u30A4\u30F3\u30B2\u30FC\u30E0\u5185\u306Bcoin\u3092\u8A2D\u7F6E\u3057\u307E\u3057\u305F\u3002\nYou
     can pick up coin in Online game.\n\n\u5229\u7528\u898F\u7D04\u3092\u66F4\u65B0\u3057\u307E\u3057\u305F\u3002\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002\nUser
     policy was updated, you must read it.\n\n\u305D\u306E\u4ED6\u3001\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\u3000minor
     fix.\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
@@ -9833,7 +9833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -29.999939}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185545215
@@ -10444,7 +10444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -14, y: 33.9}
+  m_AnchoredPosition: {x: -14, y: 34}
   m_SizeDelta: {x: 160, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302577049
@@ -12105,7 +12105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -245, y: -28.000061}
+  m_AnchoredPosition: {x: -245, y: -28}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567421896
@@ -13051,7 +13051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.716564, y: -30.71429}
+  m_AnchoredPosition: {x: -34, y: -30.75}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692812496
@@ -24138,7 +24138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.000061}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 0.7862549, y: -1.6755981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2027923163
@@ -29685,7 +29685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2125630436

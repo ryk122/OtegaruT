@@ -177,6 +177,7 @@ public class HitChecker : MonoBehaviour {
             {
                 Debug.Log("hit:gameover");
                 //ここでイベントゲームオーバー
+                GetExp(100, PlayerPrefs.GetInt("dcar"));
                 EventScene.EventGameOver();
             }
         }

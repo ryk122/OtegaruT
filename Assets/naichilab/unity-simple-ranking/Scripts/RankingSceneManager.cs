@@ -132,7 +132,10 @@ namespace naichilab
                     if (score.Value> PlayerPrefs.GetInt(EventScene.EventName()))
                     {
                         //記録更新
-                        this.sendScoreButton.interactable = true;
+                        if (EventScene.IsEventDay() == 1)//開催期間中なら更新可能
+                            this.sendScoreButton.interactable = true;
+                        else
+                            this.sendScoreButton.interactable = false;
                     }
                     else
                     {
@@ -142,7 +145,10 @@ namespace naichilab
                 }
                 else//初回
                 {
-                    this.sendScoreButton.interactable = true;
+                    if (EventScene.IsEventDay() == 1)//開催期間中なら更新可能
+                        this.sendScoreButton.interactable = true;
+                    else
+                        this.sendScoreButton.interactable = false;
                     this.scoreLabel.text = ((int)score.Value).ToString();
                     PlayerPrefs.SetInt("local" + EventScene.EventName(), (int)score.Value);
                     this.highScoreLabel.text = "-----";
