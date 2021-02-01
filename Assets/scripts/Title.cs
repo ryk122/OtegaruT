@@ -31,7 +31,7 @@ public class Title : MonoBehaviour {
     [SerializeField]
     Sprite[] eventbanner;
 
-    static int timeCheck = 0;
+    public static int timeCheck = 0;
 
     public static int YEAR,MONTH, DAY;
 
@@ -128,7 +128,7 @@ public class Title : MonoBehaviour {
     private void Update()
     {
         MONTH = 2;
-        DAY = 10;
+        DAY = 11;
         Debug.LogError("update");
     }*/
     
@@ -454,6 +454,8 @@ public class Title : MonoBehaviour {
                     {
                         eventButton.SetActive(true);
                         eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+                        if (EventScene.IsEventDay() == 2)
+                            eventText.text = "Result";
                         eventButton.GetComponent<Image>().sprite = eventbanner[EventScene.EventType()];
                         Debug.Log("do event");
                     }
@@ -464,7 +466,8 @@ public class Title : MonoBehaviour {
                         {
                             eventButton.SetActive(true);
                             eventButton.GetComponent<Image>().sprite = eventbanner[EventScene.EventType()];
-                            eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
+                            eventText.text = "Result";
+                            //eventText.text = "~" + MONTH.ToString() + "/" + ((Title.DAY < 16) ? 10 : 25).ToString();
                         }
                     }
                     else if (webRequest.downloadHandler.text.Equals("3"))
