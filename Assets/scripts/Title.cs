@@ -297,7 +297,7 @@ public class Title : MonoBehaviour {
     IEnumerator GetText()
     {
         //UnityWebRequest request = UnityWebRequest.Get("https://ntp-a1.nict.go.jp/cgi-bin/ntp");
-        UnityWebRequest request = UnityWebRequest.Get("https://us-central1-otegaru-api.cloudfunctions.net/get_time");
+        UnityWebRequest request = UnityWebRequest.Get("https://asia-northeast1-otegaru-api.cloudfunctions.net/get_time");
         // 下記でも可
         // UnityWebRequest request = new UnityWebRequest("http://example.com");
         // methodプロパティにメソッドを渡すことで任意のメソッドを利用できるようになった
@@ -337,7 +337,7 @@ public class Title : MonoBehaviour {
 
         if (float.TryParse(text.Substring(start, end - start -1), out t))
         {
-            DateTime now = new DateTime(1970, 1, 1).AddMilliseconds(t).ToLocalTime();
+            DateTime now = new DateTime(1970, 1, 1).AddMilliseconds(t+ 32400000);
             Debug.Log(now);
             TimeEvent(now);
 
