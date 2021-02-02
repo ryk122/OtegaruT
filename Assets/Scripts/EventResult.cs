@@ -9,7 +9,7 @@ using GoogleMobileAds.Api;
 public class EventResult : MonoBehaviour
 {
     [SerializeField]
-    GameObject awardPanel;
+    GameObject awardPanel,loading;
     [SerializeField]
     Text award;
 
@@ -97,7 +97,16 @@ public class EventResult : MonoBehaviour
         {
             interstitial.Show();
         }
-        SceneManager.LoadScene("EventScene");
+
+        loading.SetActive(true);
+
+        if (Title.timeCheck < 0)
+        {
+            Title.timeReload = true;
+            SceneManager.LoadScene("title");
+        }
+        else
+            SceneManager.LoadScene("EventScene");
 
     }
 }

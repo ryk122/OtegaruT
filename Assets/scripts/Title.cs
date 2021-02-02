@@ -33,6 +33,8 @@ public class Title : MonoBehaviour {
 
     public static int timeCheck = 0;
 
+    public static bool timeReload = false;
+
     public static int YEAR,MONTH, DAY;
 
 
@@ -122,6 +124,13 @@ public class Title : MonoBehaviour {
 
         naichilab.RankingSceneManager.eventRankingData = false;
 
+        if (timeReload)
+        {
+            Loading();
+            naichilab.RankingSceneManager.eventRankingData = true;
+            SceneManager.LoadScene("EventScene");
+            timeReload = false;
+        }
     }
 
     /*
@@ -417,6 +426,7 @@ public class Title : MonoBehaviour {
     {
         Application.OpenURL("https://github.com/ryk122/OtegaruT");
     }
+
 
     public void EventButton()
     {
