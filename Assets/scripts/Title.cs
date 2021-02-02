@@ -427,6 +427,10 @@ public class Title : MonoBehaviour {
         Application.OpenURL("https://github.com/ryk122/OtegaruT");
     }
 
+    public void DiscordLink()
+    {
+        Application.OpenURL("https://discord.gg/MN3DfCPMSf");
+    }
 
     public void EventButton()
     {
