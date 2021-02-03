@@ -5042,7 +5042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newspanel: {fileID: 1125132907}
-  buildnum: 130
+  buildnum: 203
 --- !u!82 &29775150
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6110,10 +6110,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "#Update News! v4.23.1\n\u30A4\u30D9\u30F3\u30C8\u30922/1\u3088\u308A\u958B\u59CB\u3057\u307E\u3059\u3002\nThe
-    event will start on February 1st.\n\n\u30AA\u30F3\u30E9\u30A4\u30F3\u30B2\u30FC\u30E0\u5185\u306Bcoin\u3092\u8A2D\u7F6E\u3057\u307E\u3057\u305F\u3002\nYou
-    can pick up coin in Online game.\n\n\u5229\u7528\u898F\u7D04\u3092\u66F4\u65B0\u3057\u307E\u3057\u305F\u3002\u78BA\u8A8D\u3057\u3066\u304F\u3060\u3055\u3044\u3002\nUser
-    policy was updated, you must read it.\n\n\u305D\u306E\u4ED6\u3001\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\u3000minor
+  m_Text: "#Update News! v4.23.2\n\nVS\u30E2\u30FC\u30C9\u3067\u306E\u30D0\u30B0\u3092\u4FEE\u6B63\u3057\u307E\u3057\u305F\u3002\na
+    Bug in VS is fixed.\n\n\u30A4\u30D9\u30F3\u30C8\u3092\u5B9F\u65BD\u4E2D\u3067\u3059\u3002\u305C\u3072\u53C2\u52A0\u304F\u3060\u3055\u3044\u3002\n\uFF0A\u30A4\u30D9\u30F3\u30C8\u306E\u53C2\u52A0\u306B\u306F\u30A4\u30F3\u30BF\u30FC\u30CD\u30C3\u30C8\u63A5\u7D9A\u304C\u5FC5\u8981\u3067\u3059\u3002\nEvent
+    mode is available.\n(Internet connection is required)\n\n\u305D\u306E\u4ED6\u3001\u4FEE\u6B63\u3092\u3057\u307E\u3057\u305F\u3002\u3000minor
     fix.\n\n\n\u3053\u308C\u304B\u3089\u3082\u300C\u5FA1\u624B\u8EFDT\u300D\u3092\u3088\u308D\u3057\u304F\u304A\u306D\u304C\u3044\u3057\u307E\u3059\u3002"
 --- !u!222 &272947056
 CanvasRenderer:
@@ -7824,7 +7823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -73, y: 10.86}
+  m_AnchoredPosition: {x: -73, y: 10.859985}
   m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672701705
