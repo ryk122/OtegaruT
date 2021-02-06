@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class AndroidCtrl : MonoBehaviour {
     public Carmain cm;
-    public GameObject b1, b2;
+    public GameObject b1, b2, b3, b4;
     float trlevel;
     bool r, l, g, b;
-    bool accont;
+    bool accont, controller;
     Vector3 acc;
     float rot;
 
 	// Use this for initialization
 	public void Start () {
         if (PlayerPrefs.GetInt("accont") == 1) accont = true; else accont = false;
-        if (accont)
+        if (PlayerPrefs.GetInt("controller") == 1) controller = true; else controller = false;
+        if (accont||controller)
         {
             b1.SetActive(false);b2.SetActive(false);
+            if (controller)
+            {
+                b3.SetActive(false);b4.SetActive(false);
+            }
         }
         trlevel = PlayerPrefs.GetFloat("trlevel");
         GameObject car = GameObject.Find("car");
@@ -34,11 +39,44 @@ public class AndroidCtrl : MonoBehaviour {
             if (rot > 1) rot = 1;
             else if (rot < -1) rot = -1;
         }
+
+        /*for controll device*/
+        if (controller)
+        {
+            //steer
+            rot = Input.GetAxis("Horizontal");
+
+
+            //up down
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Fire2"))
+            {
+                g = true;
+            }
+            else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("Fire2"))
+            {
+                g = false;
+                cm.Acoff();
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetButtonDown("Fire1"))
+            {
+                b = true;
+            }
+            else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetButtonUp("Fire1"))
+            {
+                b = false;
+            }
+
+            //other
+            if (Input.GetButtonDown("Fire3"))
+            {
+                cm.LightOnOff();
+            }
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate () {
-        if (accont)
+        if (accont||controller)
         {
             if(Mathf.Abs(rot)>0.4)
                 cm.TR(rot);

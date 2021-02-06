@@ -11,10 +11,10 @@ namespace Photon.Pun.Demo.PunBasics
         [SerializeField]
         Text playernum;
         public CarmainOnline cm;
-        public GameObject b1, b2,rcam;
+        public GameObject b1, b2, b3, b4, rcam;
         float trlevel;
         bool r, l, g, b;
-        bool accont;
+        bool accont, controller;
         int camstate;
         Vector3 acc;
         float rot;
@@ -26,9 +26,14 @@ namespace Photon.Pun.Demo.PunBasics
         {
             
             if (PlayerPrefs.GetInt("accont") == 1) accont = true; else accont = false;
-            if (accont)
+            if (PlayerPrefs.GetInt("controller") == 1) controller = true; else controller = false;
+            if (accont || controller)
             {
                 b1.SetActive(false); b2.SetActive(false);
+                if (controller)
+                {
+                    b3.SetActive(false); b4.SetActive(false);
+                }
             }
             trlevel = PlayerPrefs.GetFloat("trlevel");
             //GameObject car = GameObject.Find("car");
@@ -53,6 +58,40 @@ namespace Photon.Pun.Demo.PunBasics
                 if (rot > 1) rot = 1;
                 else if (rot < -1) rot = -1;
             }
+            /*for controll device*/
+            if (controller)
+            {
+                //steer
+                rot = Input.GetAxis("Horizontal");
+
+
+                //up down
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetButtonDown("Fire2"))
+                {
+                    g = true;
+                }
+                else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetButtonUp("Fire2"))
+                {
+                    g = false;
+                    cm.Acoff();
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetButtonDown("Fire1"))
+                {
+                    b = true;
+                    cm.Bon();
+                }
+                else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetButtonUp("Fire1"))
+                {
+                    b = false;
+                    cm.Boff();
+                }
+
+                //other
+                if (Input.GetButtonDown("Fire3"))
+                {
+                    cm.LightButton();
+                }
+            }
 
         }
 
@@ -64,7 +103,7 @@ namespace Photon.Pun.Demo.PunBasics
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (accont)
+            if (accont||controller)
             {
                 if (Mathf.Abs(rot) > 0.4)
                     cm.TR(rot);

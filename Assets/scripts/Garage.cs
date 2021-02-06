@@ -14,7 +14,7 @@ public class Garage : MonoBehaviour {
     public Text buttontex,value,strengthvalue,sevol,levellabel;
     public Slider slider,slider2,slider3,expslider;
     public GameObject ad,opt;
-    public Toggle toggle_b,toggle_e,toggle_a,toggle_m;
+    public Toggle toggle_b,toggle_e,toggle_a,toggle_m,toggle_c;
     bool having,bgm,effect,accont,mir;
     int unitytime, sm, ss ,mm,ms;
     int sw, sh, tuneTabState;
@@ -59,6 +59,7 @@ public class Garage : MonoBehaviour {
         if (PlayerPrefs.GetInt("etext") == 1) effect = true; else effect = false;
         if (PlayerPrefs.GetInt("accont") == 1) accont = true; else accont = false;
         if (PlayerPrefs.GetInt("mir") == 1) mir = true; else mir = false;
+        if (PlayerPrefs.GetInt("controller") == 1) toggle_c.isOn = true; else toggle_c.isOn = false;
         slider.value = PlayerPrefs.GetFloat("trlevel");
         slider2.value = PlayerPrefs.GetFloat("cpstren");
         slider3.value = PlayerPrefs.GetFloat("sev");
@@ -387,6 +388,7 @@ public class Garage : MonoBehaviour {
         PlayerPrefs.SetFloat("cpstren", slider2.value);
         PlayerPrefs.SetFloat("sev", slider3.value);
         PlayerPrefs.SetInt("mir", toggle_m.isOn ? 1 : 0);
+        PlayerPrefs.SetInt("controller", toggle_c.isOn ? 1 : 0);
         opt.SetActive(false);
     }
 

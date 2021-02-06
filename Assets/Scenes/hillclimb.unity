@@ -172,6 +172,8 @@ MonoBehaviour:
   cm: {fileID: 0}
   b1: {fileID: 1478070475}
   b2: {fileID: 1693206843}
+  b3: {fileID: 2048336010}
+  b4: {fileID: 324608565}
 --- !u!1 &111551987
 GameObject:
   m_ObjectHideFlags: 0
@@ -11741,6 +11743,7 @@ MonoBehaviour:
     free: 1
     dbp: 0
     auto: 0
+    eventmode: 0
 --- !u!1 &747859952
 GameObject:
   m_ObjectHideFlags: 0
