@@ -31,6 +31,11 @@ public class Title : MonoBehaviour {
     [SerializeField]
     Sprite[] eventbanner;
 
+    [SerializeField]
+    bool samplegame;
+    [SerializeField]
+    GameObject buyfullPanel;
+
     public static int timeCheck = 0;
 
     public static bool timeReload = false;
@@ -79,6 +84,9 @@ public class Title : MonoBehaviour {
 #if UNITY_STANDALONE_WIN
         if (!PlayerPrefs.HasKey("controller"))
             PlayerPrefs.SetInt("controller", 1);
+        if(!samplegame)
+            PlayerPrefs.SetInt("money", 1000000);
+
 #endif
 
         if (PlayerPrefs.HasKey("policy"))
@@ -155,6 +163,7 @@ public class Title : MonoBehaviour {
 
     public void Free()
     {
+        if (samplegame) { BuyFullVer(true); return; }
         //SceneManager.LoadScene("free");
         game = 1;
         //climb test
@@ -178,6 +187,7 @@ public class Title : MonoBehaviour {
 
     public void loadstage()
     {
+        if (samplegame) { BuyFullVer(true); return; }
         game = 4;
         SetTime();
     }
@@ -210,6 +220,7 @@ public class Title : MonoBehaviour {
     }
     public void vs()
     {
+        if (samplegame) { BuyFullVer(true); return; }
         //SceneManager.LoadScene("vs");
         game = 2;
         SetTime();
@@ -251,6 +262,7 @@ public class Title : MonoBehaviour {
 
     public void RealTouge()
     {
+        if (samplegame) { BuyFullVer(true);return; }
         Loading();
         SceneManager.LoadScene("RealTouge");
     }
@@ -276,6 +288,11 @@ public class Title : MonoBehaviour {
     public void newswiki()
     {
         Application.OpenURL("https://otegarut.wiki.fc2.com/wiki/update%20news");
+    }
+
+    public void Buynow()
+    {
+        Application.OpenURL("https://ryuukunkoubou.booth.pm/items/2732831");
     }
 
     //ad
@@ -404,6 +421,11 @@ public class Title : MonoBehaviour {
         audios.clip = www.GetAudioClip(false, true);//二つ目の引数がtureで読込中の再生可能
         audios.Play();
 
+    }
+
+    public void BuyFullVer(bool b)
+    {
+        buyfullPanel.SetActive(b);
     }
 
     public void CloseLogB()
