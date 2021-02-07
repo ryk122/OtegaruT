@@ -13,7 +13,7 @@ public class EventResult : MonoBehaviour
     [SerializeField]
     Text award;
 
-    private InterstitialAd interstitial;
+    //private InterstitialAd interstitial;
 
 
     // Start is called before the first frame update
@@ -22,16 +22,11 @@ public class EventResult : MonoBehaviour
         Title.timeCheck--;
 
         //ad load==========================================
-        RequestInterstitial();
+        //RequestInterstitial();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /*
     //ad https://developers.google.com/admob/unity/start?hl=ja
     private void RequestInterstitial()
     {
@@ -50,7 +45,7 @@ public class EventResult : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         this.interstitial.LoadAd(request);
-    }
+    }*/
 
 
     public void GiveAward(int rank)
@@ -93,10 +88,7 @@ public class EventResult : MonoBehaviour
 
     public void RePlayEvent()
     {
-        if (interstitial.IsLoaded())
-        {
-            interstitial.Show();
-        }
+        PreLoadAd.preAd.ShowAd();
 
         loading.SetActive(true);
 
@@ -108,5 +100,12 @@ public class EventResult : MonoBehaviour
         else
             SceneManager.LoadScene("EventScene");
 
+    }
+
+    public void CloseEvent()
+    {
+        PreLoadAd.preAd.ShowAd();
+        loading.SetActive(true);
+        SceneManager.LoadScene("title");
     }
 }

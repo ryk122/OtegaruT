@@ -42,6 +42,12 @@ public class CloseButton : MonoBehaviour {
         this.interstitial.LoadAd(request);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            TempStop();
+    }
+
     public void Close()
     {
         if (interstitial.IsLoaded())

@@ -51,6 +51,9 @@ public class EventScene : UserStage
             return;
         }
 
+        float vol = PlayerPrefs.GetFloat("sev");
+        ads.volume = vol;
+
         err = false;
         ltext = laptext;
         scale = 1;

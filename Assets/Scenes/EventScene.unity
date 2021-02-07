@@ -941,6 +941,7 @@ GameObject:
   - component: {fileID: 230737147}
   - component: {fileID: 230737146}
   - component: {fileID: 230737148}
+  - component: {fileID: 230737149}
   m_Layer: 0
   m_Name: RoadSetter
   m_TagString: Untagged
@@ -1077,6 +1078,19 @@ MonoBehaviour:
   pointicon: {fileID: 27055436}
   startButton: {fileID: 1581177821}
   ads: {fileID: 1645642945}
+--- !u!114 &230737149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230737145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cdd10403c1c4740a3a73e7d36b4e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photodisableObjects: []
 --- !u!1 &233354023
 GameObject:
   m_ObjectHideFlags: 0
