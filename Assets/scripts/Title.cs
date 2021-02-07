@@ -76,6 +76,10 @@ public class Title : MonoBehaviour {
             PlayerPrefs.SetInt("mir", 0);
         if (!PlayerPrefs.HasKey("sev"))
             PlayerPrefs.SetFloat("sev", 1.0f);
+#if UNITY_STANDALONE_WIN
+        if (!PlayerPrefs.HasKey("controller"))
+            PlayerPrefs.SetInt("controller", 1);
+#endif
 
         if (PlayerPrefs.HasKey("policy"))
         {
