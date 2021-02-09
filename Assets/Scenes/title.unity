@@ -5030,7 +5030,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 323889a8cb8aad541a94d6cc1dd265cb, type: 3}
   - {fileID: 21300000, guid: 662ea460ebedcce4a8a991f656fb5f2e, type: 3}
   - {fileID: 21300000, guid: 962fce948a7f0c244a73eedfffa8167e, type: 3}
-  samplegame: 1
+  samplegame: 0
   buyfullPanel: {fileID: 702267451}
 --- !u!114 &29775149
 MonoBehaviour:
