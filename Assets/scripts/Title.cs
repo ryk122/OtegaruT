@@ -140,8 +140,8 @@ public class Title : MonoBehaviour {
         {
             Loading();
             naichilab.RankingSceneManager.eventRankingData = true;
-            SceneManager.LoadScene("EventScene");
             timeReload = false;
+            SceneManager.LoadScene("EventScene");
         }
     }
 
