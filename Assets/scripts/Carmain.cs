@@ -127,7 +127,8 @@ public class Carmain : MonoBehaviour {
             tsound.Play();
         }
 
-        speedText.text = ((int)(speed * speedRate)).ToString()+"km/h";
+        if(!auto)
+            speedText.text = ((int)(speed * speedRate)).ToString()+"km/h";
 
         //if(driftEvent && (k ) && back != -1)
         if (driftEvent)
