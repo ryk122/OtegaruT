@@ -80,7 +80,7 @@ public class Title : MonoBehaviour {
         if (!PlayerPrefs.HasKey("mir"))
             PlayerPrefs.SetInt("mir", 0);
         if (!PlayerPrefs.HasKey("sev"))
-            PlayerPrefs.SetFloat("sev", 1.0f);
+            PlayerPrefs.SetFloat("sev", 0.5f);
 #if UNITY_STANDALONE_WIN
         if (!PlayerPrefs.HasKey("controller"))
             PlayerPrefs.SetInt("controller", 1);
