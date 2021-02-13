@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class Title : MonoBehaviour {
-    public GameObject howto,dpd,timep,loadtext,hill;
+    public GameObject howto,dpd,timep,loadtext,hill,credits;
     int game;
 
     [SerializeField]
@@ -202,6 +202,15 @@ public class Title : MonoBehaviour {
         howto.SetActive(false);
     }
 
+    public void Credits()
+    {
+        credits.SetActive(true);
+    }
+    public void CreditsClose()
+    {
+        credits.SetActive(false);
+    }
+
     public void DPDisp()
     {
         dpd.SetActive(true);
@@ -283,6 +292,11 @@ public class Title : MonoBehaviour {
         //一時的にGarageのものを使用
         Garage.showOption = true;
         GoGarage();
+    }
+
+    public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
     }
 
     public void newswiki()
