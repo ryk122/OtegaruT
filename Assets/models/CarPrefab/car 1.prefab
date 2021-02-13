@@ -20902,6 +20902,7 @@ MonoBehaviour:
   free: 1
   dbp: 0
   auto: 0
+  eventmode: 0
   i: 0
 --- !u!82 &8833532084445498155
 AudioSource:
