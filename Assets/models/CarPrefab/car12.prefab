@@ -15514,7 +15514,6 @@ MonoBehaviour:
   garage: 0
   nomal: {fileID: 2715143756041183186}
   tuned: {fileID: 2715143756041183188}
-  otherBody: {fileID: 0}
   wheel:
   - {fileID: 6446396813938326746}
   - {fileID: 7525053690872835189}
@@ -20671,6 +20670,7 @@ MonoBehaviour:
   free: 1
   dbp: 0
   auto: 0
+  eventmode: 0
   i: 0
 --- !u!82 &6446396813897212623
 AudioSource:
