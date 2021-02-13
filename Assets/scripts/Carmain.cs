@@ -165,6 +165,7 @@ public class Carmain : MonoBehaviour {
         back = 1;
         tlight.SetActive(false);
 
+        /*
         if (!android && !auto)
             //if (!auto)
         {
@@ -214,6 +215,7 @@ public class Carmain : MonoBehaviour {
                 }
             }
         }
+        */
 
         sliptime++;
 
