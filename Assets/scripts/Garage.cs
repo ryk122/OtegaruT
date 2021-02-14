@@ -158,7 +158,7 @@ public class Garage : MonoBehaviour {
         if ((gc & p) != p)
         {
             having = false;
-            buttontex.text = "Get:1000coin";
+            buttontex.text = "Get:2000coin";
         }
         else
         {
@@ -191,7 +191,7 @@ public class Garage : MonoBehaviour {
         {
             int c;
             c = PlayerPrefs.GetInt("money");
-            if (c >= 1000)
+            if (c >= 2000)
             {
                 int gc, i, p;
                 gc = PlayerPrefs.GetInt("gcar");
@@ -201,7 +201,7 @@ public class Garage : MonoBehaviour {
                 gc += p;
                 PlayerPrefs.SetInt("gcar", gc);
                 having = true;
-                c -= 1000;
+                c -= 2000;
                 PlayerPrefs.SetInt("money", c);
                 DispCoin(c);
                 ChangeCar();

@@ -52,7 +52,7 @@ public class Title : MonoBehaviour {
         //if there is not date ,set value.
         if (!PlayerPrefs.HasKey("money"))
         {
-            PlayerPrefs.SetInt("money", 1000);
+            PlayerPrefs.SetInt("money", 2000);
             Howto();
         }
         if (!PlayerPrefs.HasKey("dcar"))
