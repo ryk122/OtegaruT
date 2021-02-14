@@ -345,8 +345,37 @@ public class Carmain : MonoBehaviour {
         ct = 0;
         imgfadeout = true;
         Vector3 rot = transform.eulerAngles;
-        ftl.eulerAngles = rot;
-        ftr.eulerAngles = rot;
+
+        //
+        if (speed > 15)
+        {
+            float deg;
+            Vector3 t = rb.velocity;
+            float cost = Vector3.Dot(t, transform.forward) / Vector3.Magnitude(t);
+            float theata = Mathf.Acos(cost);
+            float dot2 = Vector3.Dot(t, transform.right) / Vector3.Magnitude(t);
+            deg = theata * 180 / Mathf.PI;
+            if (deg > 45)
+            {
+                deg = 45;
+            }
+            else if (deg < 25)
+            {
+                deg = 0;
+            }
+            if (dot2 < 0) deg *= -1;
+            rot.y += deg;
+
+
+            ftl.eulerAngles = rot;
+            ftr.eulerAngles = rot;  
+        }
+        //
+        else
+        {
+            ftl.eulerAngles = rot;
+            ftr.eulerAngles = rot;
+        }
 
         if (gyaa)
         {
