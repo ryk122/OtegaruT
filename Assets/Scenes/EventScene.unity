@@ -13956,8 +13956,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<Ranking award>\n  1st   100,000coin\n  2~5      1,000coin\n   6~          
-    100coin"
+  m_Text: "<Ranking award>\n  1st       100gem\n  2~5        10gem\n   6~           
+    2gem"
 --- !u!222 &1415648834
 CanvasRenderer:
   m_ObjectHideFlags: 0
