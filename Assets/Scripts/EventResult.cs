@@ -66,7 +66,7 @@ public class EventResult : MonoBehaviour
         {
             //1st
             award.text = "Congratulations!\n1位\n" + "+1000coin";
-            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 1000);
+            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 100000);
             PlayerPrefs.SetInt(EventScene.EventName() + "award", 1);
             awardPanel.SetActive(true);
         }
@@ -74,7 +74,7 @@ public class EventResult : MonoBehaviour
         {
             //semi winner
             award.text = "Congratulations!\n"+rank.ToString()+"位\n" + "+500coin";
-            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 500);
+            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + 1000);
             PlayerPrefs.SetInt(EventScene.EventName() + "award", 1);
             awardPanel.SetActive(true);
         }

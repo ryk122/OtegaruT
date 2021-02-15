@@ -8135,6 +8135,7 @@ MonoBehaviour:
   s2: {fileID: 711603522}
   d: {fileID: 1474420849}
   g: {fileID: 815396518}
+  bgm: []
 --- !u!82 &1088668917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13955,7 +13956,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<Ranking award>\n  1st  1000coin\n  2~5   500coin\n   6~    100coin"
+  m_Text: "<Ranking award>\n  1st   100,000coin\n  2~5      1,000coin\n   6~          
+    100coin"
 --- !u!222 &1415648834
 CanvasRenderer:
   m_ObjectHideFlags: 0
