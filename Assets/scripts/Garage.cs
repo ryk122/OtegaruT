@@ -22,7 +22,7 @@ public class Garage : MonoBehaviour {
     [SerializeField]
     GarageTune gt;
     [SerializeField]
-    GameObject tunebt, tunepl, polishpl, opbt, rb, lb, picker, colorbt;
+    GameObject tunebt, tunepl, polishpl, opbt, rb, lb, picker, colorbt, gemstore;
     [SerializeField]
     Dropdown drop;
     [SerializeField]
@@ -31,6 +31,9 @@ public class Garage : MonoBehaviour {
     GarageColorSetter gcs;
     [SerializeField]
     ParticleSystem polisheffect;
+
+    [SerializeField]
+    Text gemText,adblockLabel;
 
     [SerializeField]
     GameObject[] TuneContents;
@@ -71,6 +74,7 @@ public class Garage : MonoBehaviour {
         carobj = car[dcar].transform;
         having = true;
         DispCoin(PlayerPrefs.GetInt("money"));
+        DispGem(PlayerPrefs.GetInt("gem"));
         sw = Screen.width;
         sh = Screen.height;
 
@@ -221,6 +225,11 @@ public class Garage : MonoBehaviour {
         coin.text = "coin:" + c.ToString(); ;
     }
 
+    void DispGem(int g)
+    {
+        gemText.text = g.ToString();
+    }
+
     private void DispCarLevel(int carnum)
     {
         if (!PlayerPrefs.HasKey("carlev" + carnum))
@@ -262,12 +271,46 @@ public class Garage : MonoBehaviour {
     public void Close()
     {
         ad.SetActive(false);
-        CancelInvoke("TimeCount");
     }
 
     public void Option()
     {
         opt.SetActive(true);
+    }
+
+    public void GemStore()
+    {
+        gemstore.SetActive(true);
+        adblockLabel.text = "adblock:" + PlayerPrefs.GetInt("adblock").ToString();
+
+    }
+    public void CloseGemStore()
+    {
+        gemstore.SetActive(false);
+    }
+    public void GemToCoin()
+    {
+        int gem = PlayerPrefs.GetInt("gem");
+        if (gem > 0)
+        {
+            PlayerPrefs.SetInt("gem", gem - 1);
+            DispGem(gem - 1);
+            int c = PlayerPrefs.GetInt("money");
+            PlayerPrefs.SetInt("money", c + 50);
+            DispCoin(c + 50);
+        }
+    }
+    public void GemAdblock()
+    {
+        int gem = PlayerPrefs.GetInt("gem");
+        if (gem >= 10)
+        {
+            PlayerPrefs.SetInt("gem", gem - 10);
+            DispGem(gem - 10);
+            int a = PlayerPrefs.GetInt("adblock");
+            PlayerPrefs.SetInt("adblock", a + 10);
+            adblockLabel.text = "adblock:" + (a +10).ToString();
+        }
     }
 
     public void LevelRankingButton()

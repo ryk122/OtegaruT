@@ -368,6 +368,11 @@ public class UserStage : MakeRoad
             PlayerPrefs.SetInt("cheat", 1);
         }
 
+        if (s.Equals("$gemmax"))
+        {
+            PlayerPrefs.SetInt("gem", 99);
+        }
+
         if (s.Equals("$allreset"))
         {
             PlayerPrefs.DeleteAll();

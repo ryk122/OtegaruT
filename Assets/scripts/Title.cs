@@ -81,6 +81,11 @@ public class Title : MonoBehaviour {
             PlayerPrefs.SetInt("mir", 0);
         if (!PlayerPrefs.HasKey("sev"))
             PlayerPrefs.SetFloat("sev", 0.5f);
+        if (!PlayerPrefs.HasKey("adblock"))
+            PlayerPrefs.SetInt("adblock", 0);
+        if (!PlayerPrefs.HasKey("gem"))
+            PlayerPrefs.SetInt("gem", 0);
+        
 #if UNITY_STANDALONE_WIN
         if (!PlayerPrefs.HasKey("controller"))
             PlayerPrefs.SetInt("controller", 1);
@@ -409,8 +414,8 @@ public class Title : MonoBehaviour {
         {
             GetComponent<DataServer>().CheckServerData();
 
-            int c = PlayerPrefs.GetInt("money");
-            PlayerPrefs.SetInt("money", c + 50);
+            int g = PlayerPrefs.GetInt("gem");
+            PlayerPrefs.SetInt("gem", g + 1);
             PlayerPrefs.SetString("login", today.Month.ToString() + today.Day.ToString());
             logb.SetActive(true);
         }
