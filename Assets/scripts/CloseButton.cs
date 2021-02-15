@@ -52,7 +52,13 @@ public class CloseButton : MonoBehaviour {
     {
         if (interstitial.IsLoaded())
         {
-            interstitial.Show();
+            int adb = PlayerPrefs.GetInt("adblock");
+            if (adb > 0)
+            {
+                Debug.Log("adblock!");
+                interstitial.Show();
+                PlayerPrefs.SetInt("adblock", adb - 1);
+            }
         }
         SceneManager.LoadScene("title");
     }
