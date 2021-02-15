@@ -124,7 +124,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 4.23.3
+  bundleVersion: 4.24.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -173,7 +173,7 @@ PlayerSettings:
     iPhone: com.ryuukunkoubou.touge
   buildNumber:
     iPhone: 1
-  AndroidBundleVersionCode: 45
+  AndroidBundleVersionCode: 46
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
