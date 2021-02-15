@@ -46,9 +46,10 @@ public class PreLoadAd : MonoBehaviour
         if (adb > 0)
         {
             Debug.Log("adblock!");
-            interstitial.Show();
             PlayerPrefs.SetInt("adblock", adb - 1);
         }
+        else
+            interstitial.Show();
     }
 
 }
