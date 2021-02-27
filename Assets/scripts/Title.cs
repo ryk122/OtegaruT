@@ -154,7 +154,7 @@ public class Title : MonoBehaviour {
     private void Update()
     {
         MONTH = 3;
-        DAY = 12;
+        DAY = 10;
         Debug.LogError("update");
     }*/
     

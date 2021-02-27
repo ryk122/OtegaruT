@@ -45,7 +45,11 @@ public class EventScene : UserStage
 
     private void Start()
     {
-        if (Title.DAY == 0)
+        if (localdata != null)
+        {
+            Debug.LogError("edit mode!");
+        }
+        else if (Title.DAY == 0)
         {
             SceneManager.LoadScene("title");
             return;
