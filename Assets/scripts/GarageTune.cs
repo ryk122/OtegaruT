@@ -17,6 +17,8 @@ public class GarageTune : MonoBehaviour
     Dropdown drop;
     [SerializeField]
     Slider shakouSlider, camberSlider, widthSlider;
+    [SerializeField]
+    InputField[] licenseID;
 
     public TuneSetter ts;//Garageから伝達
     [SerializeField]
@@ -89,6 +91,7 @@ public class GarageTune : MonoBehaviour
                 c -= 500;
                 PlayerPrefs.SetInt("money", c);
                 PlayerPrefs.SetString("car" + dcar,"1"+data.Substring(1,data.Length-1));
+                gg.CloseTune();
             }
         }
         else
@@ -99,11 +102,31 @@ public class GarageTune : MonoBehaviour
                 c -= 100;
                 PlayerPrefs.SetInt("money", c);
                 PlayerPrefs.SetString("car" + dcar, "0" +data.Substring(1, data.Length - 1));
+                gg.CloseTune();
             }
         }
         g.DispCoin(c);
         TextChange();
         ts.SetTune(tune);
+    }
+
+    public void GetLicense()
+    {
+        int gem = PlayerPrefs.GetInt("gem");
+        if (gem > 0)
+        {
+            PlayerPrefs.SetInt("gem", gem - 1);
+            PlayerPrefs.SetInt("Islicensed" + dcar, 1);
+            string ls = licenseID[0].text +","+ licenseID[1].text + "," + licenseID[2].text;
+            PlayerPrefs.SetString("license" + dcar,ls);
+            g.CloseLicenseWindow();
+        }
+    }
+
+    public void RemoveLicense()
+    {
+        PlayerPrefs.SetInt("Islicensed" + dcar, 0);
+        g.CloseLicenseWindow();
     }
 
     public void SelectWheel()

@@ -13,7 +13,7 @@ public class Garage : MonoBehaviour {
     public TextMeshProUGUI coin;
     public Text buttontex,value,strengthvalue,sevol,levellabel;
     public Slider slider,slider2,slider3,expslider;
-    public GameObject ad,opt;
+    public GameObject ad,opt,licenseRemoveB;
     public Toggle toggle_b,toggle_e,toggle_a,toggle_m,toggle_c;
     bool having,bgm,effect,accont,mir;
     int unitytime, sm, ss ,mm,ms;
@@ -22,7 +22,7 @@ public class Garage : MonoBehaviour {
     [SerializeField]
     GarageTune gt;
     [SerializeField]
-    GameObject tunebt, tunepl, polishpl, opbt, rb, lb, picker, colorbt, gemstore;
+    GameObject tunebt, tunepl, polishpl, opbt, rb, lb, picker, colorbt, gemstore, licenseWindow;
     [SerializeField]
     Dropdown drop;
     [SerializeField]
@@ -37,6 +37,9 @@ public class Garage : MonoBehaviour {
 
     [SerializeField]
     GameObject[] TuneContents;
+
+    [SerializeField]
+    Text[] licenseText;
 
     Transform carobj;
 
@@ -388,6 +391,8 @@ public class Garage : MonoBehaviour {
 
         tuneTabState = 0;
         TuneContents[tuneTabState].SetActive(true);
+
+        GarageLicenseDisp();
     }
 
     public void CloseTune()
@@ -499,6 +504,40 @@ public class Garage : MonoBehaviour {
 
         DispCarLevel(dcar);
         StartCoroutine(SliderAnime(carexp));
+    }
+
+    public void LicenseWindow()
+    {
+        licenseWindow.SetActive(true);
+        tunepl.SetActive(false);
+    }
+
+    public void CloseLicenseWindow()
+    {
+        licenseWindow.SetActive(false);
+        CloseTune();
+        //tunepl.SetActive(true);
+    }
+
+    void GarageLicenseDisp()
+    {
+        string[] data;
+        if (PlayerPrefs.GetInt("Islicensed" + dcar) == 0)
+        {
+            licenseRemoveB.SetActive(false);
+            return;
+        }
+        licenseRemoveB.SetActive(true);
+        string s = PlayerPrefs.GetString("license" + dcar);
+        data = s.Split(',');
+        Debug.Log(data.Length);
+
+        if (data.Length >= 3)
+        {
+            licenseText[0].text = data[0];
+            licenseText[1].text = data[1];
+            licenseText[2].text = data[2];
+        }
     }
 
     private IEnumerator SliderAnime(int dest)

@@ -13,8 +13,14 @@ public class LicensePlate : MonoBehaviour
     void Start()
     {
         int dcar = PlayerPrefs.GetInt("dcar");
+        if (PlayerPrefs.GetInt("Islicensed" + dcar) ==0)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         string s = PlayerPrefs.GetString("license" + dcar);
         data = s.Split(',');
+        Debug.Log(data.Length);
 
         if (data.Length >= 3)
         {
